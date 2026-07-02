@@ -1,0 +1,1034 @@
+/* ============================================================================
+   transparency.module.css — page-specific styles for /transparency.
+   ----------------------------------------------------------------------------
+   The Transparency reference is the most complex marketing surface: a two-column
+   shell (sticky sidenav + content) plus a set of short-named component classes
+   (.sectitle/.si, .lead, .p, .explain, .legalsteps, .money, .pipeline/.stage,
+   .stage-detail, .worked/.wk, .rules/.rulecard, .disclose/.promptbox, .note,
+   .corrsteps) that would collide with the global site.css if left unscoped.
+   Scoping them as a CSS module (matching the earlier converted pages) keeps that
+   collision impossible.
+
+   Only classes NOT already in the shared system live here. Shared bits (.serif,
+   .eyebrow, .btn variants) come from the global site.css; the design tokens —
+   including the page's extra --slate / --slatetint / --slateline / --rusttint /
+   --rustline — come from the global tokens.css.
+
+   Hyphenated reference class names (.s-source, .sd-tag, …) are rendered in
+   camelCase (.sSource, .sdTag, …) so they read cleanly through `styles.*`.
+   ========================================================================== */
+
+/* ---------- two-column shell ---------- */
+.shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  gap: 40px;
+}
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* ---------- sticky sidenav ---------- */
+.sidenav {
+  position: sticky;
+  top: 78px;
+  height: fit-content;
+  padding: 44px 0 0;
+}
+@media (max-width: 900px) {
+  .sidenav {
+    display: none;
+  }
+}
+.snlabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+.sidenav a {
+  display: block;
+  font-size: 13.5px;
+  color: var(--mut);
+  font-weight: 500;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border-left: 2px solid transparent;
+}
+.sidenav a:hover {
+  background: var(--shell);
+  color: var(--pine);
+}
+.sidenav a.active {
+  color: var(--pine);
+  font-weight: 600;
+  border-left-color: var(--moss);
+  background: var(--shell);
+}
+
+.content {
+  min-width: 0;
+}
+
+/* ---------- page header ---------- */
+.phead {
+  padding: 48px 0 8px;
+}
+.phead h1 {
+  font-family: var(--font-head);
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.07;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+  max-width: 18ch;
+}
+.lede {
+  font-size: clamp(17px, 2.1vw, 20px);
+  color: var(--mut);
+  margin-top: 20px;
+  max-width: 60ch;
+  line-height: 1.55;
+}
+.lede b {
+  color: var(--ink);
+  font-weight: 600;
+}
+.updatedline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--faint);
+  margin-top: 14px;
+}
+
+/* mobile jump chips */
+.jump {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 6px;
+}
+@media (max-width: 900px) {
+  .jump {
+    display: flex;
+  }
+}
+.jump a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--moss);
+  background: var(--mosstint);
+  border: 1px solid var(--mossline);
+  border-radius: 20px;
+  padding: 7px 14px;
+}
+
+/* ---------- section shell ---------- */
+.section {
+  padding: 30px 0;
+  scroll-margin-top: 78px;
+  border-top: 1px solid var(--line2);
+}
+.section:first-of-type {
+  border-top: 0;
+}
+.sectitle {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+.si {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--pinetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.si svg {
+  width: 21px;
+  height: 21px;
+  stroke: var(--pine);
+  fill: none;
+  stroke-width: 1.8;
+}
+.sectitle h2 {
+  font-family: var(--font-head);
+  font-size: clamp(23px, 3.1vw, 30px);
+  color: var(--pine);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 16.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 8px 0 16px;
+  max-width: 64ch;
+}
+.lead b {
+  color: var(--pine);
+  font-weight: 600;
+}
+.p {
+  font-size: 15px;
+  color: var(--mut);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 64ch;
+}
+.p b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- status pills ---------- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 3px 9px;
+}
+.status.progress {
+  background: var(--honeytint);
+  color: var(--honey);
+  border: 1px solid var(--honeyline);
+}
+.status.live {
+  background: var(--mosstint);
+  color: var(--moss);
+  border: 1px solid var(--mossline);
+}
+.status svg {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke-width: 2.4;
+  stroke: currentColor;
+}
+
+/* ---------- explainer callout ---------- */
+.explain {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sky);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+.explain h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sky);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.explain h4 svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--sky);
+  fill: none;
+  stroke-width: 2;
+}
+.explain p {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+.explain p:last-child {
+  margin-bottom: 0;
+}
+.explain b {
+  color: var(--pine);
+  font-weight: 600;
+}
+/* moss-tinted explainer variant (the sourcing "if it isn't in the record" box) */
+.explain.moss {
+  border-left-color: var(--moss);
+}
+.explain.moss h4 {
+  color: var(--moss);
+}
+.explain.moss h4 svg {
+  stroke: var(--moss);
+}
+
+/* ---------- legal timeline ---------- */
+.legalsteps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 16px 0;
+  position: relative;
+  padding-left: 28px;
+}
+.legalsteps::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 22px;
+  width: 2px;
+  background: var(--line);
+}
+.lstep {
+  position: relative;
+  padding: 0 0 20px;
+}
+.lstep::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--line);
+}
+.lstep.done::before {
+  background: var(--moss);
+  border-color: var(--moss);
+}
+.lstep.now::before {
+  background: var(--honey);
+  border-color: var(--honey);
+  box-shadow: 0 0 0 4px var(--honeytint);
+}
+.lstep .lh {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.lstep .lh b {
+  font-size: 15px;
+  color: var(--pine);
+  font-weight: 600;
+}
+.lstep p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* ---------- money tables + funding bar ---------- */
+.money {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+.money .mhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 17px;
+  border-bottom: 1px solid var(--line2);
+  flex-wrap: wrap;
+}
+.money .mhead h4 {
+  font-size: 15px;
+  color: var(--pine);
+  font-weight: 600;
+}
+.money .updated {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--faint);
+}
+.mrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 17px;
+  border-bottom: 1px solid var(--line2);
+}
+.mrow:last-child {
+  border-bottom: 0;
+}
+.mrow .ml {
+  flex: 1;
+  min-width: 0;
+}
+.mrow .ml b {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+}
+.mrow .ml span {
+  font-size: 12.5px;
+  color: var(--mut);
+}
+.mrow .mv {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--faint);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.mrow.total {
+  background: var(--shell);
+}
+.mrow.total .ml b {
+  color: var(--pine);
+}
+.mrow.total .mv {
+  color: var(--pine);
+}
+.mrow.topline {
+  border-top: 1px solid var(--line2);
+}
+.barwrap {
+  padding: 14px 17px;
+}
+.bar {
+  height: 26px;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  background: var(--shell);
+  border: 1px solid var(--line2);
+}
+.bar .seg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+.barlegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 11px;
+}
+.barlegend .lg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--mut);
+}
+.barlegend .sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+/* an info-note variant used inside #money (sky-tinted) */
+.infonote {
+  background: var(--skytint);
+  border: 1px solid var(--skyline);
+  border-radius: 12px;
+  padding: 15px 17px;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin: 14px 0;
+  color: #1a3a56;
+}
+.infonote svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--sky);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.infonote b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- the interactive pipeline ---------- */
+.pipeline {
+  margin: 18px 0 8px;
+}
+.pipeStages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  position: relative;
+}
+@media (max-width: 720px) {
+  .pipeStages {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 440px) {
+  .pipeStages {
+    grid-template-columns: 1fr;
+  }
+}
+.stage {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 13px;
+  padding: 15px 13px;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+}
+.stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--slateline);
+  border-right: 2px solid var(--slateline);
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 2;
+}
+@media (max-width: 720px) {
+  .stage:not(:last-child)::after {
+    display: none;
+  }
+}
+.stage:hover {
+  border-color: var(--slateline);
+}
+.stage[aria-pressed="true"] {
+  border-color: var(--pine);
+  box-shadow: 0 4px 16px rgba(21, 35, 58, 0.1);
+  background: #fff;
+}
+.stage .snum {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--faint);
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+.stage .sic {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 11px;
+}
+.stage .sic svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke-width: 1.8;
+}
+.stage.sSource .sic {
+  background: var(--pinetint);
+}
+.stage.sSource .sic svg {
+  stroke: var(--pine);
+}
+.stage.sAi .sic {
+  background: var(--slatetint);
+}
+.stage.sAi .sic svg {
+  stroke: var(--slate);
+}
+.stage.sHuman .sic {
+  background: var(--mosstint);
+}
+.stage.sHuman .sic svg {
+  stroke: var(--moss);
+}
+.stage.sPub .sic {
+  background: var(--skytint);
+}
+.stage.sPub .sic svg {
+  stroke: var(--sky);
+}
+.stage h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--pine);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.stage .scap {
+  font-size: 12px;
+  color: var(--mut);
+  line-height: 1.45;
+}
+.stage .strust {
+  margin-top: 9px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 3px 7px;
+  display: inline-block;
+}
+.stage.sSource .strust {
+  background: var(--pinetint);
+  color: var(--pine);
+}
+.stage.sAi .strust {
+  background: var(--slatetint);
+  color: var(--slate);
+}
+.stage.sHuman .strust {
+  background: var(--mosstint);
+  color: var(--moss);
+}
+.stage.sPub .strust {
+  background: var(--skytint);
+  color: var(--sky);
+}
+.stageDetail {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-top: 12px;
+}
+.sdTag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+.stageDetail h3 {
+  font-family: var(--font-head);
+  font-size: 21px;
+  color: var(--pine);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.stageDetail p {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.stageDetail p b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- worked example (source vs. reader view) ---------- */
+.worked {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+@media (max-width: 640px) {
+  .worked {
+    grid-template-columns: 1fr;
+  }
+}
+.wk {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 16px;
+}
+.wk .wkh {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--faint);
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.wk .wkh svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke-width: 2;
+}
+.wk.src {
+  border-left: 3px solid var(--pine);
+}
+.wk.src .wkh {
+  color: var(--pine);
+}
+.wk.src .wkh svg {
+  stroke: var(--pine);
+}
+.wk.out {
+  border-left: 3px solid var(--moss);
+}
+.wk.out .wkh {
+  color: var(--moss);
+}
+.wk.out .wkh svg {
+  stroke: var(--moss);
+}
+.wk .raw {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.65;
+  background: var(--shell);
+  border-radius: 8px;
+  padding: 11px 12px;
+  white-space: pre-wrap;
+}
+.wk .summary {
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.wk .summary b {
+  color: var(--pine);
+  font-weight: 600;
+}
+.wk .srcline {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--moss);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.wk .srcline svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ---------- drafting rules cards ---------- */
+.rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+@media (max-width: 640px) {
+  .rules {
+    grid-template-columns: 1fr;
+  }
+}
+.rulecard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 17px;
+}
+.rulecard h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.rulecard.always h4 {
+  color: var(--moss);
+}
+.rulecard.never h4 {
+  color: var(--rust);
+}
+.rulecard h4 svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke-width: 2.4;
+}
+.rulecard.always h4 svg {
+  stroke: var(--moss);
+}
+.rulecard.never h4 svg {
+  stroke: var(--rust);
+}
+.rulecard ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rulecard li {
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.5;
+  padding: 6px 0;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  border-top: 1px solid var(--line2);
+}
+.rulecard li:first-child {
+  border-top: 0;
+}
+.rulecard li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  margin-top: 7px;
+}
+.rulecard.always li::before {
+  background: var(--moss);
+}
+.rulecard.never li::before {
+  background: var(--rust);
+}
+
+/* ---------- collapsible drafting prompt ---------- */
+.disclose {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+  background: var(--card);
+}
+.disclose summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 17px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--pine);
+}
+.disclose summary::-webkit-details-marker {
+  display: none;
+}
+.disclose summary .di {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--slatetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.disclose summary .di svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--slate);
+  fill: none;
+  stroke-width: 1.9;
+}
+.disclose summary .dsub {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--mut);
+  display: block;
+  margin-top: 2px;
+}
+.disclose summary .chev {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  stroke: var(--faint);
+  fill: none;
+  stroke-width: 2.2;
+  transition: transform 0.2s;
+}
+.disclose[open] summary .chev {
+  transform: rotate(90deg);
+}
+.promptbox {
+  background: var(--pine);
+  margin: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+.promptbox .pbh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+.promptbox .pbh .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+.promptbox .pbh b {
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.promptbox .pbh .ts {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #8fa0b2;
+}
+.promptbox pre {
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: #cbd6e2;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+@media (max-width: 520px) {
+  .promptbox pre {
+    font-size: 10.5px;
+    line-height: 1.6;
+    padding: 13px;
+  }
+}
+.promptbox .pc {
+  color: var(--sage);
+}
+.promptbox .pk {
+  color: #e8b98a;
+}
+.promptnote {
+  font-size: 12.5px;
+  color: var(--mut);
+  line-height: 1.6;
+  padding: 13px 17px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  background: var(--shell);
+}
+.promptnote svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--slate);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.promptnote b {
+  color: var(--pine);
+}
+
+/* ---------- plain note ---------- */
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 17px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin: 14px 0;
+}
+.note svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--slate);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.note b {
+  color: var(--pine);
+}
+
+/* ---------- correction steps ---------- */
+.corrsteps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+.cstep {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 17px;
+}
+.cstep .cn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pinetint);
+  color: var(--pine);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.cstep .cc {
+  min-width: 0;
+}
+.cstep .cc b {
+  font-size: 15px;
+  color: var(--pine);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+.cstep .cc p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.6;
+}
+
+/* ---------- CTA rows ---------- */
+.ctarow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
