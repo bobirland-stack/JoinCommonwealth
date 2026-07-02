@@ -77,6 +77,20 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
+/* --- reading & display preferences (Settings, Phase 2g) -----------------
+   Applied to <body> by the follows store so they persist across every page.
+   `bigtext` bumps the base size; `contrast` darkens the muted text + lines
+   the whole palette derives from. Both are global by necessity — a CSS
+   module cannot target the document body. */
+body.bigtext {
+  font-size: 17px;
+}
+body.contrast {
+  --mut:   #3d4642;
+  --faint: #4a544e;
+  --line:  #c9c0ac;
+}
+
 /* meta / labels / IDs / dates / source lines */
 .mono,
 .meta,
