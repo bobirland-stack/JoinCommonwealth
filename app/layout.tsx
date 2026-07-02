@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Commonwealth",
   description:
     `A neutral mirror of the public record for ${town.town.name}, ${town.town.stateAbbr}. ` +
-    "Not affiliated with the city — it links to and defers to its official sources.",
+    "Not affiliated with the city. It links to and defers to its official sources.",
 };
 
 export default function RootLayout({

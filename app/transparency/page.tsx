@@ -80,7 +80,7 @@ const STAGES: Stage[] = [
     body: (
       <>
         Every item begins with <b>one official document</b> a government has
-        already published — an agenda, adopted minutes, a roll-call vote, a
+        already published: an agenda, adopted minutes, a roll-call vote, a
         public notice, or an annual report. This document is the authority.
         Nothing that follows may contradict it or add to it. The source is kept
         and linked at every later stage.
@@ -108,7 +108,7 @@ const STAGES: Stage[] = [
         Software reads that <b>one document</b> and restates it in plainer
         language. That is the whole task. It does not browse, add context, or
         decide what matters, and it works under fixed rules (listed in the next
-        section). It cannot publish anything on its own — a person must review
+        section). It cannot publish anything on its own. A person must review
         and approve it first. This is the most constrained step in the process,
         by design.
       </>
@@ -133,9 +133,9 @@ const STAGES: Stage[] = [
     body: (
       <>
         A trained reviewer reads the draft <b>against the original document</b>.
-        If it matches and follows the rules, it proceeds. If anything is off — a
-        softened fact, a missing detail, an overstatement — the reviewer holds
-        or rejects it. The authority to reject is what makes this a real check.{" "}
+        If it matches and follows the rules, it proceeds. If anything is off,
+        such as a softened fact or a missing detail, the reviewer holds or
+        rejects it. The authority to reject is what makes this a real check.{" "}
         <b>Example:</b> a draft once described a tabled item as &ldquo;rejected,&rdquo;
         when the minutes said only that it was postponed. The reviewer caught it
         and corrected it before anything was published.
@@ -159,7 +159,7 @@ const STAGES: Stage[] = [
     detailTitle: "Published, with the source attached",
     body: (
       <>
-        Only after a person approves it does a summary reach a reader — and it
+        Only after a person approves it does a summary reach a reader. It
         arrives with a &ldquo;From the record&rdquo; tag and a link to the exact
         source. No one has to take our word for it: every published claim can be
         checked against the document it came from, and anything that does not
@@ -268,8 +268,8 @@ export default function TransparencyPage() {
               <b>
                 how we are organized, where our money comes from, how each fact
                 is sourced, and how the work is produced
-              </b>{" "}
-              — including where software assists, and where a person is
+              </b>
+              , including where software assists, and where a person is
               responsible.
             </p>
             <p className={styles.updatedline}>Last updated: 1 July 2026</p>
@@ -365,8 +365,8 @@ export default function TransparencyPage() {
                 extends its tax-exempt status to a newer project while that
                 project sets up its own. It allows Commonwealth to{" "}
                 <b>receive tax-deductible grants and donations now</b>, with
-                proper oversight, before our own IRS determination is complete —
-                a process that can take many months.
+                proper oversight, before our own IRS determination is complete.
+                That process can take many months.
               </p>
               <p>
                 In practice, donations are made to the sponsor, designated for
@@ -446,7 +446,7 @@ export default function TransparencyPage() {
                   <b>People &amp; curation</b>
                   <span>
                     The human review that checks every summary against its
-                    source — expected to be the largest cost.
+                    source, expected to be the largest cost.
                   </span>
                 </div>
               </div>
@@ -481,9 +481,10 @@ export default function TransparencyPage() {
                     above, plus the total.
                   </b>
                   <span>
-                    A single-town pilot is designed to run lean — on the order
-                    of a modest monthly budget, not a staffed newsroom. The exact
-                    numbers appear here once the sponsorship account is active.
+                    A single-town pilot is designed to run lean, on the order
+                    of a modest monthly budget rather than a staffed newsroom.
+                    The exact numbers appear here once the sponsorship account is
+                    active.
                   </span>
                 </div>
               </div>
@@ -552,7 +553,7 @@ export default function TransparencyPage() {
             <p className={styles.p} style={{ marginBottom: 0 }}>
               Money is the point at which trust is most often lost. Publishing
               every dollar in and out, and its source, is how a reader can be
-              confident our coverage is not for sale — because the record is
+              confident our coverage is not for sale, because the record is
               there to check.
             </p>
           </section>
@@ -582,7 +583,7 @@ export default function TransparencyPage() {
                 The rule: if it isn&apos;t in the record, it isn&apos;t here
               </h4>
               <p>
-                Each item comes from a specific official document — an agenda, a
+                Each item comes from a specific official document: an agenda, a
                 set of adopted minutes, a roll-call vote, a public notice, or an
                 annual report.{" "}
                 <b>
@@ -594,7 +595,7 @@ export default function TransparencyPage() {
             </div>
             <p className={styles.p}>
               <b>Where the records come from:</b> {name} publishes through
-              standard municipal systems — meeting agendas and video through{" "}
+              standard municipal systems: meeting agendas and video through{" "}
               {agendas}, the city website and notices through {web}, and annual
               reports such as the water quality report. These records are public
               by law. We use only what any resident could request.
@@ -723,7 +724,7 @@ export default function TransparencyPage() {
               <h2 className="serif">The drafting rules</h2>
             </div>
             <p className={styles.lead}>
-              These are the instructions the drafting step operates under — what
+              These are the instructions the drafting step operates under: what
               it must always do, and what it must never do. Because every
               published item links to its source, a reader can check whether we
               followed them.
@@ -834,11 +835,10 @@ against the source and may reject it. Write accordingly.`}
                     <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
                   </svg>
                   <span>
-                    We publish the substance, timestamped, rather than a live
-                    copy of a string we adjust over time; a stale &ldquo;exact
-                    prompt&rdquo; would be less accurate, not more. The rules
-                    above govern the output, and the human review and source link
-                    are what enforce them.
+                    We publish the rules themselves, with a date, instead of a
+                    live copy of the exact prompt text, which changes over time.
+                    The rules above govern the output. Human review and the
+                    source link are what enforce them.
                   </span>
                 </div>
               </div>
@@ -872,14 +872,14 @@ against the source and may reject it. Write accordingly.`}
               We will, at times. How a project handles its errors says more than
               any claim of accuracy, so we treat corrections as a defined
               process, not an exception.{" "}
-              <b>The source always takes precedence over our summary</b> — which
+              <b>The source always takes precedence over our summary</b>, which
               is why the link stays attached to every item.
             </p>
             <div className={styles.corrsteps}>
               <div className={styles.cstep}>
                 <div className={styles.cn}>1</div>
                 <div className={styles.cc}>
-                  <b>Anyone can flag it — down to the specific point</b>
+                  <b>Anyone can flag it, down to the specific point</b>
                   <p>
                     Every published item links to its source and lets you flag
                     the exact point that looks wrong, shown beside the source it
@@ -894,7 +894,7 @@ against the source and may reject it. Write accordingly.`}
                   <b>We check it against the document</b>
                   <p>
                     We compare the summary to the official source. If the summary
-                    doesn&apos;t match the record, it&apos;s wrong — regardless
+                    doesn&apos;t match the record, it&apos;s wrong, regardless
                     of who raised it, including an official.
                   </p>
                 </div>
@@ -905,7 +905,7 @@ against the source and may reject it. Write accordingly.`}
                   <b>We log the outcome either way</b>
                   <p>
                     If the summary doesn&apos;t match the record, we fix it and
-                    record the correction. If it does match, the entry says so —
+                    record the correction. If it does match, the entry says so:
                     &ldquo;checked against the source; stands.&rdquo; Both
                     outcomes are visible, because a record that shows its checks
                     is worth more than one that only shows its fixes.
@@ -922,11 +922,11 @@ against the source and may reject it. Write accordingly.`}
                 <div className={styles.ml}>
                   <b>No entries yet.</b>
                   <span>
-                    When something is flagged, the outcome appears here —
+                    When something is flagged, the outcome appears here, either
                     &ldquo;checked against the source; corrected&rdquo; or
-                    &ldquo;checked against the source; stands&rdquo; — with a link
+                    &ldquo;checked against the source; stands,&rdquo; with a link
                     to the document that decided it. An empty log means nothing
-                    has been flagged yet, not that nothing gets checked.
+                    has been flagged yet. Everything still gets checked.
                   </span>
                 </div>
               </div>
@@ -937,9 +937,9 @@ against the source and may reject it. Write accordingly.`}
               </svg>
               <span>
                 This rule applies to everyone equally. An official who believes a
-                summary is wrong uses the same process, against a record that
-                neither they nor Commonwealth control — they can point to the
-                source, not quietly change it.
+                summary is wrong uses the same process as any resident. They
+                point to the source, and it is checked against the record the
+                same way it is for everyone.
               </span>
             </div>
             <div className={styles.ctarow} style={{ marginTop: 20 }}>

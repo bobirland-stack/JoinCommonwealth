@@ -61,7 +61,7 @@ export default function GetInvolvedPage() {
           <h1 className="serif">Three ways to be heard.</h1>
           <p className={styles.lede}>
             Having a say in your town is more concrete than it sounds. Here are
-            the real, specific ways to take part —{" "}
+            the real, specific ways to take part:{" "}
             <b>show up, send a comment, or take a seat.</b>
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function GetInvolvedPage() {
                 <h3>Show up</h3>
                 <p>
                   The simplest and most direct. Most bodies keep{" "}
-                  <b>public comment open to any resident</b> — you don&apos;t
+                  <b>public comment open to any resident</b>. You don&apos;t
                   need to sign up in advance, and you don&apos;t need to be an
                   expert. A few plain sentences about how something affects you
                   carries real weight.
@@ -102,7 +102,7 @@ export default function GetInvolvedPage() {
                   <div className={styles.dl}>
                     <span className={styles.k}>Tip</span>
                     <span className={styles.v}>
-                      Comment is usually near the start — arrive a few minutes
+                      Comment is usually near the start. Arrive a few minutes
                       early and fill out a card if one&apos;s offered.
                     </span>
                   </div>
@@ -150,7 +150,7 @@ export default function GetInvolvedPage() {
                   <div className={styles.dl}>
                     <span className={styles.k}>What</span>
                     <span className={styles.v}>
-                      Name the agenda item, say what you&apos;d like, and why — a
+                      Name the agenda item, say what you&apos;d like, and why. A
                       short paragraph is plenty.
                     </span>
                   </div>
@@ -174,17 +174,16 @@ export default function GetInvolvedPage() {
                 <h3>Take a seat</h3>
                 <p>
                   Much of a town&apos;s real work happens on its{" "}
-                  <b>boards and commissions</b> — planning, zoning, parks, and
+                  <b>boards and commissions</b>: planning, zoning, parks, and
                   more. Seats are volunteer, usually a few years, and towns are{" "}
                   <b>frequently looking to fill them.</b> It&apos;s one of the
-                  highest-leverage, lowest-visibility ways to shape where you
-                  live.
+                  most effective and least known ways to shape where you live.
                 </p>
                 <div className={styles.detail}>
                   <div className={styles.dl}>
                     <span className={styles.k}>How</span>
                     <span className={styles.v}>
-                      Most seats are appointed — you submit a short interest form
+                      Most seats are appointed. You submit a short interest form
                       or letter to the city.
                     </span>
                   </div>
@@ -216,10 +215,10 @@ export default function GetInvolvedPage() {
               <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
             </svg>
             <span>
-              Specifics like meeting times and contacts — City Hall sits at{" "}
-              {hall.address} — come from {name}&apos;s public record and can
-              change. <b>Always confirm the current details</b> against the
-              city&apos;s official notice before you go or send.
+              Specifics like meeting times and contacts come from {name}&apos;s
+              public record and can change. City Hall sits at {hall.address}.{" "}
+              <b>Always confirm the current details</b> against the city&apos;s
+              official notice before you go or send.
             </span>
           </div>
         </section>
@@ -227,12 +226,12 @@ export default function GetInvolvedPage() {
         <div className={styles.followband}>
           <div className="sec-eyebrow">Stay in the loop</div>
           <h2 className="serif">
-            Follow what you care about — and we&apos;ll tell you when it moves.
+            Follow what you care about, and we&apos;ll tell you when it changes.
           </h2>
           <p>
             The hardest part of taking part is <b>knowing in time.</b> Follow a
             topic or a body, and Commonwealth emails you when something new is
-            posted to the record — an agenda drops, a decision lands, a comment
+            posted to the record: an agenda drops, a decision lands, a comment
             window opens.
           </p>
           <div className={styles.chips}>
@@ -246,8 +245,8 @@ export default function GetInvolvedPage() {
             ))}
           </div>
           <p className={styles.fine}>
-            A pointer, not a profile — you choose what to follow, and we never
-            guess it from what you read.
+            You choose what to follow. We never guess your interests from what
+            you read.
           </p>
           <div className={styles.ctarow}>
             <Link className="btn light" href="/app">
@@ -265,7 +264,7 @@ export default function GetInvolvedPage() {
           <h2 className="sec-title serif">Support the record itself.</h2>
           <p className={styles.csub}>
             Commonwealth is free for every resident because supporters keep it
-            that way. Anyone can support it — no one can control it.
+            that way. Anyone can support it. Everyone sees the same record.
           </p>
           <div className={`${styles.ctarow} ${styles.center}`}>
             <Link className="btn primary" href="/about">

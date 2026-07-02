@@ -52,9 +52,9 @@ export default function HomePage() {
         </div>
         <h1 className="serif">Know the place you live.</h1>
         <p className="lede">
-          Commonwealth is a free, nonprofit way to follow your own town — what&apos;s
-          happening, the decisions that shape it, and how to take part.{" "}
-          <b>Built on the public record. Answerable only to residents.</b>
+          Commonwealth is a free, nonprofit way to follow your town: what&apos;s
+          happening, what&apos;s being decided, and how to take part.{" "}
+          <b>It&apos;s built on the public record, and it answers to residents.</b>
         </p>
         <div className="herocta">
           <Link className="btn primary" href="/app">
@@ -113,9 +113,9 @@ export default function HomePage() {
             The record comes first. A person stands behind it.
           </h2>
           <p className="sec-sub">
-            Commonwealth doesn&apos;t generate the news. It reads what your local
-            government already produces, and makes it something you can actually
-            follow — without ever deciding what&apos;s good, wise, or popular.
+            Commonwealth reads what your local government already publishes and
+            turns it into something you can follow. It never decides whether a
+            decision was good or bad.
           </p>
           <div className="steps">
             <div className="stepcard">
@@ -128,11 +128,11 @@ export default function HomePage() {
               </div>
               <h3>It starts with the real record</h3>
               <p>
-                Agendas, minutes, roll-call votes, budgets, public notices —{" "}
+                Agendas, minutes, roll-call votes, budgets, and public notices.{" "}
                 <span className="keyword">
-                  the official record your town already produces.
+                  This is the official record your town already produces,
                 </span>{" "}
-                Every item links back to its source.
+                and every item links back to its source.
               </p>
             </div>
             <div className="stepcard">
@@ -145,12 +145,11 @@ export default function HomePage() {
               </div>
               <h3>A person stands behind every recap</h3>
               <p>
-                Software drafts a plain-language summary;{" "}
+                Software writes a first draft in plain language.{" "}
                 <span className="keyword">
-                  a trained reviewer checks every fact against the source — or
-                  holds it.
+                  A trained reviewer checks every fact against the source
                 </span>{" "}
-                Nothing publishes on a machine&apos;s say-so.
+                before anything is published.
               </p>
             </div>
             <div className="stepcard">
@@ -163,9 +162,9 @@ export default function HomePage() {
               </div>
               <h3>Your whole town, in one place</h3>
               <p>
-                What the council decided, what the library and schools are up to,
-                the events worth showing up for —{" "}
-                <span className="keyword">alongside the ways to take part.</span>
+                What the council decided, what the library and schools are
+                doing, and the events worth showing up for,{" "}
+                <span className="keyword">along with clear ways to take part.</span>
               </p>
             </div>
           </div>
@@ -177,7 +176,8 @@ export default function HomePage() {
         <div className="wrap">
           <div className="sec-eyebrow">Who it&apos;s for</div>
           <h2 className="sec-title serif">
-            A whole town — not just the people already paying attention.
+            For the whole town, including people who have never been to a
+            meeting.
           </h2>
           <div className="aud">
             <div className="audcard">
@@ -203,8 +203,8 @@ export default function HomePage() {
               <div>
                 <h4>Local institutions &amp; nonprofits</h4>
                 <p>
-                  The library, the senior center, the food pantry, the schools —
-                  a clear way to reach the residents who rely on them.
+                  The library, the senior center, the food pantry, and the
+                  schools. A clear way to reach the residents who rely on them.
                 </p>
               </div>
             </div>
@@ -217,9 +217,9 @@ export default function HomePage() {
               <div>
                 <h4>Local government</h4>
                 <p>
-                  A way for a city to get its own record — notices, decisions,
-                  votes — to residents in plain language. Commonwealth carries
-                  it; the city keeps its voice.
+                  A way for a city to get its own record of notices, decisions,
+                  and votes to residents in plain language. Commonwealth
+                  delivers it, and the city keeps its own voice.
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function HomePage() {
                 <h4>Supporters &amp; funders</h4>
                 <p>
                   People and foundations who believe a community should be able
-                  to see itself clearly — and who keep it free for everyone.
+                  to see itself clearly, and who keep it free for everyone.
                 </p>
               </div>
             </div>
@@ -249,8 +249,7 @@ export default function HomePage() {
             A plain account is only worth something if people can trust it.
           </h2>
           <p className="sec-sub">
-            So Commonwealth&apos;s independence isn&apos;t a promise — it&apos;s built into how
-            it works.
+            Commonwealth&apos;s independence is built into how it works.
           </p>
           <div className="pillars">
             <div className="pillar">
@@ -261,9 +260,9 @@ export default function HomePage() {
               </div>
               <h4>It answers to residents</h4>
               <p>
-                A nonprofit, independent from the governments it covers. No
-                supporter, funder, or city decides what&apos;s covered — or can change
-                it.
+                A nonprofit that&apos;s independent of the governments it covers.
+                That independence protects everyone, including the city, because
+                the record reads the same for every reader.
               </p>
             </div>
             <div className="pillar">
@@ -272,10 +271,10 @@ export default function HomePage() {
                   <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
                 </svg>
               </div>
-              <h4>It reports, never editorializes</h4>
+              <h4>It reports and never takes sides</h4>
               <p>
-                It explains what happened — never whether it was good, wise, or
-                popular. No endorsements, no scores, no sides.
+                It explains what happened. It never says whether a decision was
+                good or bad, and it never endorses anyone.
               </p>
             </div>
             <div className="pillar">
@@ -287,8 +286,8 @@ export default function HomePage() {
               </div>
               <h4>Support funds independence</h4>
               <p>
-                Every gift keeps the record free and independent. Supporters are
-                named and thanked — never given a say in coverage.
+                Every gift keeps the record free for everyone. Supporters are
+                named and thanked, and they never get a say in what we cover.
               </p>
             </div>
           </div>
@@ -307,9 +306,11 @@ export default function HomePage() {
       <div className="independence">
         <div className="wrap">
           <p className="q serif">
-            Anyone can support it. <b>No one can control it.</b>
+            Anyone can support it. <b>Everyone sees the same record.</b>
           </p>
-          <p className="sub">The same idea, whichever door you came in.</p>
+          <p className="sub">
+            That&apos;s true for residents, supporters, and the city alike.
+          </p>
         </div>
       </div>
 
@@ -318,8 +319,8 @@ export default function HomePage() {
         <div className="finalcta">
           <h2 className="serif">See your town clearly.</h2>
           <p>
-            Open Commonwealth for {town.town.name} — what&apos;s happening, what&apos;s
-            being decided, and how to be part of it.
+            Open Commonwealth for {town.town.name}: what&apos;s happening,
+            what&apos;s being decided, and how to be part of it.
           </p>
           <div className="fcbtns">
             <Link className="btn primary" href="/app">

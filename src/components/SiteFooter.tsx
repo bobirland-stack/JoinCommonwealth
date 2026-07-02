@@ -25,8 +25,8 @@ export default function SiteFooter() {
             <b>Commonwealth</b>
           </Link>
           <p>
-            A free, nonprofit way to understand the place you live. Built on the
-            public record, answerable only to residents.
+            A free, nonprofit way to understand the place you live, built on the
+            public record.
           </p>
           <div style={{ marginTop: 14 }}>
             <span className="pill">

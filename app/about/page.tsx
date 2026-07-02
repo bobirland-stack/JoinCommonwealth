@@ -32,13 +32,11 @@ export default function AboutPage() {
       <div className={styles.pageWrap}>
         <div className={styles.phead}>
           <div className="eyebrow">About Commonwealth</div>
-          <h1 className="serif">
-            A way to feel at home in the place you actually live.
-          </h1>
+          <h1 className="serif">Feel at home in the place you live.</h1>
           <p className={styles.lede}>
-            Commonwealth is a free, nonprofit way to understand your own town —
+            Commonwealth is a free, nonprofit way to understand your own town:
             what&apos;s happening, the decisions that shape it, and how to take
-            part. <b>One place you can actually follow.</b>
+            part, <b>all in one place you can actually follow.</b>
           </p>
         </div>
       </div>
@@ -46,7 +44,7 @@ export default function AboutPage() {
       <div className={styles.pageWrap}>
         <section className={`${styles.section} ${styles.prose}`}>
           <p>
-            Most of us want to feel connected to our own town — to know
+            Most of us want to feel connected to our own town. We want to know
             what&apos;s happening, show up to the things that matter, and have a
             real say in the decisions that shape it. But civic life is scattered
             across portals, PDFs, and meeting nights that don&apos;t fit a
@@ -54,7 +52,7 @@ export default function AboutPage() {
           </p>
           <p>
             <b>Commonwealth is how you close that gap.</b> It brings your
-            town&apos;s civic life back into one place you can actually follow —
+            town&apos;s civic life back into one place you can actually follow:
             what&apos;s going on this week, what the council and boards are
             deciding, how your representatives voted, and the concrete ways to
             take part.
@@ -64,7 +62,7 @@ export default function AboutPage() {
         <section className={styles.section}>
           <div className={styles.prose}>
             <h2 className="serif">
-              How your town stays close — and stays trustworthy
+              How it works, and why you can trust it
             </h2>
           </div>
           <div className={styles.steps}>
@@ -78,9 +76,9 @@ export default function AboutPage() {
               </div>
               <h3>It starts with the real record</h3>
               <p>
-                Commonwealth reads what your local government actually produces —
-                agendas, minutes, roll-call votes, budgets, public notices. The
-                official record, linked at every step.
+                Agendas, minutes, roll-call votes, budgets, and public notices.
+                This is the official record your town already produces, and every
+                item links back to its source.
               </p>
             </div>
             <div className={styles.stepcard}>
@@ -93,9 +91,9 @@ export default function AboutPage() {
               </div>
               <h3>A person stands behind every recap</h3>
               <p>
-                Software drafts a plain-language summary; a trained reviewer
-                checks every fact against the source, or holds it. Nothing
-                publishes on a machine&apos;s say-so.
+                Software writes a first draft in plain language. A trained
+                reviewer checks every fact against the source before anything is
+                published.
               </p>
             </div>
             <div className={styles.stepcard}>
@@ -108,9 +106,9 @@ export default function AboutPage() {
               </div>
               <h3>Your whole town, in one place</h3>
               <p>
-                What&apos;s happening this week, what the library and schools are
-                up to, the events worth showing up for — alongside what the
-                council decided and how to weigh in.
+                What the council decided, what the library and schools are
+                doing, and the events worth showing up for, along with clear ways
+                to take part.
               </p>
             </div>
           </div>
@@ -118,9 +116,7 @@ export default function AboutPage() {
 
         <section className={styles.section}>
           <div className={styles.prose}>
-            <h2 className="serif">
-              A whole town, not just the people already paying attention
-            </h2>
+            <h2 className="serif">For the whole town</h2>
           </div>
           <div className={styles.aud}>
             <div className={styles.audcard}>
@@ -132,7 +128,7 @@ export default function AboutPage() {
               <div>
                 <h4>Residents</h4>
                 <p>
-                  Anyone who lives here — to keep up with their town, understand
+                  Anyone who lives here, to keep up with their town, understand
                   a decision, see how their representatives voted, and find the
                   ways to take part.
                 </p>
@@ -147,8 +143,8 @@ export default function AboutPage() {
               <div>
                 <h4>Local institutions &amp; nonprofits</h4>
                 <p>
-                  The library, the senior center, the food pantry, the school — a
-                  clear way to reach the residents who rely on them.
+                  The library, the senior center, the food pantry, and the
+                  school. A clear way to reach the residents who rely on them.
                 </p>
               </div>
             </div>
@@ -161,9 +157,9 @@ export default function AboutPage() {
               <div>
                 <h4>Local government</h4>
                 <p>
-                  A way for a city to get its own record — notices, decisions,
-                  votes — to residents in plain language. Commonwealth carries
-                  it; the city keeps its voice.
+                  A way for a city to get its own record of notices, decisions,
+                  and votes to residents in plain language. Commonwealth delivers
+                  it, and the city keeps its own voice.
                 </p>
               </div>
             </div>
@@ -177,7 +173,7 @@ export default function AboutPage() {
                 <h4>Supporters &amp; funders</h4>
                 <p>
                   People and foundations who believe a community should be able
-                  to see itself clearly — and who keep it free for everyone here.
+                  to see itself clearly, and who keep it free for everyone here.
                 </p>
               </div>
             </div>
@@ -188,11 +184,13 @@ export default function AboutPage() {
       <div className={styles.pageWrapWide}>
         <div className={styles.band}>
           <div className="eyebrow">Independence</div>
-          <h2 className="serif">Anyone can support it. No one can control it.</h2>
+          <h2 className="serif">
+            Anyone can support it. Everyone sees the same record.
+          </h2>
           <p className={styles.bsub}>
             A plain account of a town&apos;s government is only worth something if
-            people can trust it. So Commonwealth&apos;s independence isn&apos;t a
-            promise — it&apos;s built into how it works.
+            people can trust it. Commonwealth&apos;s independence is built into
+            how it works.
           </p>
           <div className={styles.indep}>
             <div className={styles.icard}>
@@ -203,9 +201,9 @@ export default function AboutPage() {
                 It answers to residents
               </h4>
               <p>
-                A nonprofit, independent from the governments it covers. No
-                supporter, funder, or city decides what&apos;s covered, or can
-                change it.
+                A nonprofit that&apos;s independent of the governments it covers.
+                That independence protects everyone, including the city, because
+                the record reads the same for every reader.
               </p>
             </div>
             <div className={styles.icard}>
@@ -216,7 +214,7 @@ export default function AboutPage() {
                 It reports, never editorializes
               </h4>
               <p>
-                It explains what happened — never whether it was good, wise, or
+                It explains what happened, never whether it was good, wise, or
                 popular. No endorsements, no scores, no sides.
               </p>
             </div>
@@ -229,9 +227,9 @@ export default function AboutPage() {
                 Support funds independence
               </h4>
               <p>
-                Every gift keeps the record free and independent — supporters are
-                named and thanked for funding civic information, never given a
-                say in it.
+                Every gift keeps the record free and independent. Supporters are
+                named and thanked for funding civic information, and they never
+                get a say in it.
               </p>
             </div>
             <div className={styles.icard}>

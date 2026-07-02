@@ -77,12 +77,11 @@ export default function TrustPage() {
       <div className={styles.pageWrap}>
         <div className={styles.phead}>
           <div className="eyebrow">Trust &amp; security</div>
-          <h1 className="serif">The limit is the value.</h1>
+          <h1 className="serif">How we earn your trust.</h1>
           <p className={styles.lede}>
-            A plain account of a town&apos;s government is only worth something
-            if people can trust it. So the things Commonwealth{" "}
-            <b>refuses to do</b> aren&apos;t fine print — they&apos;re the
-            product. Here&apos;s how trust is built into how it works.
+            A plain account of local government is only useful if you can trust
+            it. This page explains the rules we follow and the things we will
+            never do.
           </p>
           <div className={styles.jump}>
             <a href="#record">The record comes first</a>
@@ -111,7 +110,7 @@ export default function TrustPage() {
           </div>
           <p className={styles.lead}>
             Commonwealth{" "}
-            <b>holds no record of its own — it mirrors the public&apos;s record.</b>{" "}
+            <b>holds no record of its own. It mirrors the public&apos;s record.</b>{" "}
             It&apos;s a way to understand the town&apos;s government, built on top
             of it and permanently subordinate to it. Every summary links back to
             the official source, so you never have to take our word for anything.
@@ -122,7 +121,7 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                Every claim points back to its <b>official source</b> — the
+                Every claim points back to its <b>official source</b>: the
                 agenda, the minutes, the roll-call vote, the notice.
               </span>
             </div>
@@ -131,7 +130,7 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                <b>A person stands behind every recap.</b> Software drafts; a
+                <b>A person stands behind every recap.</b> Software drafts. A
                 trained reviewer checks each fact against the source, or holds
                 it. Nothing publishes on a machine&apos;s say-so.
               </span>
@@ -142,7 +141,7 @@ export default function TrustPage() {
               </span>
               <span className={styles.rt}>
                 Commonwealth <b>never becomes the record.</b> It can&apos;t edit
-                a vote tally or rewrite what happened — only point at it.
+                a vote tally or rewrite what happened. It can only point at it.
               </span>
             </div>
           </div>
@@ -157,14 +156,14 @@ export default function TrustPage() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
             </span>
-            <h2 className="serif">You are never the product</h2>
+            <h2 className="serif">Your information stays yours</h2>
           </div>
           <p className={styles.lead}>
             The business model is the thing most civic apps get wrong.
             Commonwealth&apos;s is simple:{" "}
             <b>residents are never sold, tracked, or profiled.</b> It&apos;s
-            funded by people and foundations who want the record kept free —
-            never by advertising, never by data.
+            funded by people and foundations who want the record kept free. It is
+            never funded by advertising or by selling data.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -182,7 +181,7 @@ export default function TrustPage() {
               </span>
               <span className={styles.rt}>
                 <b>No data sold.</b> Your information is never sold, rented, or
-                shared for marketing — to anyone, ever.
+                shared for marketing, to anyone, ever.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -191,8 +190,8 @@ export default function TrustPage() {
               </span>
               <span className={styles.rt}>
                 <b>No tracking, no profiling.</b> We never infer your interests
-                from what you read. Following a topic is a choice you make — not
-                something guessed from your behavior.
+                from what you read. Following a topic is a choice you make. We
+                never guess it from your behavior.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -200,7 +199,7 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                Only <b>deliberate, consensual contributions</b> are recorded —
+                Only <b>deliberate, consensual contributions</b> are recorded:
                 the topics you choose to follow, the comment you choose to send.
                 Nothing is taken silently.
               </span>
@@ -221,10 +220,12 @@ export default function TrustPage() {
           </div>
           <p className={styles.lead}>
             When a city or institution publishes through Commonwealth, it can add
-            its own voice and its own documents — but it{" "}
-            <b>cannot touch how the record is reported.</b> Money and
-            presentation are structurally separated from the neutral record, with
-            independent enforcement and a public refusal log.
+            its own voice and its own documents.{" "}
+            <b>
+              The record itself is kept separate, so it reads the same for
+              everyone
+            </b>
+            , and money never changes how it&apos;s reported.
           </p>
           <div className={styles.firewall}>
             <h3 className="serif">Two layers, one wall between them</h3>
@@ -233,9 +234,9 @@ export default function TrustPage() {
                 <div className={styles.lbl}>The record shows</div>
                 <h4>The neutral layer</h4>
                 <p>
-                  Votes, budgets, decisions, notices — ingested from the official
-                  source, immutable, controlled by Commonwealth, clearly labeled.
-                  No one can edit or soften it.
+                  Votes, budgets, decisions, and notices, taken from the
+                  official source and clearly labeled. It reads the same for
+                  every reader.
                 </p>
               </div>
               <div className={styles.fwwall}>
@@ -247,20 +248,20 @@ export default function TrustPage() {
                 <div className={styles.lbl}>The city says</div>
                 <h4>The presentation layer</h4>
                 <p>
-                  A city may customize how its page looks and add its own
-                  verified facts and documents. It speaks in its own voice —
-                  beside the record, never over it.
+                  A city can customize how its page looks and add its own
+                  verified facts and documents. It speaks in its own voice, right
+                  beside the record.
                 </p>
               </div>
             </div>
             <p className={styles.fnote}>
               <b>
-                The institution that publishes the record cannot change how the
-                record is reported.
+                The record and each institution&apos;s own page are kept
+                separate, so the record reads the same for everyone.
               </b>{" "}
-              It can release its own documents; it cannot edit a vote tally or
-              soften a summary. If the wall isn&apos;t demonstrably real, the
-              feature doesn&apos;t ship. <i>The limit is the value.</i>
+              A city can publish its own documents and speak in its own voice. If
+              we can&apos;t show that separation working, we don&apos;t launch the
+              feature.
             </p>
           </div>
         </section>
@@ -273,13 +274,13 @@ export default function TrustPage() {
                 <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
               </svg>
             </span>
-            <h2 className="serif">Neutral by construction</h2>
+            <h2 className="serif">We never take sides</h2>
           </div>
           <p className={styles.lead}>
-            Commonwealth explains what happened —{" "}
-            <b>never whether it was good, wise, or popular.</b> This isn&apos;t a
-            stylistic preference; it&apos;s the thing that lets a whole town,
-            across every disagreement, trust the same account.
+            Commonwealth explains what happened.{" "}
+            <b>It never says whether a decision was good or bad.</b> That rule is
+            what lets a whole town, across every disagreement, trust the same
+            account.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -289,7 +290,7 @@ export default function TrustPage() {
               <span className={styles.rt}>
                 <b>No endorsements, no scores, no sides.</b> No candidate
                 ratings, no &ldquo;good vote / bad vote,&rdquo; no political
-                position — ever.
+                position, ever.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -297,8 +298,9 @@ export default function TrustPage() {
                 <Cross />
               </span>
               <span className={styles.rt}>
-                <b>No engagement games.</b> No feed tuned to enrage, no infinite
-                scroll, no metrics that reward stickiness over usefulness.
+                <b>No games to keep you scrolling.</b> No feed tuned to enrage,
+                no infinite scroll, no metrics that reward stickiness over
+                usefulness.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -307,9 +309,9 @@ export default function TrustPage() {
               </span>
               <span className={styles.rt}>
                 Where we report our own impact, we use{" "}
-                <b>defensible metrics only</b> — decisions surfaced, corrections
-                logged against source — never vanity numbers like pageviews or
-                time-on-app.
+                <b>defensible metrics only</b>: decisions we helped bring to
+                light, corrections logged against the source. We never use vanity
+                numbers like pageviews or time-on-app.
               </span>
             </div>
           </div>
@@ -327,10 +329,10 @@ export default function TrustPage() {
             <h2 className="serif">How corrections work</h2>
           </div>
           <p className={styles.lead}>
-            Anyone can flag something that doesn&apos;t match the source — and
-            that&apos;s how the record gets <b>more</b> accurate over time. But
-            even officials only get to <b>point at the record</b>, never quietly
-            change it.
+            Anyone can flag something that doesn&apos;t match the source.
+            That&apos;s how the record gets <b>more</b> accurate over time.
+            Officials use the same process as everyone else, and every outcome is
+            checked against the source and logged.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -338,8 +340,8 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                <b>Factual corrections</b> — anything checkable against the
-                official source — are verified and fixed, and the change is
+                <b>Factual corrections</b>, anything checkable against the
+                official source, are verified and fixed, and the change is
                 logged.
               </span>
             </div>
@@ -351,7 +353,7 @@ export default function TrustPage() {
                 Corrections from members of a public body are{" "}
                 <b>suggest-and-cite</b>: they propose a fix{" "}
                 <b>with a citation to the source</b>, visible and time-boxed,
-                against a record neither they nor Commonwealth control.
+                against the same public record everyone else uses.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -359,9 +361,9 @@ export default function TrustPage() {
                 <Cross />
               </span>
               <span className={styles.rt}>
-                <b>Interpretation disputes never silently change a summary.</b>{" "}
-                They route to a transparent public response; the summary stands
-                unless it&apos;s shown to be unfaithful to the source.
+                <b>Disagreements about interpretation get a public response.</b>{" "}
+                The summary stays as written unless it&apos;s shown to not match
+                the source.
               </span>
             </div>
           </div>
@@ -369,8 +371,7 @@ export default function TrustPage() {
             <Warn />
             <span>
               Built this way, the correction loop makes the firewall <b>more</b>{" "}
-              credible, not less — because the rule applies to everyone,
-              officials included.
+              credible, because the rule applies to everyone, officials included.
             </span>
           </div>
         </section>
@@ -390,10 +391,10 @@ export default function TrustPage() {
             </span>
           </div>
           <p className={styles.lead}>
-            Civic information is only fair if everyone can actually read it —
+            Civic information is only fair if everyone can actually read it,
             including older residents, people on old phones and slow connections,
             and people using assistive technology. Accessibility is a first-class
-            requirement, not a later polish.
+            requirement from the start.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -401,7 +402,7 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                Built toward <b>WCAG 2.1 AA / ADA Title II</b> — readable
+                Built toward <b>WCAG 2.1 AA / ADA Title II</b>: readable
                 contrast, real focus outlines, large touch targets, and
                 screen-reader support.
               </span>
@@ -420,7 +421,7 @@ export default function TrustPage() {
                 <Check />
               </span>
               <span className={styles.rt}>
-                Plain language by default — the five-minute version, written to
+                Plain language by default: the five-minute version, written to
                 be understood on the first read.
               </span>
             </div>
@@ -449,7 +450,8 @@ export default function TrustPage() {
           <p className={styles.lead}>
             Commonwealth may one day let a class help tend the record as civic
             learning. If it does, children are protected by{" "}
-            <b>hard rules on the critical path</b> — not by good intentions.
+            <b>hard rules on the critical path</b>, written into the process
+            itself.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.dont}`}>
@@ -496,9 +498,8 @@ export default function TrustPage() {
             <h2 className="serif">Security &amp; data handling</h2>
           </div>
           <p className={styles.lead}>
-            Because Commonwealth collects so little, there&apos;s very little to
-            lose — and that&apos;s by design. The safest data is the data you
-            never hold.
+            Commonwealth collects very little, on purpose. The safest data is the
+            data we never hold.
           </p>
           <div className={styles.rules}>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -507,8 +508,8 @@ export default function TrustPage() {
               </span>
               <span className={styles.rt}>
                 <b>Data minimization by default.</b> The public record is public.
-                What&apos;s personal to you — the topics you follow, your digest
-                email — is kept only to deliver the thing you asked for.
+                What&apos;s personal to you, the topics you follow and your
+                digest email, is kept only to deliver the thing you asked for.
               </span>
             </div>
             <div className={`${styles.rule} ${styles.do}`}>
@@ -537,7 +538,7 @@ export default function TrustPage() {
               For official services, emergencies, or legal records, always use
               the city&apos;s own channels.{" "}
               <b>If you ever spot something that doesn&apos;t match the source,
-              flag it</b> — that&apos;s how the record stays honest.
+              flag it</b>. That&apos;s how the record stays honest.
             </span>
           </div>
         </section>
