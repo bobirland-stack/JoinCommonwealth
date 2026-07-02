@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commonwealth — Your Clawson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--pine:#15233A;--moss:#125049;--paper:#FAF7F0;--shell:#F2F0EA;--card:#FFFFFF;--ink:#1A2327;--mut:#5B6560;--faint:#6E7872;--honey:#A8762A;--rust:#92310F;--sage:#A7C0A9;--sky:#1F5A8A;--line:#DDD6C8;--line2:#ECE9E1;--pinetint:#E7EDE6;--mosstint:#E4EEEA;--mossline:#C9DED7;--honeytint:#FBF1DE;--honeyline:#E7D3A8;--skytint:#E4EDF4;--skyline:#BAD1E4;--rusttint:#F6E2DA;--slate:#516175;--slatetint:#E9ECF0;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:15px}
+body.bigtext{font-size:17px}
+.mono{font-family:'Spline Sans Mono',monospace}.serif{font-family:'Newsreader',Georgia,serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--moss);outline-offset:2px;border-radius:4px}
+button{cursor:pointer;font-family:inherit}
+a,button{transition:background .15s,border-color .15s,color .15s,box-shadow .15s}
+.app{max-width:600px;margin:0 auto;background:var(--paper);min-height:100vh;position:relative;padding-bottom:74px}
+@media(min-width:601px){.app{border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:var(--pine);color:#fff;padding:12px 16px 12px}
+.top .tr{display:flex;align-items:center;gap:10px}
+.top .mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--moss),#1a6b62);display:flex;align-items:center;justify-content:center;flex:none}
+.top .mark svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2}
+.top b{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.top .home{margin-left:auto;color:#aebccb;font-size:12.5px;display:flex;align-items:center;gap:5px}
+.top .home svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.search{margin-top:11px;display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:0 12px}
+.search svg{width:16px;height:16px;stroke:#aebccb;fill:none;stroke-width:2;flex:none}
+.search input{flex:1;border:0;background:transparent;outline:none;color:#fff;font-size:14px;padding:11px 0;font-family:inherit}
+.search input::placeholder{color:#8fa0b2}
+
+/* views */
+.view{display:none;padding:16px 16px 8px}
+.view.on{display:block}
+.hi{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--moss);font-weight:600;margin-bottom:4px}
+.h1{font-family:'Newsreader',Georgia,serif;font-size:27px;line-height:1.1;color:var(--pine);font-weight:500;letter-spacing:-.01em;margin-bottom:6px}
+.sub{font-size:13.5px;color:var(--mut);margin-bottom:16px;line-height:1.5}
+
+.section-h{display:flex;align-items:center;gap:9px;margin:22px 0 11px}
+.section-h h2{font-size:13px;font-weight:700;color:var(--pine)}
+.section-h .ln{flex:1;height:1px;background:var(--line)}
+.section-h .see{font-size:12.5px;color:var(--moss);font-weight:600}
+
+/* feature card (utility-first) */
+.feature{background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;margin-bottom:14px}
+.feature .fimg{height:118px;background:linear-gradient(135deg,#20344f,#0f1d30);position:relative;display:flex;align-items:flex-end;padding:13px 15px}
+.feature .fimg .ph{position:absolute;top:9px;right:11px;font-size:9.5px;color:rgba(255,255,255,.5);font-family:'Spline Sans Mono',monospace}
+.feature .fimg .houses{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;gap:5px;opacity:.32;padding-bottom:8px}
+.feature .fimg .houses span{width:20px;background:#0c1626;border-radius:2px 2px 0 0}
+.feature .fimg h3{position:relative;color:#fff;font-size:18px;font-weight:600;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.feature .fbody{padding:12px 15px;display:flex;align-items:center;gap:12px}
+.feature .fbody .fl{flex:1;min-width:0}
+.feature .fbody .fwhen{font-size:12px;color:var(--faint);font-weight:500}
+.feature .fbody .fact{font-size:13px;font-weight:600;color:var(--moss);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.feature .fbody .fact svg{width:14px;height:14px;stroke:var(--moss);fill:none;stroke-width:2}
+
+/* provenance label */
+.prov{display:inline-flex;align-items:center;gap:5px;font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--moss);font-weight:700;background:transparent;border:0;padding:2px 0;cursor:pointer}
+.prov:hover{color:#0e423c}
+.prov .provtxt{border-bottom:1px dotted var(--mossline);padding-bottom:1px}
+.prov .provchev{width:10px;height:10px;stroke:var(--moss);fill:none;stroke-width:2.6;opacity:.55;transition:transform .15s}
+.prov[aria-expanded="true"] .provchev{transform:rotate(180deg)}
+.prov svg{width:11px;height:11px;stroke:var(--moss);fill:none;stroke-width:2.4}
+.prov.happening{color:var(--honey)}.prov.happening svg{stroke:var(--honey)}.prov.happening .provtxt{border-color:var(--honeyline)}.prov.happening .provchev{stroke:var(--honey)}
+.srcpanel{margin-top:9px;background:var(--card);border:1px solid var(--mossline);border-radius:11px;overflow:hidden;box-shadow:0 6px 20px rgba(18,80,73,.09);text-align:left;animation:srcpop .16s ease-out}
+@keyframes srcpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.srcpanel .sp-head{background:var(--mosstint);padding:9px 13px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--mossline);font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--moss);font-weight:700}
+.srcpanel .sp-head svg{width:13px;height:13px;stroke:var(--moss);fill:none;stroke-width:2.2;flex:none}
+.srcpanel .sp-body{padding:11px 13px}
+.sp-row{display:flex;gap:10px;padding:5px 0;font-size:12.5px;align-items:flex-start}
+.sp-row .sp-k{font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.03em;width:60px;flex:none;padding-top:2px}
+.sp-row .sp-v{color:var(--ink);line-height:1.5;flex:1}.sp-row .sp-v b{color:var(--pine);font-weight:600}
+.sp-ok{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--moss);font-weight:600;background:var(--mosstint);border-radius:6px;padding:3px 8px}
+.sp-ok svg{width:12px;height:12px;stroke:var(--moss);fill:none;stroke-width:2.4}
+.sp-actions{display:flex;gap:7px;padding:10px 13px;border-top:1px solid var(--line2);flex-wrap:wrap}
+.sp-act{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:8px;padding:7px 11px;border:1px solid var(--line);background:var(--paper);color:var(--pine);min-height:36px}
+.sp-act svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+.sp-act.primary{background:var(--moss);border-color:var(--moss);color:#fff}
+.sp-act.flag{margin-left:auto;color:var(--mut);border-color:transparent;background:transparent}
+.sp-act.flag:hover{color:var(--rust)}
+.sp-act:hover{border-color:var(--moss)}.sp-act.primary:hover{background:#0e423c}
+
+/* record/digest card */
+.rec{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 15px;margin-bottom:11px;display:block;width:100%;text-align:left}
+.rec:hover{border-color:var(--mossline)}
+.rec .rtop{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.rec h4{font-size:15.5px;font-weight:600;color:var(--pine);line-height:1.3;margin-bottom:5px}
+.rec p{font-size:13px;color:var(--mut);line-height:1.5}
+.rec .rmeta{font-size:11.5px;color:var(--faint);margin-top:9px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rec .src{font-size:11px;color:var(--faint);font-style:italic}
+.followbtn{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:5px 11px;font-size:11.5px;font-weight:600;color:var(--mut);display:inline-flex;align-items:center;gap:5px;white-space:nowrap;flex:none}
+.followbtn svg{width:12px;height:12px;fill:none;stroke-width:2.4;stroke:currentColor}
+.followbtn[aria-pressed="true"]{background:var(--mosstint);border-color:var(--mossline);color:var(--moss)}
+
+/* thread timeline */
+.thread{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px 16px;margin-bottom:14px}
+.thread .th-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:5px}
+.thread h3{font-size:17px;font-weight:600;color:var(--pine);line-height:1.25}
+.thread .status{display:inline-block;font-size:11px;font-weight:600;color:var(--sky);background:var(--skytint);border:1px solid var(--skyline);border-radius:6px;padding:3px 8px;margin:8px 0 12px}
+.thread .th-sum{font-size:13.5px;color:var(--mut);line-height:1.55;margin-bottom:14px}
+.thread .th-src{margin:-6px 0 14px}
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:6px;top:5px;bottom:5px;width:2px;background:var(--line)}
+.tstep{position:relative;padding-bottom:15px}
+.tstep:last-child{padding-bottom:0}
+.tstep::before{content:"";position:absolute;left:-19px;top:3px;width:11px;height:11px;border-radius:50%;background:var(--card);border:2px solid var(--mossline)}
+.tstep.deny::before{border-color:var(--rust);background:var(--rusttint)}
+.tstep.now::before{border-color:var(--moss);background:var(--moss)}
+.tstep .td{font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--moss);font-weight:600;margin-bottom:3px}
+.tstep .te{font-size:13px;color:var(--ink);line-height:1.5}
+.tstep .tbody{font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.tstep .vote{margin-top:7px;background:var(--paper);border:1px solid var(--line2);border-radius:9px;padding:9px 11px}
+.tstep .vote .vh{font-size:12px;font-weight:600;color:var(--pine);margin-bottom:6px}
+.tstep .roll{display:flex;flex-wrap:wrap;gap:5px}
+.tstep .rc{font-size:11px;padding:3px 8px;border-radius:5px;font-weight:500}
+.tstep .rc.yes{background:var(--mosstint);color:var(--moss)}
+.tstep .rc.no{background:var(--rusttint);color:var(--rust)}
+.tstep .src{font-size:10.5px;color:var(--faint);font-style:italic;margin-top:5px}
+
+/* gov body cards */
+.bodycard{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px;margin-bottom:11px}
+.bodycard h4{font-size:16px;font-weight:600;color:var(--pine);margin-bottom:4px}
+.bodycard .brole{font-size:13px;color:var(--mut);line-height:1.5;margin-bottom:9px}
+.bodycard .bmeta{display:flex;flex-wrap:wrap;gap:7px}
+.bodysrc{margin-top:11px;padding-top:11px;border-top:1px solid var(--line2)}
+.tagx{font-size:11.5px;color:var(--mut);background:var(--paper);border:1px solid var(--line2);border-radius:6px;padding:4px 9px;display:inline-flex;align-items:center;gap:5px}
+.tagx svg{width:12px;height:12px;stroke:var(--faint);fill:none;stroke-width:2}
+.official{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid var(--line2)}
+.official:first-of-type{border-top:0}
+.official .av{width:34px;height:34px;border-radius:50%;background:var(--pinetint);color:var(--pine);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex:none}
+.official .oi{flex:1;min-width:0}
+.official .oi b{font-size:14px;color:var(--pine);font-weight:600;display:block}
+.official .oi span{font-size:12px;color:var(--mut)}
+.official .osrc{font-size:10px;color:var(--faint);font-style:italic;white-space:nowrap}
+
+/* ballot / callout */
+.ballot{background:var(--honeytint);border:1px solid var(--honeyline);border-radius:14px;padding:15px 16px;margin-bottom:14px}
+.ballot .bt{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--honey);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.ballot .bt svg{width:15px;height:15px;stroke:var(--honey);fill:none;stroke-width:2}
+.ballot h4{font-size:16px;color:var(--pine);font-weight:600;margin-bottom:6px}
+.ballot p{font-size:13px;color:#6b4e16;line-height:1.55}
+
+/* take-part */
+.way{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
+.way .wn{width:40px;height:40px;border-radius:11px;background:var(--mosstint);display:flex;align-items:center;justify-content:center;flex:none}
+.way .wn svg{width:20px;height:20px;stroke:var(--moss);fill:none;stroke-width:1.8}
+.way .wc h4{font-size:15.5px;font-weight:600;color:var(--pine);margin-bottom:5px}
+.way .wc p{font-size:13px;color:var(--mut);line-height:1.55}
+.way .wc .wd{font-size:12px;color:var(--faint);margin-top:7px;line-height:1.5}
+
+/* calendar list */
+.calday{display:flex;gap:13px;margin-bottom:11px}
+.calday .cd{width:48px;flex:none;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:7px 0;height:fit-content}
+.calday .cd .mo{font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--rust);font-weight:700;text-transform:uppercase}
+.calday .cd .dy{font-size:20px;font-weight:700;color:var(--pine);line-height:1}
+.calday .ce{flex:1;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+.calday .ce h4{font-size:14.5px;font-weight:600;color:var(--pine);margin-bottom:3px}
+.calday .ce .cm{font-size:12px;color:var(--mut);display:flex;flex-wrap:wrap;gap:8px;margin-bottom:5px}
+.calday .ce .cnote{font-size:12.5px;color:var(--ink);line-height:1.45}
+
+/* You tab */
+.youhead{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;text-align:center}
+.youhead .yn{font-size:30px;margin-bottom:6px}
+.youhead h3{font-size:16px;color:var(--pine);font-weight:600;margin-bottom:5px}
+.youhead p{font-size:13px;color:var(--mut);line-height:1.5}
+.follow-grid{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:8px 13px;font-size:13px;font-weight:500;color:var(--mut);display:inline-flex;align-items:center;gap:7px}
+.fchip svg{width:14px;height:14px;fill:none;stroke-width:2.2;stroke:currentColor}
+.fchip[aria-pressed="true"]{background:var(--mosstint);border-color:var(--mossline);color:var(--moss);font-weight:600}
+.fchip .plus{stroke:var(--faint)}
+.linkrow{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:9px}
+.linkrow svg.li{width:18px;height:18px;stroke:var(--moss);fill:none;stroke-width:1.9;flex:none}
+.linkrow .lt{flex:1}.linkrow .lt b{font-size:14px;color:var(--pine);font-weight:600;display:block}.linkrow .lt span{font-size:12px;color:var(--mut)}
+.linkrow svg.ch{width:16px;height:16px;stroke:var(--faint);fill:none;stroke-width:2}
+
+.aihonest{background:var(--pinetint);border:1px solid var(--mossline);border-radius:12px;padding:13px 15px;margin:16px 0;font-size:12.5px;color:#31413a;line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.aihonest svg{width:16px;height:16px;stroke:var(--moss);fill:none;stroke-width:2;flex:none;margin-top:1px}
+.aihonest b{color:var(--pine)}
+
+.emptysearch{text-align:center;padding:30px 16px;color:var(--mut);font-size:14px;display:none}
+
+/* bottom tab bar */
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:600px;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;z-index:40}
+.tabbar button{flex:1;border:0;background:transparent;padding:9px 2px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--faint);min-height:60px}
+.tabbar button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+.tabbar button span{font-size:10px;font-weight:600;letter-spacing:.01em}
+.tabbar button.active{color:var(--moss)}
+.tabbar button .dot{position:absolute;top:8px;margin-left:16px;width:7px;height:7px;border-radius:50%;background:var(--rust);border:1.5px solid #fff}
+
+.footnote{font-size:11px;color:var(--faint);line-height:1.5;padding:16px;text-align:center}
+.toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%) translateY(12px);background:var(--pine);color:#fff;font-size:13px;font-weight:500;padding:11px 16px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60;display:flex;align-items:center;gap:8px;max-width:88vw}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast svg{width:15px;height:15px;stroke:var(--sage);fill:none;stroke-width:2.4;flex:none}
+.vts{display:inline-flex;align-items:center;gap:4px;font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--sky);background:var(--skytint);border:1px solid var(--skyline);border-radius:5px;padding:1px 7px;margin-left:7px;font-weight:600}
+.vts svg{width:10px;height:10px;stroke:var(--sky);fill:none;stroke-width:2.4}
+.ff-title{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--pine);font-weight:700;padding:11px 13px 2px}
+.ff-sub{font-size:12.5px;color:var(--mut);padding:0 13px 9px;line-height:1.5}
+.ff-points{padding:0 13px 11px;display:flex;flex-direction:column;gap:7px}
+.ff-pt{display:flex;gap:9px;align-items:flex-start;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:13px;color:var(--ink);line-height:1.5;cursor:pointer}
+.ff-pt:hover{border-color:var(--moss)}
+.ff-pt .n{font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:700;color:var(--moss);background:var(--mosstint);border-radius:5px;padding:2px 7px;flex:none;margin-top:1px}
+.ff-chosen{margin:0 13px 9px;background:var(--paper);border:1px solid var(--mossline);border-left:3px solid var(--moss);border-radius:9px;padding:9px 11px;font-size:13px;color:var(--ink);line-height:1.5}
+.ff-srcref{margin:0 13px 9px;font-size:12px;color:var(--mut);display:flex;gap:7px;align-items:flex-start;line-height:1.5}
+.ff-srcref svg{width:13px;height:13px;stroke:var(--slate);fill:none;stroke-width:2;flex:none;margin-top:2px}
+.ff-ta{margin:0 13px;width:calc(100% - 26px);min-height:64px;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-family:inherit;font-size:13px;color:var(--ink);resize:vertical;background:#fff}
+.ff-ta:focus{outline:2px solid var(--moss);outline-offset:1px}
+.ff-actions{display:flex;gap:8px;padding:11px 13px;flex-wrap:wrap}
+.ff-done{padding:15px 13px;display:flex;gap:10px;align-items:flex-start}
+.ff-done svg{width:18px;height:18px;stroke:var(--moss);fill:none;stroke-width:2.2;flex:none;margin-top:1px}
+.ff-done p{font-size:13px;color:var(--ink);line-height:1.55}
+.ff-done a{color:var(--moss);font-weight:600;text-decoration:underline}
+.howpill{position:fixed;left:50%;transform:translateX(-50%);bottom:82px;background:var(--pine);color:#fff;border:0;border-radius:22px;padding:9px 15px;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;box-shadow:0 6px 22px rgba(21,35,58,.26);z-index:45;font-family:inherit}
+.howpill:hover{background:#1d2f4a}
+.howpill svg{width:14px;height:14px;stroke:var(--sage);fill:none;stroke-width:2.2}
+@media(min-width:601px){.vts{display:inline-flex;align-items:center;gap:4px;font-family:'Spline Sans Mono',monospace;font-size:10px;color:var(--sky);background:var(--skytint);border:1px solid var(--skyline);border-radius:5px;padding:1px 7px;margin-left:7px;font-weight:600}
+.vts svg{width:10px;height:10px;stroke:var(--sky);fill:none;stroke-width:2.4}
+.ff-title{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--pine);font-weight:700;padding:11px 13px 2px}
+.ff-sub{font-size:12.5px;color:var(--mut);padding:0 13px 9px;line-height:1.5}
+.ff-points{padding:0 13px 11px;display:flex;flex-direction:column;gap:7px}
+.ff-pt{display:flex;gap:9px;align-items:flex-start;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:13px;color:var(--ink);line-height:1.5;cursor:pointer}
+.ff-pt:hover{border-color:var(--moss)}
+.ff-pt .n{font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:700;color:var(--moss);background:var(--mosstint);border-radius:5px;padding:2px 7px;flex:none;margin-top:1px}
+.ff-chosen{margin:0 13px 9px;background:var(--paper);border:1px solid var(--mossline);border-left:3px solid var(--moss);border-radius:9px;padding:9px 11px;font-size:13px;color:var(--ink);line-height:1.5}
+.ff-srcref{margin:0 13px 9px;font-size:12px;color:var(--mut);display:flex;gap:7px;align-items:flex-start;line-height:1.5}
+.ff-srcref svg{width:13px;height:13px;stroke:var(--slate);fill:none;stroke-width:2;flex:none;margin-top:2px}
+.ff-ta{margin:0 13px;width:calc(100% - 26px);min-height:64px;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-family:inherit;font-size:13px;color:var(--ink);resize:vertical;background:#fff}
+.ff-ta:focus{outline:2px solid var(--moss);outline-offset:1px}
+.ff-actions{display:flex;gap:8px;padding:11px 13px;flex-wrap:wrap}
+.ff-done{padding:15px 13px;display:flex;gap:10px;align-items:flex-start}
+.ff-done svg{width:18px;height:18px;stroke:var(--moss);fill:none;stroke-width:2.2;flex:none;margin-top:1px}
+.ff-done p{font-size:13px;color:var(--ink);line-height:1.55}
+.ff-done a{color:var(--moss);font-weight:600;text-decoration:underline}
+.howpill{bottom:86px}}
+.howscrim{position:fixed;inset:0;background:rgba(21,35,58,.5);opacity:0;pointer-events:none;transition:opacity .2s;z-index:55}
+.howscrim.on{opacity:1;pointer-events:auto}
+.howsheet{position:fixed;left:50%;bottom:0;transform:translateX(-50%) translateY(100%);width:100%;max-width:600px;background:var(--paper);border-radius:18px 18px 0 0;z-index:65;transition:transform .26s cubic-bezier(.2,.8,.2,1);max-height:88vh;overflow-y:auto;box-shadow:0 -8px 40px rgba(0,0,0,.2)}
+.howsheet.on{transform:translateX(-50%) translateY(0)}
+.howgrab{width:38px;height:4px;border-radius:2px;background:var(--line);margin:10px auto 4px}
+.howhd{padding:8px 20px 14px;border-bottom:1px solid var(--line)}
+.howhd .hh-hi{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--moss);font-weight:600;margin-bottom:7px}
+.howhd h2{font-family:'Newsreader',Georgia,serif;font-size:23px;color:var(--pine);font-weight:500;line-height:1.15}
+.howbd{padding:16px 20px 26px}
+.minipipe{display:flex;flex-direction:column;gap:0;position:relative;padding-left:30px}
+.minipipe::before{content:"";position:absolute;left:11px;top:14px;bottom:20px;width:2px;background:var(--line)}
+.mstep{position:relative;padding-bottom:15px}
+.mstep::before{content:"";position:absolute;left:-24px;top:1px;width:14px;height:14px;border-radius:50%;border:2px solid;background:var(--paper)}
+.mstep.s1::before{border-color:var(--pine)}.mstep.s2::before{border-color:var(--slate,#516175)}.mstep.s3::before{border-color:var(--moss)}.mstep.s4::before{border-color:var(--sky)}
+.mstep b{font-size:14.5px;color:var(--pine);font-weight:600}
+.mstep .mtag{font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:7px}
+.mstep.s1 .mtag{background:var(--pinetint);color:var(--pine)}.mstep.s2 .mtag{background:var(--slatetint,#E9ECF0);color:var(--slate,#516175)}.mstep.s3 .mtag{background:var(--mosstint);color:var(--moss)}.mstep.s4 .mtag{background:var(--skytint);color:var(--sky)}
+.mstep p{font-size:12.5px;color:var(--mut);line-height:1.55;margin-top:3px}
+.howpromise{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--moss);border-radius:10px;padding:13px 15px;margin-top:12px;font-size:13px;color:var(--ink);line-height:1.6}
+.howpromise b{color:var(--pine);font-weight:600}
+.howcta{display:flex;gap:10px;margin-top:13px;flex-wrap:wrap}
+.howcta a{flex:1;min-width:150px;text-align:center;border-radius:10px;padding:12px;font-size:13.5px;font-weight:600;min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px}
+.howcta a svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+.howcta .p{background:var(--moss);color:#fff}.howcta .g{background:var(--card);border:1px solid var(--line);color:var(--pine)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div class="tr">
+      <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span>
+      <b>Commonwealth</b>
+      <a class="home" href="commonwealth-home.html"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>Home</a>
+    </div>
+    <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="q" placeholder="Search Clawson's record…" oninput="doSearch(this.value)" aria-label="Search Clawson's record"></label>
+  </div>
+
+  <!-- YOUR CLAWSON -->
+  <div class="view on" id="v-home" role="tabpanel" aria-label="Your Clawson"></div>
+  <!-- HAPPENING -->
+  <div class="view" id="v-happening" role="tabpanel" aria-label="Happening"></div>
+  <!-- GOVERNMENT -->
+  <div class="view" id="v-gov" role="tabpanel" aria-label="Government"></div>
+  <!-- TAKE PART -->
+  <div class="view" id="v-take" role="tabpanel" aria-label="Take part"></div>
+  <!-- YOU -->
+  <div class="view" id="v-you" role="tabpanel" aria-label="You"></div>
+
+  <div class="footnote" id="foot"></div>
+</div>
+
+<nav class="tabbar" role="tablist" aria-label="Sections">
+  <button class="active" id="t-home" role="tab" aria-selected="true" onclick="show('home')"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg><span>Your Clawson</span></button>
+  <button id="t-happening" role="tab" aria-selected="false" onclick="show('happening')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Happening</span></button>
+  <button id="t-gov" role="tab" aria-selected="false" onclick="show('gov')"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01M10 21v-4h4v4"/></svg><span>Government</span></button>
+  <button id="t-take" role="tab" aria-selected="false" onclick="show('take')"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg><span>Take part</span></button>
+  <button id="t-you" role="tab" aria-selected="false" onclick="show('you')"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg><span>You</span></button>
+</nav>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg"></span></div>
+
+<!-- persistent "how this works" affordance -->
+<button class="howpill" onclick="openHow()" aria-label="How this works"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>How this works</button>
+
+<!-- how-this-works sheet -->
+<div class="howscrim" id="howscrim" onclick="closeHow()"></div>
+<div class="howsheet" id="howsheet" role="dialog" aria-modal="true" aria-label="How this works">
+  <div class="howgrab"></div>
+  <div class="howhd"><div class="hh-hi">How this works</div><h2 class="serif">Every summary, in four steps.</h2></div>
+  <div class="howbd">
+    <div class="minipipe">
+      <div class="mstep s1"><b>The source</b><span class="mtag">Authority</span><p>One official public document — an agenda, minutes, a vote, a notice.</p></div>
+      <div class="mstep s2"><b>Software drafts</b><span class="mtag">Constrained</span><p>Restates it in plain language under fixed rules. Nothing added.</p></div>
+      <div class="mstep s3"><b>A person reviews</b><span class="mtag">Responsible</span><p>Checks it against the source, and can hold or reject it.</p></div>
+      <div class="mstep s4"><b>Published</b><span class="mtag">You can check</span><p>With a link to the source, so you can always see for yourself.</p></div>
+    </div>
+    <div class="howpromise"><b>The source is the authority. A person is responsible. The software never has the last word.</b> Tap "From the record" on any item to see exactly where it came from.</div>
+    <div class="howcta">
+      <a class="p" href="commonwealth-transparency.html">See full transparency<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="g" href="commonwealth-trust.html">Trust &amp; security</a>
+    </div>
+  </div>
+</div>
+
+<script src="clawson.data.js"></script>
+<script>
+var T = window.TOWN;
+var FKEY='cw:settings:v1';         // shared with settings page
+var follows=[];
+
+/* ---- storage (same key/scope as settings page) ---- */
+async function loadFollows(){ try{var r=await window.storage.get(FKEY,false);if(r){var s=JSON.parse(r.value);follows=s.follows||[];}}catch(e){follows=[];} }
+async function saveFollows(){ try{var r=await window.storage.get(FKEY,false);var s=r?JSON.parse(r.value):{follows:[],email:'',freq:'weekly',prefs:{}};s.follows=follows;await window.storage.set(FKEY,JSON.stringify(s),false);}catch(e){} }
+function isFollowing(t){return follows.indexOf(t)>-1;}
+async function toggleFollow(t){var i=follows.indexOf(t);if(i>-1)follows.splice(i,1);else follows.push(t);await saveFollows();renderAll();toast(i>-1?'Unfollowed':'Following — you\'ll hear when it changes');}
+window.toggleFollow=toggleFollow;
+
+function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function svg(p){return '<svg viewBox="0 0 24 24">'+p+'</svg>';}
+var IC={check:'<path d="M20 6 9 17l-5-5"/>',plus:'<path d="M12 5v14M5 12h14"/>',bell:'<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>',
+  clock:'<path d="M12 8v4l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>',pin:'<path d="M12 22s8-4 8-10a8 8 0 1 0-16 0c0 6 8 10 8 10Z"/><circle cx="12" cy="12" r="2.5"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',doc:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'};
+function monthAbbr(iso){var d=new Date(iso+'T00:00:00');return d.toLocaleString('en-US',{month:'short'});}
+function dayNum(iso){var d=new Date(iso+'T00:00:00');return d.getDate();}
+function niceDate(iso){var d=new Date(iso+'T00:00:00');return d.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+function bodyName(id){var b=(T.bodies||[]).find(function(x){return x.id===id;});return b?b.name:'';}
+/* ===== "Where this comes from" marker + panel =====
+   Every content item already carries a `source` object. The marker is the
+   quiet, tappable "From the record" chip; tapping opens a small panel built
+   from that source. Plain language throughout — no jargon. */
+var SRC_REG={}; var SRC_N=0;
+function srcMarker(source,opts){
+  opts=opts||{};
+  var id='src'+(SRC_N++);
+  SRC_REG[id]=Object.assign({},source,{drafted:!!opts.drafted,text:opts.text||''});
+  var cls=opts.happening?'prov happening':'prov';
+  var ic=opts.happening?IC.clock:IC.check;
+  var label=opts.happening?'Happening':'From the record';
+  return '<button class="'+cls+'" aria-expanded="false" aria-label="Where this comes from" '+
+    'onclick="event.stopPropagation();toggleSource(this,\''+id+'\')">'+svg(ic)+
+    '<span class="provtxt">'+label+'</span>'+
+    '<svg class="provchev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>';
+}
+/* keep provTag name working for existing call sites (no source = generic) */
+function provTag(cls){ return srcMarker({label:'Clawson public record'},{}); }
+
+function toggleSource(btn,id){
+  var existing=btn.parentElement.querySelector('.srcpanel');
+  // close others
+  document.querySelectorAll('.srcpanel').forEach(function(p){ if(p!==existing) p.remove(); });
+  document.querySelectorAll('.prov[aria-expanded="true"]').forEach(function(b){ if(b!==btn){b.setAttribute('aria-expanded','false');} });
+  if(existing){ existing.remove(); btn.setAttribute('aria-expanded','false'); return; }
+  var s=SRC_REG[id]||{}; 
+  var p=document.createElement('div'); p.className='srcpanel';
+  var rows='';
+  rows+='<div class="sp-row"><span class="sp-k">Source</span><span class="sp-v"><b>'+esc(s.label||'Public record')+'</b></span></div>';
+  if(s.date) rows+='<div class="sp-row"><span class="sp-k">Dated</span><span class="sp-v">'+esc(s.date)+'</span></div>';
+  if(s.drafted) rows+='<div class="sp-row"><span class="sp-k">Drafted</span><span class="sp-v">Plain-language summary, drafted by software from this document under fixed rules.</span></div>';
+  rows+='<div class="sp-row"><span class="sp-k">Checked</span><span class="sp-v"><span class="sp-ok"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>A person checked this against the source</span></span></div>';
+  p.innerHTML='<div class="sp-head"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Where this comes from</div>'+
+    '<div class="sp-body">'+rows+'</div>'+
+    '<div class="sp-actions">'+
+      '<button class="sp-act primary" onclick="event.stopPropagation();toast(\'Opens the official source\')"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>View original</button>'+
+      '<button class="sp-act" onclick="event.stopPropagation();openHow()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>How this works</button>'+
+      '<button class="sp-act flag" onclick="event.stopPropagation();openFlagFlow(this,\''+id+'\')">Something look wrong?</button>'+
+    '</div>';
+  btn.parentElement.appendChild(p);
+  btn.setAttribute('aria-expanded','true');
+}
+window.toggleSource=toggleSource;
+
+/* Point-level flag flow (canon §13.2): flags address a specific point, shown
+   against its source. Structured, never scored — no votes, no tallies. */
+function ffPoints(txt){
+  return (txt||'').split(/(?<=[.!?])\s+/).map(function(x){return x.trim();})
+    .filter(function(x){return x.length>12;}).slice(0,6);
+}
+function openFlagFlow(btn,id){
+  var s=SRC_REG[id]||{}; var panel=btn.closest('.srcpanel'); if(!panel) return;
+  var pts=ffPoints(s.text);
+  if(!pts.length){pts=['The information shown for this item.'];}
+  var h='<div class="ff-title">Which point looks wrong?</div>'+
+    '<div class="ff-sub">Pick the specific point. We check it against the source document — the document decides, and both outcomes are logged publicly.</div>'+
+    '<div class="ff-points">'+pts.map(function(p,i){
+      return '<button class="ff-pt" onclick="event.stopPropagation();ffPick(this,\''+id+'\','+i+')"><span class="n">'+(i+1)+'</span><span>'+esc(p)+'</span></button>';
+    }).join('')+'</div>';
+  panel.innerHTML=h; panel.dataset.pts=JSON.stringify(pts);
+}
+function ffPick(btn,id,i){
+  var s=SRC_REG[id]||{}; var panel=btn.closest('.srcpanel');
+  var pts=JSON.parse(panel.dataset.pts||'[]'); var pt=pts[i]||'';
+  panel.innerHTML='<div class="ff-title">Point '+(i+1)+' — tell us what looks wrong</div>'+
+    '<div class="ff-chosen">'+esc(pt)+'</div>'+
+    '<div class="ff-srcref"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span>This point comes from: <b>'+esc(s.label||'the public record')+'</b>'+(s.date?' · '+esc(s.date):'')+'. If you can, check it there first — the document is what decides.</span></div>'+
+    '<textarea class="ff-ta" placeholder="What doesn\'t match? (e.g., the vote count, a name, a date)"></textarea>'+
+    '<div class="ff-actions"><button class="sp-act primary" onclick="event.stopPropagation();ffSend(this)">Send for checking</button>'+
+    '<button class="sp-act" onclick="event.stopPropagation();this.closest(\'.srcpanel\').remove()">Cancel</button></div>';
+}
+function ffSend(btn){
+  var panel=btn.closest('.srcpanel');
+  panel.innerHTML='<div class="ff-done"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><p><b>Sent.</b> A person will compare this point against the source document. If it doesn\'t match, we correct it; if it does, it stands — either way the outcome is <a href="commonwealth-transparency.html#corrections">logged publicly</a>.</p></div>';
+  toast('Sent for checking against the source');
+}
+window.openFlagFlow=openFlagFlow;window.ffPick=ffPick;window.ffSend=ffSend;
+
+/* follow button for a topic */
+function fbtn(topic){ if(!topic) return '';
+  var on=isFollowing(topic);
+  return '<button class="followbtn" aria-pressed="'+on+'" onclick="event.stopPropagation();toggleFollow(\''+topic+'\')">'+
+    '<svg viewBox="0 0 24 24">'+(on?IC.check:IC.plus)+'</svg>'+(on?'Following':'Follow')+'</button>';
+}
+
+/* ============ YOUR CLAWSON ============ */
+function renderHome(){
+  var el=document.getElementById('v-home');
+  var feat=(T.events||[]).find(function(e){return !e.body;}) || (T.events||[])[0];
+  var h='<div class="hi">'+esc(T.town.name)+', '+esc(T.town.stateAbbr)+'</div>'+
+        '<div class="h1 serif">Your Clawson.</div>'+
+        '<div class="sub">What\'s alive in your community right now — and what\'s new in the parts you keep up with.</div>';
+
+  // feature (utility-first, from happening/events)
+  if(feat){
+    h+='<div class="feature"><div class="fimg"><span class="ph">Sample image placeholder</span>'+
+      '<div class="houses"><span style="height:42px"></span><span style="height:60px"></span><span style="height:34px"></span><span style="height:52px"></span><span style="height:40px"></span></div>'+
+      '<h3>'+esc(feat.title)+'</h3></div>'+
+      '<div class="fbody"><div class="fl"><div class="fwhen">'+(feat.date?niceDate(feat.date):'')+(feat.time&&feat.time!=='All day'?' · '+esc(feat.time):'')+'</div></div>'+
+      '<span class="fact">Add &amp; remind'+svg(IC.arrow)+'</span></div></div>';
+  }
+
+  // digest
+  var newCount=(T.digest||[]).length;
+  h+='<div class="section-h"><h2>Your digest</h2><span class="ln"></span><span class="see">'+newCount+' new</span></div>';
+  h+='<div class="aihonest">'+svg('<path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15h.01M12 8v5"/>')+'<span><b>How this works:</b> every item is drawn from Clawson\'s public record and links back to its source. Plain-language recaps are checked by a person — never published on a machine\'s say-so.</span></div>';
+  (T.digest||[]).forEach(function(d){
+    var isHappening=d.tag==='Happening';
+    h+='<button class="rec" onclick="openDigest(\''+d.id+'\')">'+
+      '<div class="rtop">'+srcMarker(d.source,{happening:isHappening,text:d.title+'. '+d.note})+fbtn(d.topic)+'</div>'+
+      '<h4>'+esc(d.title)+'</h4><p>'+esc(d.note)+'</p></button>';
+  });
+
+  // the showcase thread inline teaser
+  if(T.threads&&T.threads[0]){
+    h+='<div class="section-h"><h2>Followed closely</h2><span class="ln"></span></div>';
+    h+=threadCard(T.threads[0]);
+  }
+  el.innerHTML=h;
+}
+
+function threadCard(t){
+  var steps=t.timeline.map(function(s,i){
+    var last=i===t.timeline.length-1;
+    var isDeny=/denies|denied/i.test(s.event);
+    var cls=last?'now':(isDeny?'deny':'');
+    var vote='';
+    if(s.vote){vote='<div class="vote"><div class="vh">'+esc(s.vote.result)+'</div><div class="roll">'+
+      s.vote.roll.map(function(r){return '<span class="rc '+(r.vote==='yes'?'yes':'no')+'">'+esc(r.name)+': '+r.vote+'</span>';}).join('')+'</div></div>';}
+    return '<div class="tstep '+cls+'"><div class="tbody">'+esc(bodyName(s.body))+'</div><div class="td">'+niceDate(s.date)+'</div>'+
+      '<div class="te">'+esc(s.event)+'</div>'+vote+
+      '<div class="src">'+esc(s.source.label)+(s.videoTimestamp?' <span class="vts">'+svg(IC.play||'')+'in the video: '+esc(s.videoTimestamp)+'</span>':'')+'</div></div>';
+  }).join('');
+  var tsrc=(t.timeline&&t.timeline[0]&&t.timeline[0].source)||{label:'City of Clawson'};
+  return '<div class="thread"><div class="th-top"><h3>'+esc(t.title)+'</h3>'+fbtn(t.topic)+'</div>'+
+    '<div class="status">'+esc(t.status)+'</div>'+
+    '<div class="th-sum">'+esc(t.summary)+'</div>'+
+    '<div class="th-src">'+srcMarker(tsrc,{drafted:true,text:t.summary})+'</div>'+
+    '<div class="timeline">'+steps+'</div></div>';
+}
+
+/* ============ HAPPENING (calendar) ============ */
+function renderHappening(){
+  var el=document.getElementById('v-happening');
+  var evs=(T.events||[]).slice().sort(function(a,b){return a.date<b.date?-1:1;});
+  var h='<div class="hi">Upcoming</div><div class="h1 serif">Happening.</div>'+
+        '<div class="sub">Meetings, hearings, and events worth showing up for — on one calendar.</div>';
+  evs.forEach(function(e){
+    h+='<div class="calday"><div class="cd"><div class="mo">'+monthAbbr(e.date)+'</div><div class="dy">'+dayNum(e.date)+'</div></div>'+
+      '<div class="ce"><h4>'+esc(e.title)+'</h4>'+
+      '<div class="cm"><span>'+esc(e.time||'')+'</span>'+(e.location?'<span>'+esc(e.location)+'</span>':'')+'</div>'+
+      (e.note?'<div class="cnote">'+esc(e.note)+'</div>':'')+
+      '<div class="rmeta" style="margin-top:8px">'+(e.body?fbtn(bodyTopic(e.body)):'')+'<span class="src">'+esc(e.source.label)+'</span></div>'+
+      '</div></div>';
+  });
+  el.innerHTML=h;
+}
+function bodyTopic(id){var b=(T.bodies||[]).find(function(x){return x.id===id;});return b?b.topic:null;}
+
+/* ============ GOVERNMENT ============ */
+function renderGov(){
+  var el=document.getElementById('v-gov');
+  var h='<div class="hi">Government</div><div class="h1 serif">Your local government.</div>'+
+        '<div class="sub">The bodies that make decisions, who\'s on them, and what\'s on the ballot — each linked to the record.</div>';
+
+  // ballot / city property callout (Renshaw)
+  var renshaw=(T.records||[]).find(function(r){return r.id==='r-renshaw';});
+  if(renshaw){
+    h+='<div class="ballot"><div class="bt">'+svg('<path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>')+'On your radar</div>'+
+      '<h4>'+esc(renshaw.title)+'</h4><p>'+esc(renshaw.body)+'</p>'+
+      '<div class="rmeta" style="margin-top:9px">'+srcMarker(renshaw.source,{text:renshaw.title+'. '+renshaw.body})+'</div></div>';
+  }
+
+  // bodies + their officials
+  (T.bodies||[]).forEach(function(b){
+    var mems=(T.officials||[]).filter(function(o){return o.body===b.id;});
+    h+='<div class="bodycard"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><h4>'+esc(b.name)+'</h4>'+fbtn(b.topic)+'</div>'+
+      '<div class="brole">'+esc(b.role)+'</div>'+
+      '<div class="bmeta"><span class="tagx">'+svg(IC.clock)+esc(b.cadence)+'</span><span class="tagx">'+svg(IC.pin)+esc(b.location)+'</span><span class="tagx">'+b.seats+' seats</span></div>';
+    if(mems.length){ h+='<div style="margin-top:12px">';
+      mems.forEach(function(o){
+        var inits=o.name.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+        h+='<div class="official"><span class="av">'+esc(inits)+'</span><div class="oi"><b>'+esc(o.name)+'</b><span>'+esc(o.role)+(o.term?' · '+esc(o.term):'')+'</span></div></div>';
+      });
+      h+='</div>';
+    }
+    // one calm, body-level "where this comes from" marker per body card
+    var rsrc=(mems[0]&&mems[0].source)||{label:'City of Clawson'};
+    h+='<div class="bodysrc">'+srcMarker(rsrc,{text:'The members and roles listed for this body.'})+'</div>';
+    h+='</div>';
+  });
+
+  // three ways teaser
+  h+='<div class="aihonest" style="background:var(--honeytint);border-color:var(--honeyline);color:#6b4e16">'+svg(IC.bell)+'<span><b>Want to weigh in?</b> There are three concrete ways — show up, send a comment, or take a seat. See the Take part tab.</span></div>';
+  el.innerHTML=h;
+}
+
+/* ============ TAKE PART ============ */
+function renderTake(){
+  var el=document.getElementById('v-take');
+  var council=(T.bodies||[]).find(function(b){return b.id==='council';});
+  var h='<div class="hi">Get involved</div><div class="h1 serif">Three ways to be heard.</div>'+
+        '<div class="sub">Having a say is more concrete than it sounds. Here\'s how.</div>';
+  h+='<div class="way"><span class="wn">'+svg('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>')+'</span>'+
+    '<div class="wc"><h4>Show up</h4><p>Most bodies keep public comment open to any resident — no sign-up, no expertise needed.</p>'+
+    '<div class="wd">'+(council?esc(council.name)+' meets '+esc(council.cadence)+', at '+esc(council.location)+'.':'')+'</div></div></div>';
+  h+='<div class="way"><span class="wn">'+svg('<path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/>')+'</span>'+
+    '<div class="wc"><h4>Send a comment</h4><p>Can\'t make it? Send written comment to the body through the City Clerk before the meeting — it becomes part of the record.</p>'+
+    '<div class="wd">Address it to the body, care of the Clerk, and name the agenda item.</div></div></div>';
+  h+='<div class="way"><span class="wn">'+svg('<path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M10 21v-4h4v4"/>')+'</span>'+
+    '<div class="wc"><h4>Take a seat</h4><p>Boards and commissions are volunteer, and the city fills seats as they open. Submit an application to the City Clerk\'s office.</p>'+
+    '<div class="wd">Appointed by the Mayor and Council; attend a meeting first to see what the body does.</div></div></div>';
+  h+='<div class="aihonest">'+svg(IC.check)+'<span>Details come from Clawson\'s public record and can change — <b>confirm against the city\'s official notice</b> before you go or send.</span></div>';
+  el.innerHTML=h;
+}
+
+/* ============ YOU ============ */
+function renderYou(){
+  var el=document.getElementById('v-you');
+  var count=follows.length;
+  var h='<div class="hi">You</div><div class="h1 serif">Your Commonwealth.</div>'+
+        '<div class="sub">What you follow, and where to manage it. A choice you make — never guessed from what you read.</div>';
+  h+='<div class="youhead"><div class="yn">'+(count?'🔔':'👋')+'</div>'+
+     '<h3>'+(count? 'You\'re following '+count+' topic'+(count>1?'s':'') : 'Follow what matters to you')+'</h3>'+
+     '<p>'+(count?'We\'ll email you when any of these show up in the record.':'Tap a topic below and we\'ll tell you when something new is posted.')+'</p></div>';
+  h+='<div class="section-h"><h2>Topics &amp; bodies</h2><span class="ln"></span></div>';
+  h+='<div class="follow-grid">';
+  (T.topics||[]).forEach(function(t){
+    var on=isFollowing(t.id);
+    h+='<button class="fchip" aria-pressed="'+on+'" onclick="toggleFollow(\''+t.id+'\')"><svg viewBox="0 0 24 24" class="'+(on?'':'plus')+'">'+(on?IC.check:IC.plus)+'</svg>'+esc(t.label)+'</button>';
+  });
+  h+='</div>';
+  h+='<div class="section-h"><h2>Manage</h2><span class="ln"></span></div>';
+  h+='<a class="linkrow" href="commonwealth-settings.html"><svg class="li" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg><div class="lt"><b>Your digest</b><span>Email, frequency, urgent alerts</span></div><svg class="ch" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>';
+  h+='<a class="linkrow" href="commonwealth-settings.html"><svg class="li" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div class="lt"><b>Privacy &amp; your data</b><span>Export or delete anytime · you\'re never the product</span></div><svg class="ch" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>';
+  h+='<a class="linkrow" href="commonwealth-trust.html"><svg class="li" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg><div class="lt"><b>Trust &amp; security</b><span>How this stays neutral and safe</span></div><svg class="ch" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>';
+  el.innerHTML=h;
+}
+
+/* ============ SEARCH ============ */
+function doSearch(q){
+  q=(q||'').trim().toLowerCase();
+  if(!q){renderAll();return;}
+  var hits=[];
+  (T.digest||[]).forEach(function(d){if((d.title+d.note).toLowerCase().indexOf(q)>-1)hits.push({t:d.title,s:d.note,src:d.source.label,topic:d.topic});});
+  (T.records||[]).forEach(function(r){if((r.title+r.body).toLowerCase().indexOf(q)>-1)hits.push({t:r.title,s:r.body,src:r.source.label,topic:r.topic});});
+  (T.threads||[]).forEach(function(t){if((t.title+t.summary).toLowerCase().indexOf(q)>-1)hits.push({t:t.title,s:t.summary,src:t.timeline[0].source.label,topic:t.topic});});
+  (T.officials||[]).forEach(function(o){if(o.name.toLowerCase().indexOf(q)>-1)hits.push({t:o.name,s:o.role,src:o.source.label,topic:null});});
+  (T.events||[]).forEach(function(e){if(e.title.toLowerCase().indexOf(q)>-1)hits.push({t:e.title,s:(e.note||'')+' · '+niceDate(e.date),src:e.source.label,topic:bodyTopic(e.body)});});
+  var el=document.getElementById('v-home');
+  var h='<div class="hi">Search</div><div class="h1 serif">Results</div><div class="sub">'+hits.length+' match'+(hits.length===1?'':'es')+' in the record for "'+esc(q)+'"</div>';
+  if(!hits.length){h+='<div style="text-align:center;padding:30px 10px;color:var(--mut)">Nothing found. Try a body, a topic, or an address.</div>';}
+  hits.forEach(function(x){h+='<div class="rec"><div class="rtop">'+srcMarker({label:x.src},{text:x.t+'. '+x.s})+(x.topic?fbtn(x.topic):'')+'</div><h4>'+esc(x.t)+'</h4><p>'+esc(x.s)+'</p></div>';});
+  // show results in home view, keep on home tab
+  document.querySelectorAll('.view').forEach(function(v){v.classList.remove('on');});
+  el.classList.add('on'); el.innerHTML=h;
+  document.querySelectorAll('.tabbar button').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  var tb=document.getElementById('t-home');tb.classList.add('active');tb.setAttribute('aria-selected','true');
+}
+window.doSearch=doSearch;
+
+function openDigest(id){
+  var d=(T.digest||[]).find(function(x){return x.id===id;});
+  if(!d)return;
+  if(d.threadId){show('home');setTimeout(function(){var t=document.querySelector('.thread');if(t)t.scrollIntoView({behavior:'smooth',block:'center'});},60);toast('Opening the full thread');return;}
+  if(d.recordId){var r=(T.records||[]).find(function(x){return x.id===d.recordId;});if(r&&r.link){toast('Opening '+d.title);return;}}
+  toast('From the record: '+d.source.label);
+}
+window.openDigest=openDigest;
+
+/* ============ NAV ============ */
+function show(v){
+  var map={home:'v-home',happening:'v-happening',gov:'v-gov',take:'v-take',you:'v-you'};
+  document.querySelectorAll('.view').forEach(function(el){el.classList.remove('on');});
+  document.getElementById(map[v]).classList.add('on');
+  document.querySelectorAll('.tabbar button').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  var tb=document.getElementById('t-'+v);tb.classList.add('active');tb.setAttribute('aria-selected','true');
+  var qEl=document.getElementById('q'); if(qEl && v!=='home') qEl.value='';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.show=show;
+
+function renderAll(){renderHome();renderHappening();renderGov();renderTake();renderYou();}
+
+var toastT;
+function toast(m){var t=document.getElementById('toast');document.getElementById('toastMsg').textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on');},2200);}
+function openHow(){document.getElementById('howscrim').classList.add('on');document.getElementById('howsheet').classList.add('on');}
+function closeHow(){document.getElementById('howscrim').classList.remove('on');document.getElementById('howsheet').classList.remove('on');}
+window.openHow=openHow;window.closeHow=closeHow;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeHow();document.querySelectorAll('.srcpanel').forEach(function(p){p.remove();});document.querySelectorAll('.prov[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false');});}});
+
+/* tab keyboard nav */
+(function(){var tabs=['home','happening','gov','take','you'].map(function(k){return document.getElementById('t-'+k);});
+  tabs.forEach(function(t,i){t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var nx=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];nx.focus();nx.click();}});});})();
+
+/* boot */
+(async function(){
+  document.getElementById('foot').innerHTML='Preview built on Clawson\'s public record. Content is real where sourced; some items are sample and labeled. <b>Not affiliated with the City of Clawson.</b>';
+  await loadFollows();
+  renderAll();
+})();
+</script>
+</body>
+</html>
