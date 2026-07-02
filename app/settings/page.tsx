@@ -95,7 +95,7 @@ export default function SettingsPage() {
     showToast(
       wasFollowing
         ? `Unfollowed ${label}`
-        : `Following ${label} — you'll hear when it changes`,
+        : `Following ${label}. You'll hear when it changes`,
     );
   };
 
@@ -148,8 +148,8 @@ export default function SettingsPage() {
           <h1 className="serif">Your Commonwealth.</h1>
           <p className={styles.lede}>
             Control what you follow, how your newsletter reaches you, and how the
-            app looks. Everything here is <b>yours</b> — chosen by you, and yours
-            to change, export, or delete.
+            app looks. Everything here is <b>yours</b> to change, export, or
+            delete.
           </p>
         </div>
 
@@ -164,8 +164,8 @@ export default function SettingsPage() {
             <div>
               <h2>What you follow</h2>
               <p>
-                Pick the topics and bodies you want to hear about. A choice, never
-                a guess.
+                Pick the topics and bodies you want to hear about. We only follow
+                what you pick.
               </p>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function SettingsPage() {
               <h2>Your digest</h2>
               <p>
                 Get the weekly Commonwealth digest for your town by email. One
-                email a week; unsubscribe anytime.
+                email a week. Unsubscribe anytime.
               </p>
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function SettingsPage() {
             </div>
             <p className={styles.emailnote}>
               Saved to this device for now. Signup wiring to the email service
-              comes in a later phase — nothing is sent yet.
+              comes in a later phase. Nothing is sent yet.
             </p>
           </div>
         </section>
@@ -309,7 +309,7 @@ export default function SettingsPage() {
             <div>
               <h2>Privacy &amp; your data</h2>
               <p>
-                You are never the product. Here&apos;s everything we keep — and
+                Your information stays yours. Here&apos;s everything we keep, and
                 your control over it.
               </p>
             </div>

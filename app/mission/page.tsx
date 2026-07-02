@@ -31,11 +31,11 @@ export default function MissionPage() {
       <div className={styles.pageWrap}>
         <div className={styles.phead}>
           <div className="eyebrow">Our mission</div>
-          <h1 className="serif">One mission. The door you enter is yours.</h1>
+          <h1 className="serif">Make your town easy to follow.</h1>
           <p className={styles.lede}>
             Commonwealth keeps a town&apos;s public record clear, current, and in
-            plain language — so a community can see itself, and take part in the
-            decisions that shape it. <b>Everything else is a way in.</b>
+            plain language, so residents can understand the decisions that shape
+            where they live and take part in them.
           </p>
         </div>
       </div>
@@ -44,36 +44,37 @@ export default function MissionPage() {
         <section className={`${styles.section} ${styles.prose}`}>
           <p className={styles.big}>
             The decisions that change a town are made in rooms almost no one sits
-            in. A rezoning, a millage, a budget line, a water notice — each one
+            in. A rezoning, a millage, a budget line, a water notice: each one
             shapes the place you live, and most of them pass with a handful of
             residents watching.
           </p>
           <p>
-            That gap isn&apos;t apathy. It&apos;s friction. The record exists —
-            agendas, minutes, roll-call votes, budgets, notices — but it lives in
-            PDFs and portals and meeting nights that don&apos;t fit a working life.{" "}
+            People care about their town. The record is just hard to reach.
+            Agendas, minutes, votes, budgets, and notices all exist, but they
+            live in PDFs, portals, and meeting nights that don&apos;t fit a
+            working life.{" "}
             <b>
-              Commonwealth&apos;s mission is to close that gap without ever
-              standing between you and the record.
+              Commonwealth closes that gap, and it always points you back to the
+              original record.
             </b>
           </p>
 
           <div className={styles.callout}>
             <p className={`${styles.q} serif`}>
-              Turn the public record into public understanding —{" "}
+              Turn the public record into public understanding:{" "}
               <b>
-                the five-minute version of your local government, in plain
-                language, in time to matter — always pointing back to the source.
+                a five-minute, plain-language version of your local government,
+                delivered in time to matter, with a link to the source on every
+                item.
               </b>
             </p>
           </div>
 
-          <h2 className="serif">What we will and won&apos;t be</h2>
+          <h2 className="serif">What we do, and what we never do</h2>
           <p>
-            The unit of value is a government that stays watchable. Accountability
-            runs through residents, reporters, analysts —{" "}
-            <b>not through Commonwealth taking a side.</b> We explain what
-            happened; we never tell you whether it was good, wise, or popular.
+            Our job is to keep local government easy to watch. Accountability
+            belongs to residents, reporters, and voters. We explain what
+            happened, and we never tell you whether it was good or bad.
           </p>
         </section>
 
@@ -86,7 +87,7 @@ export default function MissionPage() {
                   <path d="M14 2v6h6" />
                 </svg>
               </div>
-              <h3>Subordinate to the record</h3>
+              <h3>The record comes first</h3>
               <p>
                 Commonwealth holds no record of its own. It mirrors the
                 public&apos;s record, and every claim links back to its source.
@@ -98,11 +99,11 @@ export default function MissionPage() {
                   <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
                 </svg>
               </div>
-              <h3>Neutral by construction</h3>
+              <h3>No sides, ever</h3>
               <p>
-                No endorsements, no scores, no sides. Describing what happened,
-                never judging it — because that&apos;s what earns a whole
-                town&apos;s trust.
+                No endorsements, no scores, no sides. We describe what happened
+                without judging it, because that is how a whole town can trust
+                the same account.
               </p>
             </div>
             <div className={styles.pcard}>
@@ -111,45 +112,42 @@ export default function MissionPage() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
                 </svg>
               </div>
-              <h3>Restraint is the feature</h3>
+              <h3>We keep it small on purpose</h3>
               <p>
-                No ads, no data sold, no engagement games. The things we refuse to
-                do are what make the thing we do worth trusting.
+                No ads, no data sales, and no tricks to keep you scrolling. A
+                simple product is easier to trust.
               </p>
             </div>
           </div>
         </section>
 
         <section className={`${styles.section} ${styles.prose}`}>
-          <h2 className="serif">Why fund a pilot, not a promise</h2>
+          <h2 className="serif">Why we&apos;re starting with one town</h2>
           <p>
             No one has directly tested a neutral, persistent civic-information
-            utility. The closest evidence — what happens to a community when local
-            information disappears — points one way, but the positive case has to
+            utility. The closest evidence, what happens to a community when local
+            information disappears, points one way, but the positive case has to
             be <b>proven, in a real town, with honest numbers.</b>
           </p>
           <p>
-            The deepest risk in civic tech is mission drift: fund a neutral public
-            good, watch it get monetized into the very thing it was meant to fix.
-            Commonwealth is built to resist that — structurally, in how it&apos;s
-            governed and funded — not just to intend it.
+            Projects like this often drift. They start as a public good and end
+            up selling ads or data. Commonwealth is set up to prevent that, in
+            how it is governed and how it is funded.
           </p>
         </section>
 
         <div className={styles.band}>
           <div className="eyebrow">The honest ask</div>
-          <h2 className="serif">Fund the evidence, not a promise.</h2>
+          <h2 className="serif">Fund a real test.</h2>
           <p>
-            We&apos;re not asking anyone to fund an app and hope. We&apos;re asking
-            to fund a <b>measurement-first pilot in one town</b> —{" "}
-            {town.town.name}, {town.town.state} — with stop-criteria set in
-            advance. A small, fast proof this year. A larger ask only if the
-            numbers are real.
+            We&apos;re asking supporters to fund <b>a pilot in one town</b>,{" "}
+            {town.town.name}, {town.town.state}, that measures its results
+            honestly and sets the conditions for stopping in advance. A small,
+            fast test this year. A larger ask only if the numbers hold up.
           </p>
           <p>
-            It&apos;s a bet we can honor regardless of how the pilot turns out —
-            because what we&apos;re proving is whether a community will actually
-            use a thing like this. That answer is worth having either way.
+            Whatever the pilot shows, the answer is worth having: will a
+            community actually use a service like this?
           </p>
           <div className={styles.ctarow}>
             <Link className="btn light" href="/about">
@@ -174,7 +172,7 @@ export default function MissionPage() {
 
         <section className={styles.closing}>
           <p className={`${styles.closingQ} serif`}>
-            Anyone can support it. <b>No one can control it.</b>
+            Anyone can support it. <b>Everyone sees the same record.</b>
           </p>
           <div className={`${styles.ctarow} ${styles.center}`}>
             <Link className="btn primary" href="/app">
