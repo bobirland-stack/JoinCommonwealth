@@ -1,0 +1,502 @@
+{
+  "town": {
+    "id": "clawson-mi",
+    "name": "Clawson",
+    "state": "Michigan",
+    "stateAbbr": "MI",
+    "county": "Oakland County",
+    "population": 11389,
+    "areaSqMi": 2.2,
+    "tagline": "The Little City with a Big Heart",
+    "hall": {
+      "address": "425 N. Main St., Clawson, MI 48017",
+      "phone": "(248) 435-4500",
+      "hours": "Mon–Thurs 7:30 AM – 5:30 PM (closed Fridays)"
+    },
+    "integrations": {
+      "agendas": "Granicus",
+      "web": "Revize",
+      "videoBase": "https://clawson.granicus.com"
+    },
+    "water": {
+      "pwsid": "MI0001440",
+      "provider": "City of Clawson (Detroit/GLWA source)"
+    },
+    "notAffiliated": true
+  },
+  "bodies": [
+    {
+      "id": "council",
+      "name": "City Council",
+      "kind": "legislative",
+      "seats": 7,
+      "cadence": "1st & 3rd Tuesday, 7:30 PM",
+      "location": "City Hall, 425 N. Main St.",
+      "role": "Final authority on ordinances, budget, and rezonings.",
+      "topic": "council"
+    },
+    {
+      "id": "planning",
+      "name": "Planning Commission",
+      "kind": "advisory",
+      "seats": 9,
+      "cadence": "2nd & 4th Tuesday, 7:30 PM",
+      "location": "Municipal Building",
+      "role": "Holds hearings and recommends land-use decisions to Council.",
+      "topic": "planning"
+    },
+    {
+      "id": "zba",
+      "name": "Zoning Board of Appeals",
+      "kind": "quasi-judicial",
+      "seats": 5,
+      "cadence": "As needed",
+      "location": "Municipal Building",
+      "role": "Decides variances and appeals of zoning decisions.",
+      "topic": "zoning"
+    }
+  ],
+  "officials": [
+    {
+      "id": "moffitt",
+      "name": "Susan Moffitt",
+      "role": "Mayor",
+      "body": "council",
+      "note": "Elected mayor Nov 4, 2025 (previously Mayor Pro Tem).",
+      "term": "2-year term",
+      "source": {
+        "label": "Oakland County unofficial results, via C&G Newspapers",
+        "date": "2025-11-04",
+        "real": true
+      }
+    },
+    {
+      "id": "peltonen",
+      "name": "Meredith Peltonen",
+      "role": "Council member",
+      "body": "council",
+      "note": "Top vote-getter, Nov 2025.",
+      "term": "4-year term",
+      "source": {
+        "label": "C&G Newspapers election results",
+        "date": "2025-11-04",
+        "real": true
+      }
+    },
+    {
+      "id": "slowinski",
+      "name": "Laura Slowinski",
+      "role": "Council member",
+      "body": "council",
+      "term": "4-year term",
+      "source": {
+        "label": "C&G Newspapers election results",
+        "date": "2025-11-04",
+        "real": true
+      }
+    },
+    {
+      "id": "orourke",
+      "name": "Aidan O'Rourke",
+      "role": "Council member",
+      "body": "council",
+      "note": "Won partial term ending Nov 15, 2027.",
+      "term": "partial term",
+      "source": {
+        "label": "C&G Newspapers election results",
+        "date": "2025-11-04",
+        "real": true
+      }
+    },
+    {
+      "id": "tinlin",
+      "name": "Scott Tinlin",
+      "role": "Council member",
+      "body": "council",
+      "note": "Won a 2-year term; served on Council 2022–2023.",
+      "term": "2-year term",
+      "source": {
+        "label": "C&G Newspapers election results",
+        "date": "2025-11-04",
+        "real": true
+      }
+    },
+    {
+      "id": "clerk",
+      "name": "G. Machele Kukuk, MMC",
+      "role": "City Clerk",
+      "body": "council",
+      "note": "Appointed clerk; FOIA coordinator.",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "manager",
+      "name": "Joseph Rheker III",
+      "role": "City Manager",
+      "body": "council",
+      "note": "City Manager since 2022.",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    }
+  ],
+  "threads": [
+    {
+      "id": "t-340main",
+      "title": "340 N. Main Street — rezoning",
+      "topic": "zoning",
+      "summary": "A former church on a narrow ~1.5-acre lot, proposed for rezoning from Office (O-1) and Single-Family (R-1/R-2) to Core Residential (CR) to allow townhome-style units. A long back-and-forth between the Planning Commission and City Council.",
+      "parcels": [
+        "20-34-352-016",
+        "20-34-352-017"
+      ],
+      "status": "Resubmitted — back before the Planning Commission",
+      "timeline": [
+        {
+          "date": "2025-08-26",
+          "body": "planning",
+          "event": "Planning Commission recommends rezoning 4–3. (A 5-vote threshold is needed to enact at the commission level, so it advances to Council as a recommendation.)",
+          "source": {
+            "label": "CitizenPortal.ai meeting summary",
+            "date": "2025-08-27",
+            "real": true
+          }
+        },
+        {
+          "date": "2025-09-02",
+          "body": "council",
+          "event": "Council sends the request back to the Planning Commission after residents raise building-height and privacy concerns.",
+          "source": {
+            "label": "CitizenPortal.ai meeting summary",
+            "date": "2025-09-03",
+            "real": true
+          }
+        },
+        {
+          "date": "2025-10-14",
+          "body": "planning",
+          "videoTimestamp": "0:58:12",
+          "event": "On the revised application, the Planning Commission approves the rezoning 6–1; staff finds it consistent with the adopted master plan and future land use map.",
+          "source": {
+            "label": "CitizenPortal.ai meeting summary",
+            "date": "2025-10-15",
+            "real": true
+          }
+        },
+        {
+          "date": "2025-10-21",
+          "body": "council",
+          "videoTimestamp": "1:42:36",
+          "event": "Council DENIES the rezoning 3–2. Roll call — Millan: no; Scott: no; Shepherd: no; Moffitt: yes; Anderson: yes. Residents and members raised access, scale, and enforcement concerns; some floated buying the site for green space.",
+          "vote": {
+            "result": "Denied 3–2",
+            "roll": [
+              {
+                "name": "Mayor Paula Millan",
+                "vote": "no"
+              },
+              {
+                "name": "Councilor Scott",
+                "vote": "no"
+              },
+              {
+                "name": "Councilor Shepherd",
+                "vote": "no"
+              },
+              {
+                "name": "Mayor Pro Tem Moffitt",
+                "vote": "yes"
+              },
+              {
+                "name": "Councilor Anderson",
+                "vote": "yes"
+              }
+            ]
+          },
+          "source": {
+            "label": "CitizenPortal.ai meeting summary",
+            "date": "2025-10-22",
+            "real": true
+          }
+        },
+        {
+          "date": "2026-02-24",
+          "body": "planning",
+          "event": "The applicant resubmits; the request is scheduled to go before the Planning Commission again.",
+          "source": {
+            "label": "City of Clawson — Development in Clawson",
+            "date": "2026-02-01",
+            "real": true
+          }
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "id": "PC-2026-02-24",
+      "body": "planning",
+      "title": "Planning Commission — Regular Meeting",
+      "date": "2026-02-24",
+      "time": "7:30 PM",
+      "status": "upcoming",
+      "items": [
+        {
+          "id": "i1",
+          "n": 1,
+          "title": "340 N. Main Street — rezoning (resubmitted)",
+          "type": "hearing",
+          "threadId": "t-340main",
+          "summary": "Public hearing on the resubmitted request to rezone the former church site to Core Residential (CR).",
+          "source": {
+            "label": "City of Clawson — Development in Clawson",
+            "date": "2026-02-01",
+            "real": true
+          }
+        },
+        {
+          "id": "i2",
+          "n": 2,
+          "title": "Zoning Ordinance text amendment",
+          "type": "hearing",
+          "summary": "Public hearing on a proposed amendment to the zoning ordinance text.",
+          "source": {
+            "label": "City of Clawson — Development in Clawson",
+            "date": "2026-02-01",
+            "real": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "CC-2026-upcoming",
+      "body": "council",
+      "title": "City Council — Regular Meeting",
+      "date": "2026-07-07",
+      "time": "7:30 PM",
+      "status": "upcoming",
+      "items": [
+        {
+          "id": "i1",
+          "n": 1,
+          "title": "Consent agenda & minutes",
+          "type": "action",
+          "summary": "Approval of prior minutes and routine consent items.",
+          "source": {
+            "label": "City of Clawson",
+            "date": "2026-07-01",
+            "real": false
+          }
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "r-renshaw",
+      "topic": "council",
+      "tag": "City property",
+      "title": "121 Renshaw — the city's senior apartments",
+      "body": "The City of Clawson owns and operates a 15-unit senior apartment complex at 121 Renshaw (fourteen 1-bedroom units and one efficiency; residents 60+). Decisions about it — leases, budget, any sale or change — run through the city.",
+      "source": {
+        "label": "City of Clawson — Renshaw Senior Apartments",
+        "date": "2025-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "r-water",
+      "topic": "water",
+      "tag": "Your water",
+      "title": "Your water quality report (2024)",
+      "body": "Clawson publishes an annual water quality report (CCR) for public water supply MI0001440. It lists what was tested and what was found — the plain-language version, linked to the official report.",
+      "link": "commonwealth-water.html",
+      "source": {
+        "label": "City of Clawson — Annual Water Quality Report",
+        "date": "2025-06-01",
+        "real": true
+      }
+    },
+    {
+      "id": "r-zba-renshaw",
+      "topic": "zoning",
+      "tag": "ZBA",
+      "title": "210 E. 14 Mile — Renshaw's Lounge rear-setback variance",
+      "body": "A variance request for a rear setback at 210 E. 14 Mile Road (Renshaw's Lounge) went before the Zoning Board of Appeals in October 2025.",
+      "source": {
+        "label": "City of Clawson — Development in Clawson",
+        "date": "2025-10-16",
+        "real": true
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "date": "2026-02-24",
+      "time": "7:30 PM",
+      "body": "planning",
+      "title": "Planning Commission — Regular Meeting",
+      "location": "Municipal Building",
+      "note": "Public hearing: 340 N. Main rezoning (resubmitted).",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-02-01",
+        "real": true
+      }
+    },
+    {
+      "id": "e2",
+      "date": "2026-07-07",
+      "time": "7:30 PM",
+      "body": "council",
+      "title": "City Council — Regular Meeting",
+      "location": "City Hall, 425 N. Main St.",
+      "note": "1st Tuesday. Public comment open to residents.",
+      "source": {
+        "label": "City of Clawson meeting schedule",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "e3",
+      "date": "2026-07-21",
+      "time": "7:30 PM",
+      "body": "council",
+      "title": "City Council — Regular Meeting",
+      "location": "City Hall, 425 N. Main St.",
+      "note": "3rd Tuesday.",
+      "source": {
+        "label": "City of Clawson meeting schedule",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "e4",
+      "date": "2026-07-14",
+      "time": "7:30 PM",
+      "body": "planning",
+      "title": "Planning Commission — Regular Meeting",
+      "location": "Municipal Building",
+      "note": "2nd Tuesday.",
+      "source": {
+        "label": "City of Clawson meeting schedule",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "e5",
+      "date": "2026-07-04",
+      "time": "All day",
+      "body": null,
+      "title": "Clawson 4th of July Celebration",
+      "location": "Downtown Clawson",
+      "note": "One of the city's signature annual events.",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-06-01",
+        "real": true
+      }
+    }
+  ],
+  "topics": [
+    {
+      "id": "council",
+      "label": "City Council"
+    },
+    {
+      "id": "planning",
+      "label": "Planning Commission"
+    },
+    {
+      "id": "zoning",
+      "label": "Zoning & development"
+    },
+    {
+      "id": "budget",
+      "label": "Budget & taxes"
+    },
+    {
+      "id": "parks",
+      "label": "Parks & events"
+    },
+    {
+      "id": "water",
+      "label": "Your water"
+    },
+    {
+      "id": "schools",
+      "label": "Schools"
+    },
+    {
+      "id": "ballot",
+      "label": "Elections & ballot"
+    }
+  ],
+  "digest": [
+    {
+      "id": "d1",
+      "topic": "zoning",
+      "threadId": "t-340main",
+      "tag": "From the record",
+      "title": "340 N. Main rezoning is back before the Planning Commission",
+      "note": "Recommended, denied by Council 3–2, and now resubmitted. Follow the whole thread in order.",
+      "date": "2026-02-01",
+      "source": {
+        "label": "City of Clawson + CitizenPortal.ai summaries",
+        "date": "2026-02-01",
+        "real": true
+      }
+    },
+    {
+      "id": "d2",
+      "topic": "council",
+      "recordId": "r-renshaw",
+      "tag": "From the record",
+      "title": "121 Renshaw: the city's senior apartments",
+      "note": "What the city owns and operates — and where decisions about it are made.",
+      "date": "2025-11-01",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2025-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "d3",
+      "topic": "water",
+      "recordId": "r-water",
+      "tag": "From the record",
+      "title": "Your 2024 water quality report, in plain language",
+      "note": "What was tested in Clawson's water (MI0001440), and what it means.",
+      "date": "2025-06-01",
+      "source": {
+        "label": "City of Clawson CCR",
+        "date": "2025-06-01",
+        "real": true
+      }
+    },
+    {
+      "id": "d4",
+      "topic": "parks",
+      "tag": "Happening",
+      "title": "Clawson 4th of July celebration",
+      "note": "The city's signature summer event returns downtown.",
+      "date": "2026-06-15",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-06-01",
+        "real": true
+      }
+    }
+  ]
+}

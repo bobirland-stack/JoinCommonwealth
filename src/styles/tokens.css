@@ -1,0 +1,114 @@
+/* ============================================================================
+   tokens.css — the Commonwealth design system (Tech Reference §3)
+   ----------------------------------------------------------------------------
+   Lifted verbatim from the validated reference surfaces. Plain CSS custom
+   properties, no Tailwind build step (Build Plan §1). Import this globally.
+
+   Fonts (Google Fonts):
+     Public Sans      — body / UI
+     Spline Sans Mono — labels, meta, IDs, dates, source lines
+     Newsreader       — page headlines (serif)
+   ========================================================================== */
+
+:root {
+  /* Core palette */
+  --pine:   #15233A;
+  --moss:   #125049;
+  --paper:  #FAF7F0;
+  --shell:  #F2F0EA;
+  --card:   #FFFFFF;
+  --ink:    #1A2327;
+  --mut:    #5B6560;
+  --faint:  #6E7872;
+  --honey:  #A8762A;
+  --rust:   #92310F;
+  --sage:   #A7C0A9;
+  --sky:    #1F5A8A;
+
+  /* Lines */
+  --line:   #DDD6C8;
+  --line2:  #ECE9E1;
+
+  /* Tints (backgrounds) + matched borders */
+  --pinetint:  #E7EDE6;
+  --mosstint:  #E4EEEA;
+  --mossline:  #C9DED7;
+  --honeytint: #FBF1DE;
+  --honeyline: #E7D3A8;
+  --skytint:   #E4EDF4;
+  --skyline:   #BAD1E4;
+  --rusttint:  #F6E2DA;
+
+  /* Type stacks */
+  --font-ui:    "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono:  "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-head:  "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+/* --- base --------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  color: var(--pine);
+  line-height: 1.2;
+}
+
+/* meta / labels / IDs / dates / source lines */
+.mono,
+.meta,
+.source-line {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--mut);
+}
+
+a {
+  color: var(--sky);
+  text-underline-offset: 2px;
+}
+
+/* --- accessibility floors (WCAG 2.2 AA — Build Plan §1b) ---------------- */
+
+:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+/* target size ≥24px min (we build 44–48px); help stays consistently placed */
+button,
+[role="tab"],
+.tap {
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
