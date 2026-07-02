@@ -1,19 +1,18 @@
-import BottomBar from "./BottomBar";
+import AppShell from "@/src/components/AppShell";
+// The resident-app stylesheet (Phase 3). Imported here so it applies to every
+// /app route and never leaks into the marketing pages (which load site.css).
+import "@/src/styles/app.css";
 
 /**
- * Resident-app shell (Phase 1). A five-tab bottom bar over a scrollable content
- * area. The tabs' surfaces are placeholders until later phases.
+ * Resident-app shell. Every tab is a route rendered as {children} inside the
+ * shared shell (top bar, footnote, How-this-works sheet, toast, bottom tab bar).
+ * The shell also provides the toast / source-panel / how-sheet behaviors the
+ * tab surfaces depend on. See src/components/AppShell.tsx.
  */
 export default function AppShellLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div style={{ minHeight: "100dvh", background: "var(--shell)" }}>
-      {/* Content sits above the fixed bottom bar; reserve room for it. */}
-      <div style={{ paddingBottom: "72px" }}>{children}</div>
-      <BottomBar />
-    </div>
-  );
+  return <AppShell>{children}</AppShell>;
 }
