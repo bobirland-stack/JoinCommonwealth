@@ -32,6 +32,7 @@ header.nav { position: sticky; top: 0; z-index: 40; background: rgba(250, 247, 2
 .navlinks { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .navlinks a { padding: 8px 13px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--mut); }
 .navlinks a:hover { background: var(--shell); color: var(--pine); }
+.navlinks a.active { color: var(--pine); font-weight: 600; }
 .navlinks a.cta { background: var(--moss); color: #fff; font-weight: 600; margin-left: 6px; }
 .navlinks a.cta:hover { background: #0e423c; color: #fff; }
 .menubtn { display: none; margin-left: auto; background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
@@ -57,6 +58,8 @@ header.nav { position: sticky; top: 0; z-index: 40; background: rgba(250, 247, 2
 .btn.primary:hover { background: #0e423c; }
 .btn.ghost { background: var(--card); border-color: var(--line); color: var(--pine); }
 .btn.ghost:hover { border-color: var(--moss); color: var(--moss); }
+.btn.light { background: #fff; color: var(--pine); }
+.btn.light:hover { background: var(--shell); }
 .trustline { margin-top: 22px; font-size: 13.5px; color: var(--faint); display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
 .trustline svg { width: 15px; height: 15px; stroke: var(--moss); fill: none; stroke-width: 2; flex: none; }
 
