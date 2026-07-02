@@ -1,0 +1,295 @@
+/* ============================================================================
+   get-involved.module.css — page-specific styles for /get-involved.
+   ----------------------------------------------------------------------------
+   Scoped as a CSS module (matching mission.module.css / about.module.css) for
+   the same reason: the Get involved reference defines a narrow `.wrap` (880px)
+   and a set of card classes — `.ways`/`.way`, `.followband`, `.chips`/`.chip`,
+   `.note` — whose short names would otherwise collide with (or be shadowed by)
+   the global site.css. Scoping them keeps that collision impossible.
+
+   Only the classes NOT already covered by the shared system live here. Shared
+   bits (.serif, .eyebrow, .sec-eyebrow, .sec-title, .btn variants) come from
+   the global site.css; the design tokens come from the global tokens.css.
+   ========================================================================== */
+
+/* Get involved content column — the reference's narrow 880px `.wrap`. */
+.pageWrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Reference sections are tighter (26px) than the shared 56px `section`. */
+.section {
+  padding: 26px 0;
+}
+
+/* ---------- page header ---------- */
+.phead {
+  padding: 60px 0 8px;
+}
+.phead h1 {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 5.6vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+  max-width: 16ch;
+}
+.lede {
+  font-size: clamp(18px, 2.3vw, 22px);
+  color: var(--mut);
+  margin-top: 22px;
+  max-width: 54ch;
+  line-height: 1.55;
+}
+.lede b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- three "ways to take part" cards ---------- */
+.ways {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
+}
+.way {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px 26px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+@media (max-width: 640px) {
+  .way {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px;
+  }
+}
+.wn {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--mosstint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.wn svg {
+  width: 23px;
+  height: 23px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 1.8;
+}
+.wc {
+  flex: 1;
+  min-width: 0;
+}
+.wtag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.wc h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--pine);
+  margin-bottom: 9px;
+}
+.wc p {
+  font-size: 15px;
+  color: var(--mut);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.wc p b {
+  color: var(--pine);
+  font-weight: 600;
+}
+.detail {
+  background: var(--paper);
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  padding: 13px 15px;
+  margin-top: 13px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.dl {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+  padding: 3px 0;
+}
+.k {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--faint);
+  font-weight: 600;
+  min-width: 74px;
+  flex: none;
+}
+.v {
+  color: var(--ink);
+}
+.wcta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--moss);
+  margin-top: 14px;
+}
+.wcta svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ---------- amber "confirm the details" note ---------- */
+.note {
+  background: var(--honeytint);
+  border: 1px solid var(--honeyline);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  color: #6b4e16;
+  line-height: 1.6;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.note svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--honey);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.note b {
+  color: #43340f;
+}
+
+/* ---------- dark "Stay in the loop" follow-band ---------- */
+.followband {
+  background: var(--pine);
+  color: #dbe3ec;
+  border-radius: 20px;
+  padding: 40px 38px;
+  margin: 26px 0;
+}
+/* the band recolors the shared moss eyebrow to sage */
+.followband :global(.sec-eyebrow) {
+  color: var(--sage);
+}
+.followband h2 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.4vw, 32px);
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  max-width: 22ch;
+}
+.followband p {
+  font-size: 16px;
+  color: #aebccb;
+  line-height: 1.65;
+  max-width: 56ch;
+  margin-bottom: 8px;
+}
+.followband p b {
+  color: #fff;
+  font-weight: 600;
+}
+.fine {
+  font-size: 13.5px;
+  color: #8fa0b2;
+  margin-bottom: 20px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 18px 0 22px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  color: #dbe3ec;
+  font-weight: 500;
+}
+.chip svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--sage);
+  fill: none;
+  stroke-width: 2;
+}
+/* the band's ghost button rides on top of the shared `.btn.ghost` */
+.btnDark {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.btnDark:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+/* ---------- CTA rows ---------- */
+.ctarow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.ctarow.center {
+  justify-content: center;
+}
+
+/* ---------- closing "Support the record itself" ---------- */
+.closing {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+.closing :global(.sec-eyebrow) {
+  text-align: center;
+}
+.closing h2 {
+  max-width: 24ch;
+  margin: 0 auto 8px;
+}
+.closing .csub {
+  font-size: 16px;
+  color: var(--mut);
+  max-width: 50ch;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
