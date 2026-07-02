@@ -1,0 +1,271 @@
+/* ============================================================================
+   about.module.css — page-specific styles for /about.
+   ----------------------------------------------------------------------------
+   Scoped as a CSS module (matching the precedent set by mission.module.css)
+   for the same concrete reason: the About reference defines a narrow `.wrap`
+   (820px) plus card classes — `.steps`/`.stepcard`, `.aud`/`.audcard` — whose
+   names already exist in the global site.css with the home page's (slightly
+   different) values. Scoping these classes keeps that collision impossible.
+
+   Only the classes NOT already covered by the shared system live here — the
+   two content columns, the page header, prose, the step/audience card grids,
+   the dark "Independence" band with its indep-cards, and the CTA rows. Shared
+   bits (.serif, .eyebrow, .btn variants) come from the global site.css; the
+   design tokens come from the global tokens.css.
+   ========================================================================== */
+
+/* About content columns — the reference's narrow 820px `.wrap` and the wide
+   1080px `.wrap-wide` used by the Independence band. */
+.pageWrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.pageWrapWide {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Reference sections are tighter (34px) than the shared 56px `section`. */
+.section {
+  padding: 34px 0;
+}
+
+/* ---------- page header ---------- */
+.phead {
+  padding: 60px 0 8px;
+}
+.phead h1 {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 5.6vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+  max-width: 16ch;
+}
+.lede {
+  font-size: clamp(18px, 2.3vw, 22px);
+  color: var(--mut);
+  margin-top: 22px;
+  max-width: 56ch;
+  line-height: 1.55;
+}
+.lede b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- prose ---------- */
+.prose p {
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  max-width: 64ch;
+}
+.prose h2 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.4vw, 32px);
+  color: var(--pine);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 14px 0 18px;
+  line-height: 1.15;
+}
+.prose b {
+  font-weight: 600;
+  color: var(--pine);
+}
+
+/* ---------- step cards ("How your town stays close") ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 6px 0;
+}
+@media (max-width: 760px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+.stepcard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 22px;
+}
+.stepcard .sn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--moss);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.stepcard .si {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--mosstint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.stepcard .si svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 1.8;
+}
+.stepcard h3 {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--pine);
+  margin-bottom: 8px;
+}
+.stepcard p {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.6;
+}
+
+/* ---------- audience cards ("A whole town") ---------- */
+.aud {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+@media (max-width: 680px) {
+  .aud {
+    grid-template-columns: 1fr;
+  }
+}
+.audcard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+.audcard .ai {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--pinetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.audcard .ai svg {
+  width: 19px;
+  height: 19px;
+  stroke: var(--pine);
+  fill: none;
+  stroke-width: 1.8;
+}
+.audcard h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pine);
+  margin-bottom: 5px;
+}
+.audcard p {
+  font-size: 14px;
+  color: var(--mut);
+  line-height: 1.55;
+}
+
+/* ---------- dark "Independence" band ---------- */
+.band {
+  background: var(--pine);
+  color: #dbe3ec;
+  border-radius: 20px;
+  padding: 44px 40px;
+  margin: 20px 0;
+}
+/* the band recolors the shared moss eyebrow to sage */
+.band :global(.eyebrow) {
+  color: var(--sage);
+}
+.band h2 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.4vw, 34px);
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  max-width: 24ch;
+}
+.bsub {
+  font-size: 16px;
+  color: #aebccb;
+  line-height: 1.6;
+  max-width: 58ch;
+  margin-bottom: 26px;
+}
+
+/* independence cards inside the band */
+.indep {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 680px) {
+  .indep {
+    grid-template-columns: 1fr;
+  }
+}
+.icard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+}
+.icard h4 {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.icard h4 svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--sage);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+}
+.icard p {
+  font-size: 13.5px;
+  color: #aebccb;
+  line-height: 1.6;
+}
+
+/* ---------- CTA rows ---------- */
+.ctarow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.ctarow.center {
+  justify-content: center;
+}
+
+/* closing centered CTA section */
+.closing {
+  text-align: center;
+  padding: 30px 0 20px;
+}
