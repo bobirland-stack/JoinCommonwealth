@@ -24,6 +24,7 @@
   --rust:   #92310F;
   --sage:   #A7C0A9;
   --sky:    #1F5A8A;
+  --slate:  #516175;
 
   /* Lines */
   --line:   #DDD6C8;
@@ -38,6 +39,9 @@
   --skytint:   #E4EDF4;
   --skyline:   #BAD1E4;
   --rusttint:  #F6E2DA;
+  --rustline:  #E3C3B6;
+  --slatetint: #E9ECF0;
+  --slateline: #CBD3DD;
 
   /* Type stacks */
   --font-ui:    "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
