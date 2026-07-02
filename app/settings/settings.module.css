@@ -1,0 +1,346 @@
+/* ============================================================================
+   settings.module.css — page-specific styles for /settings.
+   ----------------------------------------------------------------------------
+   The Settings reference introduces a set of short-named component classes
+   (.wrap at a narrower 760px, .phead, .card, .row, .toggle, .fpill, .emailrow,
+   .actions, .privacy-note, .toast, …) that would collide with the global
+   site.css `.wrap`/`.card`/`.btn` if left unscoped. Scoping them as a CSS module
+   (matching the earlier converted pages) keeps that collision impossible.
+
+   Two rules that MUST be global — `body.bigtext` and `body.contrast` — do not
+   live here: a CSS module cannot target the document body, and the classes are
+   applied globally so they persist across pages. They live in tokens.css.
+
+   Shared bits (.serif, .eyebrow) come from the global site.css / tokens.css.
+   Hyphenated reference class names (.card-head, .privacy-note, .fp-ic) are
+   rendered in camelCase (.cardHead, .privacyNote, .fpIc) so they read cleanly
+   through `styles.*`.
+   ========================================================================== */
+
+/* ---------- narrower page container ---------- */
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.phead {
+  padding: 48px 0 8px;
+}
+.phead h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+}
+.phead .lede {
+  font-size: 17px;
+  color: var(--mut);
+  margin-top: 16px;
+  max-width: 52ch;
+  line-height: 1.55;
+}
+.phead .lede b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 8px 8px 4px;
+  margin-top: 20px;
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+}
+.cardHead .ci {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--pinetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.cardHead .ci svg {
+  width: 19px;
+  height: 19px;
+  stroke: var(--pine);
+  fill: none;
+  stroke-width: 1.8;
+}
+.cardHead h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--pine);
+}
+.cardHead p {
+  font-size: 12.5px;
+  color: var(--mut);
+  margin-top: 1px;
+}
+
+/* ---------- generic row ---------- */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line2);
+}
+.row .rc {
+  flex: 1;
+  min-width: 0;
+}
+.row .rt {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.row .rs {
+  font-size: 12.5px;
+  color: var(--mut);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+/* ---------- toggle switch ---------- */
+.toggle {
+  width: 44px;
+  height: 26px;
+  min-height: 26px;
+  border-radius: 20px;
+  background: #cfc9ba;
+  border: none;
+  position: relative;
+  flex: none;
+  padding: 0;
+  transition: background 0.15s;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.16s;
+}
+.toggle[aria-pressed="true"] {
+  background: var(--moss);
+}
+.toggle[aria-pressed="true"]::after {
+  transform: translateX(18px);
+}
+
+/* ---------- follow pills ---------- */
+.follows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line2);
+}
+.fpill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--mut);
+  min-height: 40px;
+}
+.fpill[aria-pressed="true"] {
+  background: var(--mosstint);
+  border-color: var(--mossline);
+  color: var(--moss);
+  font-weight: 600;
+}
+.fpIc {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.fpIc svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke-width: 2.2;
+  stroke: currentColor;
+}
+.fpill[aria-pressed="false"] .fpIc svg {
+  stroke: var(--faint);
+}
+
+/* ---------- email field ---------- */
+.emailrow {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line2);
+}
+.emailrow label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mut);
+  display: block;
+  margin-bottom: 7px;
+}
+.emailin {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.emailin input {
+  flex: 1;
+  min-width: 200px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px 13px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.emailin input:focus {
+  outline: none;
+  border-color: var(--moss);
+  background: #fff;
+}
+.savebtn {
+  background: var(--moss);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+}
+.savebtn:hover {
+  background: #0e423c;
+}
+.emailnote {
+  font-size: 12px;
+  color: var(--faint);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- privacy actions ---------- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line2);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--pine);
+  min-height: 44px;
+}
+.btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+.btn:hover {
+  border-color: var(--moss);
+  color: var(--moss);
+}
+.btn.danger {
+  color: var(--rust);
+}
+.btn.danger:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  background: var(--rusttint);
+}
+
+.privacyNote {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line2);
+  font-size: 13px;
+  color: var(--mut);
+  line-height: 1.6;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.privacyNote svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.privacyNote a {
+  color: var(--moss);
+  font-weight: 600;
+}
+
+/* ---------- toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--pine);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s, transform 0.22s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.toast.on {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--sage);
+  fill: none;
+  stroke-width: 2.4;
+}
+
+.spacer {
+  height: 36px;
+}
