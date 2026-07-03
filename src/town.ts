@@ -37,6 +37,7 @@ const REQUIRED_KEYS: (keyof Town)[] = [
   "threads",
   "meetings",
   "records",
+  "infrastructureProjects",
   "events",
   "topics",
   "digest",
@@ -64,6 +65,7 @@ function validateTown(t: Town): Town {
   const sourced: { name: string; rows: { id: string; source?: unknown }[] }[] = [
     { name: "officials", rows: t.officials },
     { name: "records", rows: t.records },
+    { name: "infrastructureProjects", rows: t.infrastructureProjects },
     { name: "events", rows: t.events },
     { name: "digest", rows: t.digest },
     { name: "institutions", rows: t.institutions },

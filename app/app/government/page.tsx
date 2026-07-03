@@ -7,8 +7,9 @@
    one per person). Everything reads from the data seam (src/town.ts).
    ========================================================================== */
 
-import type { Source } from "@/data/towns/schema";
+import type { ProjectStatus, Source } from "@/data/towns/schema";
 import { town } from "@/src/town";
+import RecordCard from "@/src/components/RecordCard";
 import SourceMarker from "@/src/components/SourceMarker";
 import FollowButton from "@/src/components/FollowButton";
 import { IconArrow, IconBell, IconClock, IconGavel, IconPin, IconRadar } from "@/src/components/icons";
@@ -23,9 +24,17 @@ function initials(name: string): string {
     .toUpperCase();
 }
 
+/** Plain-language label for a project's status. */
+const STATUS_LABEL: Record<ProjectStatus, string> = {
+  planned: "Planned",
+  "in-progress": "In progress",
+  complete: "Complete",
+};
+
 export default function GovernmentPage() {
   const { name } = town.town;
   const radar = town.records.find((r) => r.id === "r-renshaw");
+  const projects = town.infrastructureProjects;
 
   return (
     <main className="view">
@@ -52,6 +61,31 @@ export default function GovernmentPage() {
             />
           </div>
         </div>
+      )}
+
+      {/* road and water work — current projects, same card language as records */}
+      {projects.length > 0 && (
+        <>
+          <div className="section-h">
+            <h2>Road and water work</h2>
+            <span className="ln" />
+          </div>
+          <div className="sub" style={{ marginTop: -6 }}>
+            Current projects that might affect your street or your water. Follow
+            this topic to hear when something new comes up.
+          </div>
+          {projects.map((p) => (
+            <RecordCard
+              key={p.id}
+              source={p.source}
+              tag={STATUS_LABEL[p.status]}
+              title={p.title}
+              body={p.summary}
+              topic="infrastructure"
+              meta={[p.location, ...(p.timeline ? [p.timeline] : [])]}
+            />
+          ))}
+        </>
       )}
 
       {/* bodies + their officials */}
