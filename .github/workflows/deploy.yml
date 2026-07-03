@@ -52,6 +52,16 @@ jobs:
           # Variables. Empty until the function is deployed; the flag flow stays
           # honest about that.
           NEXT_PUBLIC_FLAG_ENDPOINT: ${{ vars.FLAG_ENDPOINT }}
+          # Supabase connection for the curation workspace (Stage A, Task 1).
+          # Set both as repository variables under Settings -> Secrets and
+          # variables -> Actions -> Variables. The URL is the project URL and
+          # the key is the anon (public) key from Project Settings -> API in
+          # the Supabase dashboard. Both are empty until set; the workspace
+          # reports itself as not connected rather than crashing. The anon key
+          # is public by design: row-level security requires a signed-in
+          # collaborator for every read and write.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
 
       - name: Add .nojekyll
         run: touch out/.nojekyll
