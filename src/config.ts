@@ -27,3 +27,21 @@ export const FLAG_ENDPOINT = process.env.NEXT_PUBLIC_FLAG_ENDPOINT ?? "";
    ---------------------------------------------------------------------------- */
 export const SUBMISSION_ENDPOINT =
   process.env.NEXT_PUBLIC_SUBMISSION_ENDPOINT ?? "";
+
+/* ----------------------------------------------------------------------------
+   PUBLISH_ENDPOINT is the URL of the small serverless function that turns an
+   approved, reviewed meeting into a commit on data/towns/clawson.json and a
+   pull request (Stage A, Task 3). It is the same serverless pattern as the flag
+   and submission functions, with one difference: committing a file and opening
+   a pull request needs a GitHub token with Contents and Pull requests access,
+   not just Issues. That token lives only in the worker's dashboard, never in
+   this repo. The URL is set at build time from NEXT_PUBLIC_PUBLISH_ENDPOINT and
+   inlined into the static build.
+
+   It is empty until that function is deployed and the variable is set. Unlike a
+   submission, a publish cannot fall back to "saved anyway": the whole point is
+   the commit. So when this is empty, the publish screen says plainly that it
+   cannot publish yet, rather than marking a meeting published with no record
+   behind it.
+   ---------------------------------------------------------------------------- */
+export const PUBLISH_ENDPOINT = process.env.NEXT_PUBLIC_PUBLISH_ENDPOINT ?? "";

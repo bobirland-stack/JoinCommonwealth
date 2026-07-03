@@ -23,6 +23,11 @@ export interface Source {
   date: string;       // ISO date the fact was captured/checked (YYYY-MM-DD)
   real: boolean;      // true = verified; false = sample (label in UI)
   drafted?: boolean;  // true = software-drafted under fixed rules
+  selfReviewed?: boolean; // true = reviewed by the same person who drafted it;
+                          // the source panel shows the honest self-review line
+                          // instead of "a person checked this against the
+                          // source". Set at publish time from a draft whose
+                          // review_type is "self".
 }
 
 /* ----------------------------------------------------------------------------

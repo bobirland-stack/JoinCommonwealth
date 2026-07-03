@@ -184,6 +184,7 @@ function WorkspaceNav() {
   const links = [
     { href: "/workspace", label: "Coverage ledger" },
     { href: "/workspace/submit", label: "Submit" },
+    { href: "/workspace/verify-log", label: "Verification log" },
   ];
   return (
     <nav className={styles.nav} aria-label="Workspace">

@@ -7,8 +7,11 @@
    "From the record" chip (or the honey "Happening" variant); tapping it opens
    the "Where this comes from" panel built from that source: the Source label,
    the Dated row, the "Drafted" row when the item was software-drafted, and the
-   Checked row. From the panel a resident can view the original, open How this
-   works, or flag a specific point that looks wrong.
+   Checked row. When a source is `selfReviewed`, the Checked row is replaced by
+   an honest "Reviewed" row: reviewed by the same person who drafted it, with
+   independent review coming as the team grows. From the panel a resident can
+   view the original, open How this works, or flag a specific point that looks
+   wrong.
 
    Coordination lives in the shell (useAppShell): opening one panel closes any
    other, Escape closes, and an outside click closes. aria-expanded on the chip
@@ -88,6 +91,7 @@ export default function SourceMarker({
           label={label}
           date={source.date}
           drafted={!!drafted}
+          selfReviewed={!!source.selfReviewed}
           text={text ?? ""}
           onViewOriginal={() => showToast("Opens the official source")}
           onHow={() => {
@@ -121,6 +125,7 @@ function SourcePanel({
   label,
   date,
   drafted,
+  selfReviewed,
   text,
   onViewOriginal,
   onHow,
@@ -129,6 +134,7 @@ function SourcePanel({
   label: string;
   date: string;
   drafted: boolean;
+  selfReviewed: boolean;
   text: string;
   onViewOriginal: () => void;
   onHow: () => void;
@@ -290,15 +296,25 @@ function SourcePanel({
             </span>
           </div>
         )}
-        <div className="sp-row">
-          <span className="sp-k">Checked</span>
-          <span className="sp-v">
-            <span className="sp-ok">
-              <IconCheck />
-              A person checked this against the source
+        {selfReviewed ? (
+          <div className="sp-row">
+            <span className="sp-k">Reviewed</span>
+            <span className="sp-v">
+              Reviewed by the same person who drafted it. Independent review is
+              coming as the team grows.
             </span>
-          </span>
-        </div>
+          </div>
+        ) : (
+          <div className="sp-row">
+            <span className="sp-k">Checked</span>
+            <span className="sp-v">
+              <span className="sp-ok">
+                <IconCheck />
+                A person checked this against the source
+              </span>
+            </span>
+          </div>
+        )}
       </div>
       <div className="sp-actions">
         <button className="sp-act primary" onClick={onViewOriginal}>
