@@ -374,6 +374,12 @@ export default function TrustPage() {
               credible, because the rule applies to everyone, officials included.
             </span>
           </div>
+          <div className={styles.ctarow}>
+            <Link className="btn ghost" href="/verification-log">
+              See the verification log
+              <Arrow />
+            </Link>
+          </div>
         </section>
 
         {/* #access — Built for everyone to use */}

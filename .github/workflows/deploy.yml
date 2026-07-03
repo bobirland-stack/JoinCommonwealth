@@ -47,6 +47,11 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          # URL of the serverless flag function (Phase 7). Set as a repository
+          # variable under Settings -> Secrets and variables -> Actions ->
+          # Variables. Empty until the function is deployed; the flag flow stays
+          # honest about that.
+          NEXT_PUBLIC_FLAG_ENDPOINT: ${{ vars.FLAG_ENDPOINT }}
 
       - name: Add .nojekyll
         run: touch out/.nojekyll

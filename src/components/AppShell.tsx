@@ -298,6 +298,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
               See full transparency
               <IconArrow />
             </Link>
+            <Link className="g" href="/verification-log" onClick={closeHow}>
+              Verification log
+            </Link>
             <Link className="g" href="/trust" onClick={closeHow}>
               Trust &amp; security
             </Link>
