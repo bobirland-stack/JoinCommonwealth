@@ -22,6 +22,12 @@ export const IconChevronDown = () => svg(<path d="M6 9l6 6 6-6" />);
 export const IconArrow = () => svg(<path d="M5 12h14M13 6l6 6-6 6" />);
 export const IconHome = () => svg(<path d="M3 12l9-9 9 9M5 10v10h14V10" />);
 
+export const IconSearch = () =>
+  svg([
+    <circle key="a" cx="11" cy="11" r="7" />,
+    <path key="b" d="m21 21-4.3-4.3" />,
+  ]);
+
 export const IconMark = () => svg(<path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />);
 
 export const IconDoc = () =>

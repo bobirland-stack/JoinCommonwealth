@@ -31,9 +31,18 @@ import {
   type ReactNode,
 } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { town } from "@/src/town";
 import BottomBar from "@/app/app/BottomBar";
-import { IconArrow, IconCheck, IconHome, IconMark, IconShieldCheck } from "./icons";
+import SearchResults from "./SearchResults";
+import {
+  IconArrow,
+  IconCheck,
+  IconHome,
+  IconMark,
+  IconSearch,
+  IconShieldCheck,
+} from "./icons";
 
 /* --- context -------------------------------------------------------------- */
 
@@ -62,9 +71,34 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const [howOpen, setHowOpen] = useState(false);
   const [openSourceId, setOpenSourceId] = useState<string | null>(null);
 
+  // Search: `rawQuery` is what the resident typed; `query` is the lightly
+  // debounced value the results view actually runs on. A non-empty `query`
+  // swaps the results view in for the active tab, in the same column.
+  const [rawQuery, setRawQuery] = useState("");
+  const [query, setQuery] = useState("");
+  const pathname = usePathname();
+
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pillRef = useRef<HTMLButtonElement | null>(null);
   const sheetRef = useRef<HTMLDivElement | null>(null);
+
+  // Debounce lightly (150ms) so a fast typist doesn't re-search every keystroke.
+  useEffect(() => {
+    const t = setTimeout(() => setQuery(rawQuery.trim()), 150);
+    return () => clearTimeout(t);
+  }, [rawQuery]);
+
+  // Changing tabs (a Link in the bottom bar) clears search and returns to the
+  // tab, mirroring the reference's show() clearing the query on navigation.
+  useEffect(() => {
+    setRawQuery("");
+    setQuery("");
+  }, [pathname]);
+
+  const clearSearch = useCallback(() => {
+    setRawQuery("");
+    setQuery("");
+  }, []);
 
   const showToast = useCallback((msg: string) => {
     setToast(msg);
@@ -146,7 +180,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       value={{ showToast, openHow, openSourceId, setOpenSourceId }}
     >
       <div className="app">
-        {/* top bar — brand + Home. Search ships in Phase 4. */}
+        {/* top bar — brand + Home, then the record search. */}
         <div className="top">
           <div className="tr">
             <span className="mark">
@@ -158,9 +192,25 @@ export default function AppShell({ children }: { children: ReactNode }) {
               Home
             </Link>
           </div>
+          <label className="search">
+            <IconSearch />
+            <input
+              type="search"
+              value={rawQuery}
+              onChange={(e) => setRawQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  clearSearch();
+                  (e.target as HTMLInputElement).blur();
+                }
+              }}
+              placeholder={`Search ${town.town.name}'s record…`}
+              aria-label={`Search ${town.town.name}'s record`}
+            />
+          </label>
         </div>
 
-        {children}
+        {query ? <SearchResults query={query} /> : children}
 
         <div className="footnote">
           Preview built on {town.town.name}&apos;s public record. Content is real

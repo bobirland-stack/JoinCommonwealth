@@ -17,3 +17,15 @@ export function niceDate(iso: string): string {
   const [y, m, d] = iso.split("-").map(Number);
   return `${MONTHS[(m ?? 1) - 1]} ${d}, ${y}`;
 }
+
+/** The three-letter month for an ISO date, e.g. "Feb". Drives the calendar chip. */
+export function monthAbbr(iso: string): string {
+  const [, m] = iso.split("-").map(Number);
+  return MONTHS[(m ?? 1) - 1];
+}
+
+/** The day-of-month number for an ISO date, e.g. 1. Drives the calendar chip. */
+export function dayNum(iso: string): number {
+  const [, , d] = iso.split("-").map(Number);
+  return d ?? 1;
+}
