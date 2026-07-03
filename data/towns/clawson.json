@@ -850,6 +850,72 @@
           }
         }
       ]
+    },
+    {
+      "id": "planning-2026-01-27",
+      "body": "planning",
+      "title": "Planning Commission — Regular Meeting",
+      "date": "2026-01-27",
+      "time": "7:30 PM",
+      "status": "closed-out",
+      "items": [
+        {
+          "id": "i1",
+          "n": 1,
+          "title": "340 N. Main Street — rezoning (resubmitted)",
+          "type": "hearing",
+          "summary": "The Commission held the public hearing on the resubmitted request to rezone the former church site at 340 N. Main to Core Residential. After the hearing, it voted 5 to 1 to recommend approval to the City Council. The Council makes the final decision at a later meeting.",
+          "source": {
+            "label": "City of Clawson",
+            "date": "2026-01-27",
+            "real": true
+          },
+          "threadId": "t-340main",
+          "videoTimestamp": "0:42:15",
+          "vote": {
+            "result": "Recommended for approval 5–1",
+            "roll": [
+              {
+                "name": "Ruiz",
+                "vote": "yes"
+              },
+              {
+                "name": "Okafor",
+                "vote": "yes"
+              },
+              {
+                "name": "Bell",
+                "vote": "yes"
+              },
+              {
+                "name": "Ng",
+                "vote": "yes"
+              },
+              {
+                "name": "Petrov",
+                "vote": "yes"
+              },
+              {
+                "name": "Adams",
+                "vote": "no"
+              }
+            ]
+          }
+        },
+        {
+          "id": "i2",
+          "n": 2,
+          "title": "Zoning Ordinance text amendment",
+          "type": "hearing",
+          "summary": "The Commission held a public hearing on a proposed change to the zoning ordinance text covering accessory dwelling units. No vote was taken; the item was carried to the next meeting for more discussion.",
+          "source": {
+            "label": "City of Clawson",
+            "date": "2026-01-27",
+            "real": true,
+            "selfReviewed": true
+          }
+        }
+      ]
     }
   ],
   "records": [
