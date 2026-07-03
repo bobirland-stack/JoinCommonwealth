@@ -1,0 +1,101 @@
+/* ============================================================================
+   NewsletterSignup.module.css — styles for the weekly digest signup form.
+   ----------------------------------------------------------------------------
+   Scoped as a CSS module so its short class names (.row, .input, .button) can't
+   collide with the global site.css. Colors come from the design tokens, so the
+   form matches the rest of Commonwealth on every surface it appears.
+
+   Two variants: the default "panel" (home page, Settings card) and a compact
+   "footer" that sits on the darker shell background.
+   ========================================================================== */
+
+.root {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mut);
+  margin-bottom: 7px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 200px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px 13px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--moss);
+  background: #fff;
+}
+
+.button {
+  background: var(--moss);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 44px;
+  cursor: pointer;
+}
+.button:hover {
+  background: #0e423c;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--faint);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 12.5px;
+  color: var(--moss);
+  font-weight: 500;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- footer variant: compact, on the shell background ---------- */
+
+.footer .label {
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 11px;
+}
+.footer .input {
+  min-width: 0;
+  background: #fff;
+  padding: 9px 12px;
+}
+.footer .button {
+  min-height: 40px;
+  padding: 0 15px;
+}
+.footer .hint,
+.footer .note {
+  font-size: 11.5px;
+  margin-top: 8px;
+}

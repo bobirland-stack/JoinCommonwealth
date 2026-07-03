@@ -16,6 +16,7 @@ import Link from "next/link";
 import { town } from "@/src/town";
 import SiteNav from "@/src/components/SiteNav";
 import SiteFooter from "@/src/components/SiteFooter";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
 import "@/src/styles/site.css";
 
 /** Format an ISO (YYYY-MM-DD) date as e.g. "Feb 1, 2026" (UTC, no TZ drift). */
@@ -313,6 +314,23 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+
+      {/* weekly digest signup */}
+      <section style={{ paddingTop: 8 }}>
+        <div className="wrap">
+          <div className="sec-eyebrow">Stay caught up</div>
+          <h2 className="sec-title serif">
+            Get the weekly digest for {town.town.name}.
+          </h2>
+          <p className="sec-sub">
+            One email a week with what showed up in the record and what&apos;s
+            coming up. Every item links back to its source.
+          </p>
+          <div style={{ maxWidth: 460, marginTop: 20 }}>
+            <NewsletterSignup />
+          </div>
+        </div>
+      </section>
 
       {/* final cta */}
       <div className="wrap">

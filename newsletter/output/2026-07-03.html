@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--
+  template.html — the Commonwealth weekly newsletter layout (Phase 5).
+  ----------------------------------------------------------------------------
+  Email clients are not browsers. Many strip <head> CSS, external stylesheets,
+  and web fonts, and some strip <style> too. So the layout is a centered table
+  with the styles that matter written inline on the elements themselves. The
+  <style> block below only carries a couple of nice-to-haves; nothing depends
+  on it rendering.
+
+  The palette is the Commonwealth core (pine, moss, paper) written as plain hex
+  so it survives the trip. Fonts list the brand faces first and fall back to
+  web-safe families every client already has.
+
+  This file holds NO town facts. The build script (build-newsletter.ts) fills
+  the [[ ... ]] slots from `town` at build time. The one {{ unsubscribe_url }}
+  token is left untouched: the email service replaces it with its real link.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Commonwealth · Clawson weekly</title>
+    <style>
+      /* Nice-to-haves only. The email works without any of this. */
+      body { margin: 0; padding: 0; background: #F2F0EA; }
+      a { color: #1F5A8A; }
+      @media (max-width: 620px) {
+        .cw-wrap { width: 100% !important; }
+        .cw-pad { padding-left: 20px !important; padding-right: 20px !important; }
+      }
+    </style>
+  </head>
+  <body style="margin:0; padding:0; background:#F2F0EA; color:#1A2327; font-family:'Public Sans', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-height:1.55;">
+    <!-- preheader: shows in the inbox preview, hidden in the body -->
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
+      This week from the Clawson public record, plus what's coming up.
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F2F0EA;">
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+          <table role="presentation" class="cw-wrap" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px; background:#FAF7F0; border:1px solid #DDD6C8; border-radius:16px; overflow:hidden;">
+
+            <!-- header -->
+            <tr>
+              <td style="background:#15233A; padding:26px 28px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="vertical-align:middle;">
+                      <span style="display:inline-block; vertical-align:middle;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A7C0A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />
+                        </svg>
+                      </span>
+                      <span style="display:inline-block; vertical-align:middle; margin-left:9px; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:20px; font-weight:600; color:#FAF7F0; letter-spacing:0.01em;">Commonwealth</span>
+                    </td>
+                    <td align="right" style="vertical-align:middle; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A7C0A9;">
+                      Clawson, MI
+                    </td>
+                  </tr>
+                </table>
+                <div style="margin-top:14px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; letter-spacing:0.06em; color:#A7C0A9;">
+                  A person stands behind every recap.
+                </div>
+              </td>
+            </tr>
+
+            <!-- issue line + intro -->
+            <tr>
+              <td class="cw-pad" style="padding:26px 28px 8px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#125049; font-weight:600;">
+                  This week · July 3, 2026
+                </div>
+                <h1 style="margin:12px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:26px; line-height:1.2; font-weight:600; color:#15233A;">
+                  Your week in Clawson.
+                </h1>
+                <p style="margin:12px 0 0; font-size:15px; line-height:1.6; color:#5B6560;">
+                  Here's what showed up in Clawson's public record this week, plus what's coming up. Every item shows where it came from, so you can check it against the source yourself.
+                </p>
+              </td>
+            </tr>
+
+            <!-- digest section -->
+            <tr>
+              <td class="cw-pad" style="padding:22px 28px 6px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#5B6560; font-weight:700; border-bottom:1px solid #DDD6C8; padding-bottom:10px;">
+                  From the record
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#A8762A; font-weight:700;">
+                  Happening
+                </div>
+                <h2 style="margin:7px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:18px; line-height:1.3; font-weight:600; color:#15233A;">
+                  Clawson 4th of July celebration
+                </h2>
+                <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">
+                  The city's signature summer event returns downtown.
+                </p>
+                <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                  City of Clawson · June 1, 2026
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">
+                  From the record
+                </div>
+                <h2 style="margin:7px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:18px; line-height:1.3; font-weight:600; color:#15233A;">
+                  340 N. Main rezoning is back before the Planning Commission
+                </h2>
+                <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">
+                  Recommended, denied by Council 3–2, and now resubmitted. Follow the whole thread in order.
+                </p>
+                <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                  City of Clawson + CitizenPortal.ai summaries · February 1, 2026
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">
+                  From the record
+                </div>
+                <h2 style="margin:7px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:18px; line-height:1.3; font-weight:600; color:#15233A;">
+                  121 Renshaw: the city's senior apartments
+                </h2>
+                <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">
+                  What the city owns and operates — and where decisions about it are made.
+                </p>
+                <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                  City of Clawson · January 1, 2025
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">
+                  From the record
+                </div>
+                <h2 style="margin:7px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:18px; line-height:1.3; font-weight:600; color:#15233A;">
+                  Your 2024 water quality report, in plain language
+                </h2>
+                <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">
+                  What was tested in Clawson's water (MI0001440), and what it means.
+                </p>
+                <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                  City of Clawson CCR · June 1, 2025
+                </div>
+              </td>
+            </tr>
+
+            <!-- events section -->
+            <tr>
+              <td class="cw-pad" style="padding:22px 28px 6px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#5B6560; font-weight:700; border-bottom:1px solid #DDD6C8; padding-bottom:10px;">
+                  Coming up
+                </div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="54" style="vertical-align:top;">
+                      <div style="width:46px; text-align:center; border:1px solid #DDD6C8; border-radius:10px; padding:6px 0; background:#FFFFFF;">
+                        <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">Jul</div>
+                        <div style="font-family:'Newsreader', Georgia, serif; font-size:20px; font-weight:600; color:#15233A; line-height:1.1;">4</div>
+                      </div>
+                    </td>
+                    <td style="vertical-align:top; padding-left:14px;">
+                      <h2 style="margin:0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:17px; line-height:1.3; font-weight:600; color:#15233A;">
+                        Clawson 4th of July Celebration
+                      </h2>
+                      <div style="margin-top:4px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; color:#5B6560;">All day · Downtown Clawson</div>
+                      <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">One of the city's signature annual events.</p>
+                      <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                        City of Clawson · June 1, 2026
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="54" style="vertical-align:top;">
+                      <div style="width:46px; text-align:center; border:1px solid #DDD6C8; border-radius:10px; padding:6px 0; background:#FFFFFF;">
+                        <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">Jul</div>
+                        <div style="font-family:'Newsreader', Georgia, serif; font-size:20px; font-weight:600; color:#15233A; line-height:1.1;">7</div>
+                      </div>
+                    </td>
+                    <td style="vertical-align:top; padding-left:14px;">
+                      <h2 style="margin:0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:17px; line-height:1.3; font-weight:600; color:#15233A;">
+                        City Council — Regular Meeting
+                      </h2>
+                      <div style="margin-top:4px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; color:#5B6560;">7:30 PM · City Hall, 425 N. Main St.</div>
+                      <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">1st Tuesday. Public comment open to residents.</p>
+                      <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                        City of Clawson meeting schedule · January 1, 2026
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="54" style="vertical-align:top;">
+                      <div style="width:46px; text-align:center; border:1px solid #DDD6C8; border-radius:10px; padding:6px 0; background:#FFFFFF;">
+                        <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">Jul</div>
+                        <div style="font-family:'Newsreader', Georgia, serif; font-size:20px; font-weight:600; color:#15233A; line-height:1.1;">14</div>
+                      </div>
+                    </td>
+                    <td style="vertical-align:top; padding-left:14px;">
+                      <h2 style="margin:0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:17px; line-height:1.3; font-weight:600; color:#15233A;">
+                        Planning Commission — Regular Meeting
+                      </h2>
+                      <div style="margin-top:4px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; color:#5B6560;">7:30 PM · Municipal Building</div>
+                      <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">2nd Tuesday.</p>
+                      <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                        City of Clawson meeting schedule · January 1, 2026
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="cw-pad" style="padding:16px 28px; border-bottom:1px solid #ECE9E1;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="54" style="vertical-align:top;">
+                      <div style="width:46px; text-align:center; border:1px solid #DDD6C8; border-radius:10px; padding:6px 0; background:#FFFFFF;">
+                        <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#125049; font-weight:700;">Jul</div>
+                        <div style="font-family:'Newsreader', Georgia, serif; font-size:20px; font-weight:600; color:#15233A; line-height:1.1;">21</div>
+                      </div>
+                    </td>
+                    <td style="vertical-align:top; padding-left:14px;">
+                      <h2 style="margin:0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:17px; line-height:1.3; font-weight:600; color:#15233A;">
+                        City Council — Regular Meeting
+                      </h2>
+                      <div style="margin-top:4px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; color:#5B6560;">7:30 PM · City Hall, 425 N. Main St.</div>
+                      <p style="margin:6px 0 0; font-size:14px; line-height:1.55; color:#1A2327;">3rd Tuesday.</p>
+                      <div style="margin-top:9px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11.5px; letter-spacing:0.01em; color:#5B6560;">
+                        City of Clawson meeting schedule · January 1, 2026
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- footer -->
+            <tr>
+              <td class="cw-pad" style="padding:26px 28px 28px;">
+                <div style="border-top:1px solid #DDD6C8; padding-top:18px;">
+                  <p style="margin:0; font-size:12.5px; line-height:1.6; color:#6E7872;">
+                    Commonwealth mirrors the public record and is <strong style="color:#5B6560;">not affiliated with the City of Clawson</strong>. Content is real Clawson data where noted; sample items are labeled.
+                  </p>
+                  <p style="margin:14px 0 0; font-size:12.5px; line-height:1.6; color:#6E7872;">
+                    You're getting this because you signed up for the weekly Clawson digest. One email a week.
+                    <a href="{{ unsubscribe_url }}" style="color:#125049; font-weight:600;">Unsubscribe anytime</a>.
+                  </p>
+                  <p style="margin:14px 0 0; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; color:#6E7872;">
+                    © 2026 Commonwealth · A free, nonprofit way to know the place you live.
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

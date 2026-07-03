@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+  template.html — the Commonwealth weekly newsletter layout (Phase 5).
+  ----------------------------------------------------------------------------
+  Email clients are not browsers. Many strip <head> CSS, external stylesheets,
+  and web fonts, and some strip <style> too. So the layout is a centered table
+  with the styles that matter written inline on the elements themselves. The
+  <style> block below only carries a couple of nice-to-haves; nothing depends
+  on it rendering.
+
+  The palette is the Commonwealth core (pine, moss, paper) written as plain hex
+  so it survives the trip. Fonts list the brand faces first and fall back to
+  web-safe families every client already has.
+
+  This file holds NO town facts. The build script (build-newsletter.ts) fills
+  the [[ ... ]] slots from `town` at build time. The one {{ unsubscribe_url }}
+  token is left untouched: the email service replaces it with its real link.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Commonwealth · [[TOWN_NAME]] weekly</title>
+    <style>
+      /* Nice-to-haves only. The email works without any of this. */
+      body { margin: 0; padding: 0; background: #F2F0EA; }
+      a { color: #1F5A8A; }
+      @media (max-width: 620px) {
+        .cw-wrap { width: 100% !important; }
+        .cw-pad { padding-left: 20px !important; padding-right: 20px !important; }
+      }
+    </style>
+  </head>
+  <body style="margin:0; padding:0; background:#F2F0EA; color:#1A2327; font-family:'Public Sans', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size:16px; line-height:1.55;">
+    <!-- preheader: shows in the inbox preview, hidden in the body -->
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
+      [[PREHEADER]]
+    </div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F2F0EA;">
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+          <table role="presentation" class="cw-wrap" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px; background:#FAF7F0; border:1px solid #DDD6C8; border-radius:16px; overflow:hidden;">
+
+            <!-- header -->
+            <tr>
+              <td style="background:#15233A; padding:26px 28px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="vertical-align:middle;">
+                      <span style="display:inline-block; vertical-align:middle;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A7C0A9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />
+                        </svg>
+                      </span>
+                      <span style="display:inline-block; vertical-align:middle; margin-left:9px; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:20px; font-weight:600; color:#FAF7F0; letter-spacing:0.01em;">Commonwealth</span>
+                    </td>
+                    <td align="right" style="vertical-align:middle; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#A7C0A9;">
+                      [[TOWN_NAME]], [[STATE_ABBR]]
+                    </td>
+                  </tr>
+                </table>
+                <div style="margin-top:14px; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; letter-spacing:0.06em; color:#A7C0A9;">
+                  A person stands behind every recap.
+                </div>
+              </td>
+            </tr>
+
+            <!-- issue line + intro -->
+            <tr>
+              <td class="cw-pad" style="padding:26px 28px 8px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#125049; font-weight:600;">
+                  This week · [[ISSUE_DATE]]
+                </div>
+                <h1 style="margin:12px 0 0; font-family:'Newsreader', Georgia, 'Times New Roman', serif; font-size:26px; line-height:1.2; font-weight:600; color:#15233A;">
+                  Your week in [[TOWN_NAME]].
+                </h1>
+                <p style="margin:12px 0 0; font-size:15px; line-height:1.6; color:#5B6560;">
+                  [[INTRO]]
+                </p>
+              </td>
+            </tr>
+
+            <!-- digest section -->
+            <tr>
+              <td class="cw-pad" style="padding:22px 28px 6px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#5B6560; font-weight:700; border-bottom:1px solid #DDD6C8; padding-bottom:10px;">
+                  From the record
+                </div>
+              </td>
+            </tr>
+            [[DIGEST_ITEMS]]
+
+            <!-- events section -->
+            <tr>
+              <td class="cw-pad" style="padding:22px 28px 6px;">
+                <div style="font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#5B6560; font-weight:700; border-bottom:1px solid #DDD6C8; padding-bottom:10px;">
+                  Coming up
+                </div>
+              </td>
+            </tr>
+            [[EVENT_ITEMS]]
+
+            <!-- footer -->
+            <tr>
+              <td class="cw-pad" style="padding:26px 28px 28px;">
+                <div style="border-top:1px solid #DDD6C8; padding-top:18px;">
+                  <p style="margin:0; font-size:12.5px; line-height:1.6; color:#6E7872;">
+                    Commonwealth mirrors the public record and is <strong style="color:#5B6560;">not affiliated with the City of [[TOWN_NAME]]</strong>. Content is real [[TOWN_NAME]] data where noted; sample items are labeled.
+                  </p>
+                  <p style="margin:14px 0 0; font-size:12.5px; line-height:1.6; color:#6E7872;">
+                    You're getting this because you signed up for the weekly [[TOWN_NAME]] digest. One email a week.
+                    <a href="{{ unsubscribe_url }}" style="color:#125049; font-weight:600;">Unsubscribe anytime</a>.
+                  </p>
+                  <p style="margin:14px 0 0; font-family:'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size:11px; color:#6E7872;">
+                    © [[YEAR]] Commonwealth · A free, nonprofit way to know the place you live.
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
