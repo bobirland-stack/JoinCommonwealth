@@ -1,0 +1,541 @@
+/* ============================================================================
+   workspace.module.css — the look of the internal curation workspace.
+   ----------------------------------------------------------------------------
+   A plain, functional internal tool. It borrows the Commonwealth design tokens
+   (colors, type) so it feels of a piece with the site, but it is its own small
+   surface with its own layout. Nothing here is resident-facing.
+   ========================================================================== */
+
+/* --- the sign-in / not-connected gate ---------------------------------- */
+
+.gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--shell);
+}
+
+.gateCard {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gateTitle {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  color: var(--pine);
+  margin: 0;
+}
+
+.gateText {
+  color: var(--mut);
+  margin: 0;
+}
+
+/* --- the shell (signed in) --------------------------------------------- */
+
+.shell {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px 24px;
+  background: var(--pine);
+  color: var(--paper);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brandName {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: var(--paper);
+}
+
+.brandTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.navlink {
+  color: var(--paper);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.navlink:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.who {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--sage);
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 24px 64px;
+}
+
+/* --- page headings ----------------------------------------------------- */
+
+.pageHead {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mut);
+  margin: 0 0 6px;
+}
+
+.title {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  color: var(--pine);
+  margin: 0 0 8px;
+}
+
+.lede {
+  color: var(--mut);
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* --- panels / cards ---------------------------------------------------- */
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.panel + .panel {
+  margin-top: 18px;
+}
+
+.sectionTitle {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: var(--pine);
+  margin: 0 0 4px;
+}
+
+/* --- forms ------------------------------------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--mut);
+  margin: 0;
+}
+
+.input,
+.textarea,
+.select {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: 2px solid var(--sky);
+  outline-offset: 1px;
+  border-color: var(--sky);
+}
+
+/* --- buttons ----------------------------------------------------------- */
+
+.primary {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--paper);
+  background: var(--moss);
+  border: 1px solid var(--moss);
+  border-radius: 8px;
+  padding: 11px 18px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.primary:hover {
+  background: #0e423c;
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.ghost {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--paper);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.reject {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--rust);
+  background: var(--rusttint);
+  border: 1px solid var(--rustline);
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.reject:hover {
+  background: #f0d5c9;
+}
+
+.rowActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.linkButton {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--paper);
+  background: var(--sky);
+  border: 1px solid var(--sky);
+  border-radius: 8px;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.linkButton:hover {
+  background: #184a72;
+}
+
+/* --- messages ---------------------------------------------------------- */
+
+.error {
+  color: var(--rust);
+  background: var(--rusttint);
+  border: 1px solid var(--rustline);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.notice {
+  color: var(--moss);
+  background: var(--mosstint);
+  border: 1px solid var(--mossline);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 0;
+}
+
+.empty {
+  color: var(--mut);
+  text-align: center;
+  padding: 32px;
+}
+
+/* --- the coverage ledger ----------------------------------------------- */
+
+.ledger {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--line2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ledgerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--card);
+  padding: 16px 18px;
+}
+
+.ledgerMain {
+  flex: 1;
+  min-width: 200px;
+}
+
+.ledgerTitle {
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 2px;
+}
+
+.ledgerMeta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--mut);
+}
+
+.ledgerActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.smallLink {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--sky);
+  text-decoration: none;
+  padding: 8px 12px;
+  border: 1px solid var(--skyline);
+  background: var(--skytint);
+  border-radius: 8px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.smallLink:hover {
+  background: #d6e6f2;
+}
+
+/* --- status pills ------------------------------------------------------ */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pill_not_started {
+  color: var(--mut);
+  background: var(--shell);
+  border: 1px solid var(--line);
+}
+
+.pill_agenda_captured,
+.pill_minutes_captured {
+  color: var(--honey);
+  background: var(--honeytint);
+  border: 1px solid var(--honeyline);
+}
+
+.pill_summary_drafted {
+  color: var(--sky);
+  background: var(--skytint);
+  border: 1px solid var(--skyline);
+}
+
+.pill_summary_reviewed,
+.pill_published {
+  color: var(--moss);
+  background: var(--mosstint);
+  border: 1px solid var(--mossline);
+}
+
+/* --- drafting & review items ------------------------------------------- */
+
+.item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  background: var(--card);
+}
+
+.item + .item {
+  margin-top: 16px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.source {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.sourceLabel,
+.draftLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mut);
+  margin: 0 0 6px;
+}
+
+/* Side-by-side compare on the review screen; stacks on narrow screens. */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .compare {
+    grid-template-columns: 1fr;
+  }
+}
+
+.compareCol {
+  min-width: 0;
+}
+
+.draftText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.rejected {
+  color: var(--rust);
+  background: var(--rusttint);
+  border: 1px solid var(--rustline);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+.waiting {
+  color: var(--sky);
+  background: var(--skytint);
+  border: 1px solid var(--skyline);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.byline {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--mut);
+  margin: 8px 0 0;
+}
+
+.rejectBox {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

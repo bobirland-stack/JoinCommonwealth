@@ -52,6 +52,12 @@ jobs:
           # Variables. Empty until the function is deployed; the flag flow stays
           # honest about that.
           NEXT_PUBLIC_FLAG_ENDPOINT: ${{ vars.FLAG_ENDPOINT }}
+          # URL of the serverless submission function (Stage A, Task 2). Same
+          # pattern as the flag function above: a repository variable under
+          # Settings -> Secrets and variables -> Actions -> Variables. Empty
+          # until the function is deployed; a submission still saves, and the
+          # notify step just reports that no notice was sent.
+          NEXT_PUBLIC_SUBMISSION_ENDPOINT: ${{ vars.SUBMISSION_ENDPOINT }}
           # Supabase connection for the curation workspace (Stage A, Task 1).
           # Set both as repository variables under Settings -> Secrets and
           # variables -> Actions -> Variables. The URL is the project URL and
