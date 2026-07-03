@@ -1,0 +1,123 @@
+{
+  "id": "michigan",
+  "name": "State of Michigan",
+  "level": "state",
+  "summary": "Michigan sets the laws, standards, and statewide offices that every town in the state works within.",
+  "bodies": [
+    {
+      "id": "governor-office",
+      "name": "Office of the Governor",
+      "kind": "executive",
+      "seats": 2,
+      "cadence": "Full-time office; the Governor and Lieutenant Governor serve four-year terms.",
+      "location": "Michigan State Capitol, Lansing",
+      "role": "Runs the state's executive branch, signs or vetoes bills, and proposes the state budget.",
+      "topic": "state-executive",
+      "note": "The Governor and Lieutenant Governor run together on one ticket and are elected statewide."
+    },
+    {
+      "id": "attorney-general",
+      "name": "Office of the Attorney General",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "Lansing",
+      "role": "The state's top lawyer; represents Michigan in court and enforces state law.",
+      "topic": "state-executive"
+    },
+    {
+      "id": "secretary-of-state",
+      "name": "Office of the Secretary of State",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "Lansing",
+      "role": "Runs elections statewide and the offices where residents handle licenses and vehicle titles.",
+      "topic": "state-executive"
+    },
+    {
+      "id": "legislature",
+      "name": "Michigan Legislature",
+      "kind": "legislative",
+      "seats": 148,
+      "cadence": "Convenes year-round in Lansing, with most work in regular session.",
+      "location": "Michigan State Capitol, Lansing",
+      "role": "Writes and passes state law. It has two chambers: a 38-seat Senate and a 110-seat House of Representatives.",
+      "topic": "state-legislature",
+      "note": "Each town falls within one state Senate district and one state House district."
+    }
+  ],
+  "officials": [
+    {
+      "id": "whitmer",
+      "name": "Gretchen Whitmer",
+      "role": "Governor",
+      "body": "governor-office",
+      "note": "Elected in 2018 and again in 2022.",
+      "term": "4-year term, through the end of 2026",
+      "source": {
+        "label": "State of Michigan (michigan.gov)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "gilchrist",
+      "name": "Garlin Gilchrist II",
+      "role": "Lieutenant Governor",
+      "body": "governor-office",
+      "note": "Runs on the same ticket as the Governor.",
+      "term": "4-year term, through the end of 2026",
+      "source": {
+        "label": "State of Michigan (michigan.gov)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "nessel",
+      "name": "Dana Nessel",
+      "role": "Attorney General",
+      "body": "attorney-general",
+      "note": "Elected in 2018 and again in 2022.",
+      "term": "4-year term, through the end of 2026",
+      "source": {
+        "label": "State of Michigan (michigan.gov)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "benson",
+      "name": "Jocelyn Benson",
+      "role": "Secretary of State",
+      "body": "secretary-of-state",
+      "note": "Elected in 2018 and again in 2022.",
+      "term": "4-year term, through the end of 2026",
+      "source": {
+        "label": "State of Michigan (michigan.gov)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "lead-action-level",
+      "label": "Lead action level",
+      "value": "15 parts per billion",
+      "unit": "ppb",
+      "note": "This is the federal level at which a water system must act. Michigan's own rule is stricter and lowers the action level to 12 ppb, starting in 2025. A town's water report can be read against these numbers.",
+      "source": {
+        "label": "U.S. EPA, Lead and Copper Rule",
+        "date": "2026-07-03",
+        "real": true
+      }
+    }
+  ],
+  "source": {
+    "label": "State of Michigan (michigan.gov)",
+    "date": "2026-07-03",
+    "real": true
+  }
+}

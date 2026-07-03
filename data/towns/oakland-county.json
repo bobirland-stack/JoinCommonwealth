@@ -1,0 +1,193 @@
+{
+  "id": "oakland-county",
+  "name": "Oakland County",
+  "level": "county",
+  "summary": "Oakland County runs the courts, deeds, elections support, public health, and other services that reach every town within it.",
+  "bodies": [
+    {
+      "id": "board-of-commissioners",
+      "name": "Board of Commissioners",
+      "kind": "legislative",
+      "seats": 19,
+      "cadence": "Meets about twice a month at the county complex in Pontiac.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Sets the county budget and county policy. Each of its 19 members represents one district.",
+      "topic": "county-government",
+      "note": "Each town falls within one or more county commissioner districts."
+    },
+    {
+      "id": "county-executive",
+      "name": "Office of the County Executive",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Runs the county's day-to-day departments and proposes the county budget.",
+      "topic": "county-government"
+    },
+    {
+      "id": "county-clerk",
+      "name": "Clerk and Register of Deeds",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Keeps county records, including property deeds, and helps run elections.",
+      "topic": "county-government"
+    },
+    {
+      "id": "county-treasurer",
+      "name": "Office of the Treasurer",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Collects county taxes and handles unpaid property taxes across the county.",
+      "topic": "county-government"
+    },
+    {
+      "id": "prosecutor",
+      "name": "Office of the Prosecuting Attorney",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Brings criminal cases on behalf of the county.",
+      "topic": "county-courts"
+    },
+    {
+      "id": "sheriff",
+      "name": "Office of the Sheriff",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Runs county law enforcement and the county jail. Some towns contract with the Sheriff for local policing.",
+      "topic": "county-government"
+    },
+    {
+      "id": "water-resources",
+      "name": "Office of the Water Resources Commissioner",
+      "kind": "executive",
+      "seats": 1,
+      "cadence": "Full-time office; a four-year term.",
+      "location": "One Public Works Dr., Waterford",
+      "role": "Oversees drains, sewers, and stormwater that cross town lines across the county.",
+      "topic": "county-government"
+    },
+    {
+      "id": "health-division",
+      "name": "Oakland County Health Division",
+      "kind": "executive",
+      "seats": 0,
+      "cadence": "Open year-round, with clinics at county health centers.",
+      "location": "Oakland County health centers, Pontiac and Southfield",
+      "role": "Provides public health services to every town: immunizations, water and food safety, and health records.",
+      "topic": "county-health"
+    },
+    {
+      "id": "circuit-court",
+      "name": "6th Circuit Court and county courts",
+      "kind": "quasi-judicial",
+      "seats": 0,
+      "cadence": "In session year-round at the county courthouse.",
+      "location": "1200 N. Telegraph Rd., Pontiac",
+      "role": "Hears the felony, civil, and family cases that come from towns across the county.",
+      "topic": "county-courts",
+      "note": "District courts handle smaller matters closer to home and are organized by area."
+    }
+  ],
+  "officials": [
+    {
+      "id": "coulter",
+      "name": "David Coulter",
+      "role": "County Executive",
+      "body": "county-executive",
+      "note": "Became County Executive in 2019, then elected in 2020 and 2024.",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "brown",
+      "name": "Lisa Brown",
+      "role": "Clerk and Register of Deeds",
+      "body": "county-clerk",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "wittenberg",
+      "name": "Robert Wittenberg",
+      "role": "Treasurer",
+      "body": "county-treasurer",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "mcdonald",
+      "name": "Karen McDonald",
+      "role": "Prosecuting Attorney",
+      "body": "prosecutor",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "bouchard",
+      "name": "Michael Bouchard",
+      "role": "Sheriff",
+      "body": "sheriff",
+      "note": "Has served as Sheriff since 1999.",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "nash",
+      "name": "Jim Nash",
+      "role": "Water Resources Commissioner",
+      "body": "water-resources",
+      "term": "4-year term",
+      "source": {
+        "label": "Oakland County, Michigan (oakgov.com)",
+        "date": "2026-07-03",
+        "real": true
+      }
+    },
+    {
+      "id": "board-chair-sample",
+      "name": "Board chair (sample entry)",
+      "role": "Chair, Board of Commissioners",
+      "body": "board-of-commissioners",
+      "note": "Sample content. The board elects its own chair from among its members. The current chair is not verified here yet.",
+      "source": {
+        "label": "Sample entry, not verified",
+        "date": "2026-07-03",
+        "real": false
+      }
+    }
+  ],
+  "source": {
+    "label": "Oakland County, Michigan (oakgov.com)",
+    "date": "2026-07-03",
+    "real": true
+  }
+}

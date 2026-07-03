@@ -68,7 +68,14 @@ export interface TownIdentity {
 /* ----------------------------------------------------------------------------
    Governing bodies (council, commissions, boards).
    -------------------------------------------------------------------------- */
-export type BodyKind = "legislative" | "advisory" | "quasi-judicial";
+export type BodyKind =
+  | "legislative"
+  | "advisory"
+  | "quasi-judicial"
+  | "executive"; // elected/appointed offices (a Governor's office, a Sheriff's
+                 // office). Added for the shared jurisdiction layer, where a
+                 // "body" is often a single office rather than a deliberating
+                 // board. Existing town bodies never use this value.
 
 export interface Body {
   id: string;
@@ -258,6 +265,44 @@ export interface Institution {
   website?: string;
   streams: InstitutionStream[];
   source: Source;
+}
+
+/* ----------------------------------------------------------------------------
+   Shared jurisdiction layer — the county and state content every town in a
+   place inherits. The point is that state and county facts live HERE, once,
+   and a town references the layer instead of copying them into its own JSON.
+   That is what lets a second town launch richer and cheaper: the shared layer
+   already exists, so the second town only writes what is truly its own.
+
+   A SharedJurisdiction reuses the same Body, Official, and Source shapes as a
+   Town, on purpose, so the shared layer feels like the same system and a
+   component can render a county office the same way it renders a city office.
+   -------------------------------------------------------------------------- */
+
+/**
+ * A shared standard a town can be read against, e.g. the lead action level a
+ * water report is measured by. Small and sourced like every other fact.
+ */
+export interface Benchmark {
+  id: string;
+  label: string;        // e.g. "Lead action level"
+  value: string;        // the standard, in plain language
+  unit?: string;        // e.g. "ppb"
+  note?: string;        // optional short context
+  source: Source;
+}
+
+export type JurisdictionLevel = "state" | "county";
+
+export interface SharedJurisdiction {
+  id: string;                 // "michigan" | "oakland-county"
+  name: string;               // "State of Michigan", "Oakland County"
+  level: JurisdictionLevel;
+  summary: string;            // one plain sentence: what this level does
+  bodies: Body[];             // state/county bodies and offices (reused shape)
+  officials: Official[];      // statewide/countywide officials (reused shape)
+  benchmarks?: Benchmark[];   // shared standards a town can be compared against
+  source: Source;             // provenance for the layer as a whole
 }
 
 /* ----------------------------------------------------------------------------
