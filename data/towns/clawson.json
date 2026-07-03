@@ -54,6 +54,110 @@
       "location": "Municipal Building",
       "role": "Decides variances and appeals of zoning decisions.",
       "topic": "zoning"
+    },
+    {
+      "id": "dda",
+      "name": "Downtown Development Authority",
+      "kind": "advisory",
+      "seats": 0,
+      "cadence": "3rd Wednesday, 8:00 AM",
+      "location": "Municipal Building, 425 N. Main St.",
+      "role": "Leads downtown through the Main Street program: events, storefront improvements, and small-business grants.",
+      "topic": "dda",
+      "takeAction": "Join a Main Street committee, or ask about a storefront improvement grant.",
+      "note": "Board members are appointed by Council. The city's downtown page lists the current roster."
+    },
+    {
+      "id": "parks-rec",
+      "name": "Parks & Recreation Board",
+      "kind": "advisory",
+      "seats": 6,
+      "cadence": "4th Monday, 6:00 PM",
+      "location": "Hunter Community Center, 509 Fisher Ct.",
+      "role": "Guides the city's parks, recreation programs, and the Hunter Community & Senior Center.",
+      "topic": "parks-rec",
+      "takeAction": "Propose or volunteer for a program, or share your thoughts on a park plan. A seat is open now.",
+      "openSeat": true
+    },
+    {
+      "id": "library",
+      "name": "Blair Memorial Library Board",
+      "kind": "advisory",
+      "seats": 5,
+      "cadence": "2nd Tuesday, 9:00 AM",
+      "location": "Blair Memorial Library, 416 N. Main St.",
+      "role": "Governs the Blair Memorial Library, its budget, policies, and services.",
+      "topic": "library",
+      "takeAction": "Attend a board meeting, or support the library through the Friends of the Library.",
+      "note": "The library has served Clawson since 1929."
+    },
+    {
+      "id": "traffic",
+      "name": "Traffic & Safety Board",
+      "kind": "advisory",
+      "seats": 5,
+      "cadence": "1st Thursday, 7:30 PM",
+      "location": "Municipal Building, 425 N. Main St.",
+      "role": "Advises Council on traffic, parking, and pedestrian safety around the city.",
+      "topic": "traffic",
+      "takeAction": "Bring a traffic or safety concern to a meeting, or apply for the open seat.",
+      "openSeat": true
+    },
+    {
+      "id": "historical",
+      "name": "Historical Commission",
+      "kind": "advisory",
+      "seats": 6,
+      "cadence": "7:00 PM on the 2nd Tuesday of January, April, July, and October",
+      "location": "Historical Museum, 41 Fisher Ct.",
+      "role": "Keeps Clawson's history and runs the Historical Museum.",
+      "topic": "historical",
+      "takeAction": "Volunteer, share an old photo or story, or attend a quarterly meeting."
+    },
+    {
+      "id": "board-of-review",
+      "name": "Board of Review",
+      "kind": "advisory",
+      "seats": 3,
+      "cadence": "Convenes each March to hear assessment appeals, with limited July and December sessions",
+      "location": "Municipal Building",
+      "role": "Hears appeals of a property's assessed value, the figure that drives your tax bill.",
+      "topic": "board-of-review",
+      "takeAction": "File an appeal with the assessor in March and bring evidence such as recent comparable sales."
+    },
+    {
+      "id": "ethics",
+      "name": "Board of Ethics",
+      "kind": "advisory",
+      "seats": 5,
+      "cadence": "Annually, or as needed when a matter arises",
+      "location": "Municipal Building",
+      "role": "Issues written advisory opinions on ethics questions. Sitting elected officials cannot serve on it.",
+      "topic": "ethics",
+      "takeAction": "File a complaint or request an advisory opinion through the City Clerk."
+    },
+    {
+      "id": "compensation",
+      "name": "Compensation Commission",
+      "kind": "advisory",
+      "seats": 5,
+      "cadence": "Every odd-numbered year",
+      "location": "Municipal Building",
+      "role": "Recommends the salaries of the city's elected officials.",
+      "topic": "compensation",
+      "takeAction": "A seat is open now. Apply through the City Clerk.",
+      "openSeat": true
+    },
+    {
+      "id": "elections",
+      "name": "Elections Commission",
+      "kind": "advisory",
+      "seats": 3,
+      "cadence": "As required to administer city elections",
+      "location": "Municipal Building",
+      "role": "Oversees the conduct of the city's elections.",
+      "topic": "elections",
+      "takeAction": "Most of this work is set by law. Election workers are recruited through the City Clerk's office."
     }
   ],
   "officials": [
@@ -139,6 +243,457 @@
       "role": "City Manager",
       "body": "council",
       "note": "City Manager since 2022.",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-jennex",
+      "name": "Scott Jennex",
+      "role": "Director",
+      "body": "parks-rec",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-aprile",
+      "name": "Alexander Aprile",
+      "role": "Board member",
+      "body": "parks-rec",
+      "term": "term ends 5/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-cavallaro",
+      "name": "Cleyton Cavallaro",
+      "role": "Board member",
+      "body": "parks-rec",
+      "term": "term ends 5/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-prowse",
+      "name": "Melissa Prowse",
+      "role": "Board member",
+      "body": "parks-rec",
+      "term": "term ends 5/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-trachsel",
+      "name": "Stephen Trachsel",
+      "role": "Board member",
+      "body": "parks-rec",
+      "term": "term ends 5/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "pr-waddy",
+      "name": "James Waddy III",
+      "role": "Board member",
+      "body": "parks-rec",
+      "term": "term ends 5/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "lib-brennan",
+      "name": "Timothy Brennan",
+      "role": "President",
+      "body": "library",
+      "term": "term ends 6/30/2030",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "lib-bekofske",
+      "name": "Gary Bekofske",
+      "role": "Vice-President",
+      "body": "library",
+      "term": "term ends 6/30/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "lib-baker",
+      "name": "Sue Baker",
+      "role": "Secretary",
+      "body": "library",
+      "term": "term ends 6/30/2029",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "lib-brown",
+      "name": "Madeline Brown",
+      "role": "Board member",
+      "body": "library",
+      "term": "term ends 6/30/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "lib-finn",
+      "name": "Veronica Finn",
+      "role": "Board member",
+      "body": "library",
+      "term": "term ends 6/30/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "ts-coatta",
+      "name": "Melissa Coatta",
+      "role": "Board member",
+      "body": "traffic",
+      "term": "term ends 5/1/2029",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "ts-watt",
+      "name": "Sue Watt",
+      "role": "Board member",
+      "body": "traffic",
+      "term": "term ends 5/1/2029",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "ts-lalonde",
+      "name": "Andrea LaLonde",
+      "role": "Board member",
+      "body": "traffic",
+      "term": "term ends 5/1/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "ts-pounders",
+      "name": "Patricia Pounders",
+      "role": "Board member",
+      "body": "traffic",
+      "term": "term ends 5/1/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "ts-stanley",
+      "name": "Jacqueline Stanley",
+      "role": "Board member",
+      "body": "traffic",
+      "term": "term ends 5/1/2029",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-davis",
+      "name": "Leah Davis",
+      "role": "Curator",
+      "body": "historical",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-dwyer",
+      "name": "Dan Dwyer",
+      "role": "Commission member",
+      "body": "historical",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-harpster",
+      "name": "Kristin Harpster",
+      "role": "Commission member",
+      "body": "historical",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-hayes",
+      "name": "Barbara Hayes",
+      "role": "Commission member",
+      "body": "historical",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-irwin",
+      "name": "Tracey Irwin",
+      "role": "Commission member",
+      "body": "historical",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hc-martz",
+      "name": "Julie Martz",
+      "role": "Commission member",
+      "body": "historical",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "bor-heng",
+      "name": "Jeff Heng",
+      "role": "Board member",
+      "body": "board-of-review",
+      "term": "term ends 12/31/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "bor-haney",
+      "name": "Ralph Haney",
+      "role": "Board member",
+      "body": "board-of-review",
+      "term": "term ends 12/31/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "bor-mcbride",
+      "name": "Vence McBride",
+      "role": "Board member",
+      "body": "board-of-review",
+      "term": "term ends 12/31/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "eth-fenton",
+      "name": "Annie Fenton",
+      "role": "Vice-Chair",
+      "body": "ethics",
+      "term": "term ends 9/15/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "eth-quinn",
+      "name": "Timothy Quinn",
+      "role": "Board member",
+      "body": "ethics",
+      "term": "term ends 9/15/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "eth-clute-cubbin",
+      "name": "Erica Clute-Cubbin",
+      "role": "Board member",
+      "body": "ethics",
+      "term": "term ends 9/15/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "eth-trachsel",
+      "name": "Dana Trachsel",
+      "role": "Board member",
+      "body": "ethics",
+      "term": "term ends 9/15/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "eth-murphy",
+      "name": "Brian Murphy",
+      "role": "Board member",
+      "body": "ethics",
+      "term": "term ends 9/15/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "comp-heng",
+      "name": "Jeff Heng",
+      "role": "Commission member",
+      "body": "compensation",
+      "term": "term ends 7/1/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "comp-huffman",
+      "name": "Sherry Huffman",
+      "role": "Commission member",
+      "body": "compensation",
+      "term": "term ends 7/1/2026",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "comp-manning",
+      "name": "Scott Manning",
+      "role": "Commission member",
+      "body": "compensation",
+      "term": "term ends 7/1/2027",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "comp-mcbride",
+      "name": "Vence McBride",
+      "role": "Commission member",
+      "body": "compensation",
+      "term": "term ends 7/1/2028",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "comp-perkins",
+      "name": "Jennifer Perkins",
+      "role": "Commission member",
+      "body": "compensation",
+      "term": "term ends 7/1/2030",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "el-moffitt",
+      "name": "Susan Moffitt",
+      "role": "Mayor",
+      "body": "elections",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "el-nusaj",
+      "name": "Renis Nusaj",
+      "role": "Commission member",
+      "body": "elections",
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "el-kukuk",
+      "name": "G. Machele Kukuk",
+      "role": "Commission member",
+      "body": "elections",
       "source": {
         "label": "City of Clawson",
         "date": "2026-01-01",
@@ -440,6 +995,42 @@
     {
       "id": "ballot",
       "label": "Elections & ballot"
+    },
+    {
+      "id": "dda",
+      "label": "Downtown & DDA"
+    },
+    {
+      "id": "parks-rec",
+      "label": "Parks & recreation"
+    },
+    {
+      "id": "library",
+      "label": "Library"
+    },
+    {
+      "id": "traffic",
+      "label": "Traffic & safety"
+    },
+    {
+      "id": "historical",
+      "label": "History & museum"
+    },
+    {
+      "id": "board-of-review",
+      "label": "Property assessments"
+    },
+    {
+      "id": "ethics",
+      "label": "Ethics"
+    },
+    {
+      "id": "compensation",
+      "label": "Elected pay"
+    },
+    {
+      "id": "elections",
+      "label": "City elections"
     }
   ],
   "digest": [

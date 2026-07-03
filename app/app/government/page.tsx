@@ -11,7 +11,7 @@ import type { Source } from "@/data/towns/schema";
 import { town } from "@/src/town";
 import SourceMarker from "@/src/components/SourceMarker";
 import FollowButton from "@/src/components/FollowButton";
-import { IconBell, IconClock, IconGavel, IconPin, IconRadar } from "@/src/components/icons";
+import { IconArrow, IconBell, IconClock, IconGavel, IconPin, IconRadar } from "@/src/components/icons";
 
 /** Two-letter initials for the roster avatar. */
 function initials(name: string): string {
@@ -68,7 +68,9 @@ export default function GovernmentPage() {
               <h4>{b.name}</h4>
               <FollowButton topic={b.topic} />
             </div>
+            {b.openSeat && <div className="bopen">A seat is open now.</div>}
             <div className="brole">{b.role}</div>
+            {b.note && <div className="bnote">{b.note}</div>}
             <div className="bmeta">
               <span className="tagx">
                 <IconGavel />
@@ -82,7 +84,7 @@ export default function GovernmentPage() {
                 <IconPin />
                 {b.location}
               </span>
-              <span className="tagx">{b.seats} seats</span>
+              {b.seats > 0 && <span className="tagx">{b.seats} seats</span>}
             </div>
             {members.length > 0 && (
               <div className="roster">
@@ -98,6 +100,12 @@ export default function GovernmentPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            )}
+            {b.takeAction && (
+              <div className="btake">
+                <IconArrow />
+                <span>{b.takeAction}</span>
               </div>
             )}
             {/* one calm, body-level source marker for the whole roster */}
