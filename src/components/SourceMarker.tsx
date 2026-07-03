@@ -19,8 +19,10 @@
    ========================================================================== */
 
 import { useId, useState } from "react";
+import Link from "next/link";
 import type { Source } from "@/data/towns/schema";
 import { town } from "@/src/town";
+import { FLAG_ENDPOINT } from "@/src/config";
 import { useAppShell } from "./AppShell";
 import {
   IconChevronDown,
@@ -107,6 +109,14 @@ type FlagState =
   | { mode: "picked"; index: number }
   | { mode: "sent" };
 
+/** Build the source line and page path sent to the flag function. */
+function flagContext(label: string, date: string) {
+  return {
+    source: date ? `${label} · ${date}` : label,
+    page: typeof window !== "undefined" ? window.location.pathname : "",
+  };
+}
+
 function SourcePanel({
   label,
   date,
@@ -125,11 +135,45 @@ function SourcePanel({
   onFlagged: () => void;
 }) {
   const [flag, setFlag] = useState<FlagState>({ mode: "panel" });
+  const [note, setNote] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const points = toPoints(text);
 
   // Clicks inside the panel must not bubble to the card or the outside-close
   // handler.
   const stop = (e: React.MouseEvent) => e.stopPropagation();
+
+  // Send the flagged point to the serverless function, which opens a GitHub
+  // Issue. On success we show the plain confirmation. On failure we say so
+  // honestly and let the resident try again; we never fake a success.
+  async function submit(index: number) {
+    setSending(true);
+    setError(null);
+    try {
+      if (!FLAG_ENDPOINT) throw new Error("not-configured");
+      const { source, page } = flagContext(label, date);
+      const res = await fetch(FLAG_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          claim: points[index],
+          detail: note.trim(),
+          source,
+          page,
+        }),
+      });
+      if (!res.ok) throw new Error("bad-status");
+      setFlag({ mode: "sent" });
+      onFlagged();
+    } catch {
+      setError(
+        "Something went wrong, and nothing was sent. Please try again in a moment.",
+      );
+    } finally {
+      setSending(false);
+    }
+  }
 
   if (flag.mode === "points") {
     return (
@@ -170,19 +214,31 @@ function SourcePanel({
         </div>
         <textarea
           className="ff-ta"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
           placeholder="What doesn't match? (e.g., the vote count, a name, a date)"
         />
+        {error && (
+          <div className="ff-sub" style={{ color: "var(--rust)" }} role="alert">
+            {error}
+          </div>
+        )}
         <div className="ff-actions">
           <button
             className="sp-act primary"
+            disabled={sending}
+            onClick={() => submit(flag.index)}
+          >
+            {sending ? "Sending…" : "Send for checking"}
+          </button>
+          <button
+            className="sp-act"
+            disabled={sending}
             onClick={() => {
-              setFlag({ mode: "sent" });
-              onFlagged();
+              setError(null);
+              setFlag({ mode: "panel" });
             }}
           >
-            Send for checking
-          </button>
-          <button className="sp-act" onClick={() => setFlag({ mode: "panel" })}>
             Cancel
           </button>
         </div>
@@ -196,10 +252,10 @@ function SourcePanel({
         <div className="ff-done">
           <IconCheck />
           <p>
-            <b>Sent.</b> A person will compare this point against the source
-            document. If it doesn&apos;t match, we correct it. If it does, it
-            stands. Either way the outcome is{" "}
-            <a href="/transparency#corrections">logged publicly</a>.
+            <b>Sent. Someone will check this against the source.</b> If it
+            doesn&apos;t match, we correct it. If it does, it stands. Either way
+            the outcome is logged in the{" "}
+            <Link href="/verification-log">verification log</Link>.
           </p>
         </div>
       </div>
