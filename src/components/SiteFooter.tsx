@@ -9,6 +9,7 @@
 
 import Link from "next/link";
 import { town } from "@/src/town";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
 import "@/src/styles/site.css";
 
 export default function SiteFooter() {
@@ -35,6 +36,9 @@ export default function SiteFooter() {
               </svg>
               Nonprofit · independent
             </span>
+          </div>
+          <div style={{ marginTop: 20, maxWidth: 320 }}>
+            <NewsletterSignup variant="footer" />
           </div>
         </div>
 

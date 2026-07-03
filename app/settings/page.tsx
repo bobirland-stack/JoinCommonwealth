@@ -33,6 +33,7 @@ import Link from "next/link";
 import { town } from "@/src/town";
 import SiteNav from "@/src/components/SiteNav";
 import SiteFooter from "@/src/components/SiteFooter";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
 import {
   type Settings,
   type Prefs,
@@ -40,15 +41,12 @@ import {
   getSettings,
   subscribe,
   toggleFollow,
-  setEmail as storeSetEmail,
   setPref,
   clearAll,
   exportJSON,
 } from "@/src/lib/follows";
 import "@/src/styles/site.css";
 import styles from "./settings.module.css";
-
-const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 /** Mirror the two class-backed prefs onto <body> so they take effect globally. */
 function applyBodyClasses(prefs: Prefs): void {
@@ -61,7 +59,6 @@ export default function SettingsPage() {
   // Start from empty defaults so SSR and first client render agree; the mount
   // effect swaps in the real stored settings.
   const [settings, setSettings] = useState<Settings>(defaultSettings);
-  const [emailInput, setEmailInput] = useState("");
   const [toast, setToast] = useState("");
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -76,7 +73,6 @@ export default function SettingsPage() {
   useEffect(() => {
     const sync = (s: Settings) => {
       setSettings(s);
-      setEmailInput(s.email);
       applyBodyClasses(s.prefs);
     };
     sync(getSettings());
@@ -99,16 +95,6 @@ export default function SettingsPage() {
     );
   };
 
-  const onSaveEmail = () => {
-    const v = emailInput.trim();
-    if (v && !EMAIL_RE.test(v)) {
-      showToast("That email doesn't look right");
-      return;
-    }
-    setSettings(storeSetEmail(v));
-    showToast(v ? "Newsletter email saved" : "Email cleared");
-  };
-
   const onTogglePref = (key: keyof Prefs) => {
     const next = setPref(key, !settings.prefs[key]);
     setSettings(next);
@@ -129,7 +115,6 @@ export default function SettingsPage() {
   const onDelete = () => {
     const fresh = clearAll();
     setSettings(fresh);
-    setEmailInput("");
     applyBodyClasses(fresh.prefs);
     showToast("Everything deleted");
   };
@@ -215,27 +200,7 @@ export default function SettingsPage() {
             </div>
           </div>
           <div className={styles.emailrow}>
-            <label htmlFor="email">Email for your weekly digest</label>
-            <div className={styles.emailin}>
-              <input
-                type="email"
-                id="email"
-                placeholder="you@example.com"
-                autoComplete="email"
-                value={emailInput}
-                onChange={(e) => setEmailInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") onSaveEmail();
-                }}
-              />
-              <button className={styles.savebtn} onClick={onSaveEmail}>
-                Save
-              </button>
-            </div>
-            <p className={styles.emailnote}>
-              Saved to this device for now. Signup wiring to the email service
-              comes in a later phase. Nothing is sent yet.
-            </p>
+            <NewsletterSignup />
           </div>
         </section>
 
