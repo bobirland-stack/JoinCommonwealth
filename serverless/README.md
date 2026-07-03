@@ -38,3 +38,31 @@ computer.
 
 Until step 6 is done, the flag flow is honest about it: it tells the resident it
 could not send, rather than pretending it worked.
+
+# The submission function
+
+`submission-worker.js` is the twin of the flag function, added in Stage A,
+Task 2. When a scout submits an agenda, minutes, or a recording link in the
+curation workspace, the workspace saves it to the database and then calls this
+function, which opens a GitHub Issue titled `New submission: {meeting title}` so
+the curator team gets a plain, durable notice. It is the same pattern as the
+flag function: one small Cloudflare Worker, one `GITHUB_TOKEN` secret, the same
+GitHub Issues pipeline. We reuse it rather than standing up a second mechanism.
+
+## Set it up
+
+The steps are the same as the flag function above. You can reuse the same
+GitHub token (it already has Issues: Read and write on this repository), or make
+a second one the same way.
+
+1. In Cloudflare, create a second Worker (for example `commonwealth-submission`).
+2. Paste in the contents of `submission-worker.js` and deploy.
+3. Add the `GITHUB_TOKEN` secret to this Worker the same way as before.
+4. Copy the Worker's URL.
+5. In the GitHub repo, under Settings, then Secrets and variables, then Actions,
+   then the Variables tab, add a repository variable named `SUBMISSION_ENDPOINT`
+   set to the Worker URL. The next deploy picks it up.
+
+Until that variable is set, a submission still saves to the database. The notify
+step just tells the scout that no notice was sent, rather than pretending one
+was.
