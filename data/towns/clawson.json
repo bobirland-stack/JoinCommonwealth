@@ -1089,5 +1089,122 @@
         "real": true
       }
     }
+  ],
+  "institutions": [
+    {
+      "id": "blair-library",
+      "name": "Blair Memorial Library",
+      "kind": "library",
+      "summary": "The town's library, at 416 N. Main Street, serving Clawson since 1929.",
+      "address": "416 N. Main St., Clawson, MI 48017",
+      "streams": [
+        {
+          "id": "events",
+          "label": "Events & programs",
+          "description": "Story times, talks, and classes, plus current hours."
+        },
+        {
+          "id": "booksales",
+          "label": "Book sales",
+          "description": "Dates for the library's used-book sales."
+        },
+        {
+          "id": "friends",
+          "label": "Friends of the Library",
+          "description": "News from the library's nonprofit support group."
+        }
+      ],
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "historical-society",
+      "name": "Clawson Historical Society",
+      "kind": "historical society",
+      "summary": "Keeps and shares Clawson's history, including photographs, records, and the local story.",
+      "address": "41 Fisher Ct, Clawson, MI 48017",
+      "streams": [
+        {
+          "id": "talks",
+          "label": "Talks & tours",
+          "description": "Events and walking tours."
+        },
+        {
+          "id": "thisweek",
+          "label": "This week in history",
+          "description": "Short notes from the archive."
+        },
+        {
+          "id": "archive",
+          "label": "From the archive",
+          "description": "Photos, documents, and oral histories."
+        }
+      ],
+      "source": {
+        "label": "Clawson Historical Society",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "hunter-senior-center",
+      "name": "Hunter Senior Center",
+      "kind": "senior center",
+      "summary": "Programs, transportation, and resources for Clawson's older residents, at the Hunter Community Center.",
+      "address": "509 Fisher Ct, Clawson, MI 48017",
+      "streams": [
+        {
+          "id": "events",
+          "label": "Events & socials",
+          "description": "Classes and gatherings."
+        },
+        {
+          "id": "transport",
+          "label": "Transportation",
+          "description": "Rides and schedule changes."
+        },
+        {
+          "id": "resources",
+          "label": "Resources & services",
+          "description": "Support and assistance for seniors."
+        },
+        {
+          "id": "oralhistory",
+          "label": "Oral history",
+          "description": "The Clawson Remembers project, in residents' own words."
+        }
+      ],
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    },
+    {
+      "id": "clawson-dda",
+      "name": "Clawson DDA / Downtown",
+      "kind": "downtown authority",
+      "summary": "Leads downtown Clawson through the Main Street program: events, storefront improvements, and small business support.",
+      "streams": [
+        {
+          "id": "events",
+          "label": "Downtown events",
+          "description": "The farmers market, the car show, and Cinema in the Streets."
+        },
+        {
+          "id": "business",
+          "label": "Business news",
+          "description": "Openings, grants, and downtown updates."
+        }
+      ],
+      "source": {
+        "label": "City of Clawson",
+        "date": "2026-01-01",
+        "real": true
+      }
+    }
   ]
 }

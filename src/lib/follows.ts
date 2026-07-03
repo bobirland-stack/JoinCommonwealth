@@ -39,6 +39,14 @@ export interface Prefs {
 export interface Settings {
   /** Followed topic ids (matching `town.topics[].id`). */
   follows: string[];
+  /**
+   * Followed institution streams, each stored as a `"{institutionId}:{streamId}"`
+   * pair. This is a SECOND, separate list from `follows`, kept in the SAME
+   * store and localStorage key so everything still round-trips through one
+   * place. Each pair is followed on its own; following an institution's streams
+   * is never all-or-nothing.
+   */
+  institutionFollows: string[];
   /** The digest / newsletter email, or "" if unset. */
   email: string;
   /** Reading & display preferences. */
@@ -49,6 +57,7 @@ export interface Settings {
 export function defaultSettings(): Settings {
   return {
     follows: [],
+    institutionFollows: [],
     email: "",
     prefs: { bigtext: false, contrast: false, reducemotion: false },
   };
@@ -71,6 +80,9 @@ function normalize(raw: unknown): Settings {
     follows: Array.isArray(r.follows)
       ? r.follows.filter((f): f is string => typeof f === "string")
       : base.follows,
+    institutionFollows: Array.isArray(r.institutionFollows)
+      ? r.institutionFollows.filter((f): f is string => typeof f === "string")
+      : base.institutionFollows,
     email: typeof r.email === "string" ? r.email : base.email,
     prefs: {
       bigtext: !!r.prefs?.bigtext,
@@ -161,6 +173,44 @@ export function toggleFollow(id: string): Settings {
     return {
       ...s,
       follows: on ? s.follows.filter((f) => f !== id) : [...s.follows, id],
+    };
+  });
+}
+
+/* --- institution-stream follows ------------------------------------------- */
+
+/**
+ * The stable key for a single followable institution stream. Institution-stream
+ * follows live in their own list (`institutionFollows`) but in the SAME store
+ * and localStorage key as topic follows.
+ */
+export function streamKey(institutionId: string, streamId: string): string {
+  return `${institutionId}:${streamId}`;
+}
+
+/** Is this institution stream currently followed? */
+export function isFollowingStream(
+  institutionId: string,
+  streamId: string,
+): boolean {
+  return getSettings().institutionFollows.includes(
+    streamKey(institutionId, streamId),
+  );
+}
+
+/** Toggle a followed institution stream; returns the new settings. */
+export function toggleFollowStream(
+  institutionId: string,
+  streamId: string,
+): Settings {
+  const key = streamKey(institutionId, streamId);
+  return updateSettings((s) => {
+    const on = s.institutionFollows.includes(key);
+    return {
+      ...s,
+      institutionFollows: on
+        ? s.institutionFollows.filter((f) => f !== key)
+        : [...s.institutionFollows, key],
     };
   });
 }
