@@ -1,0 +1,569 @@
+/* ============================================================================
+   support.module.css — page-specific styles for /support.
+   ----------------------------------------------------------------------------
+   The Support page is an adaptation of the Transparency page's #legal and
+   #money material, set on the narrow single-column layout the other marketing
+   pages use (mission's 820px `.pageWrap`). It reuses the same short-named
+   component classes those pages established — .sectitle/.si, .lead, .p,
+   .legalsteps, .money, .explain, .note, the .status pills — scoped here as a
+   CSS module so they can't collide with the global site.css or with the other
+   pages' modules.
+
+   Only classes NOT already in the shared system live here. Shared bits
+   (.serif, .eyebrow, .btn variants) come from the global site.css; the design
+   tokens come from the global tokens.css.
+   ========================================================================== */
+
+/* Content column — the reference's narrow 820px column. */
+.pageWrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- page header ---------- */
+.phead {
+  padding: 60px 0 8px;
+}
+.phead h1 {
+  font-family: var(--font-head);
+  font-size: clamp(34px, 5.2vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+  max-width: 20ch;
+}
+.lede {
+  font-size: clamp(18px, 2.3vw, 22px);
+  color: var(--mut);
+  margin-top: 22px;
+  max-width: 56ch;
+  line-height: 1.55;
+}
+.lede b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- section shell ---------- */
+.section {
+  padding: 30px 0;
+  border-top: 1px solid var(--line2);
+}
+.section:first-of-type {
+  border-top: 0;
+}
+.sectitle {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+.si {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--pinetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.si svg {
+  width: 21px;
+  height: 21px;
+  stroke: var(--pine);
+  fill: none;
+  stroke-width: 1.8;
+}
+.sectitle h2 {
+  font-family: var(--font-head);
+  font-size: clamp(23px, 3.1vw, 30px);
+  color: var(--pine);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 16.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 8px 0 16px;
+  max-width: 64ch;
+}
+.lead b {
+  color: var(--pine);
+  font-weight: 600;
+}
+.p {
+  font-size: 15px;
+  color: var(--mut);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 64ch;
+}
+.p b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- the primary ask (the largest element, top of page) ---------- */
+.ask {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--moss);
+  border-radius: 16px;
+  padding: 30px 32px;
+  margin: 8px 0 6px;
+  box-shadow: 0 4px 24px rgba(21, 35, 58, 0.05);
+}
+.ask h2 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.4vw, 34px);
+  color: var(--pine);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 22ch;
+}
+.ask p {
+  font-size: 16.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 62ch;
+}
+.ask p b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- status pills ---------- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 3px 9px;
+}
+.status.progress {
+  background: var(--honeytint);
+  color: var(--honey);
+  border: 1px solid var(--honeyline);
+}
+.status.live {
+  background: var(--mosstint);
+  color: var(--moss);
+  border: 1px solid var(--mossline);
+}
+.status svg {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke-width: 2.4;
+  stroke: currentColor;
+}
+
+/* ---------- legal timeline ---------- */
+.legalsteps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 16px 0;
+  position: relative;
+  padding-left: 28px;
+}
+.legalsteps::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 22px;
+  width: 2px;
+  background: var(--line);
+}
+.lstep {
+  position: relative;
+  padding: 0 0 20px;
+}
+.lstep::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--line);
+}
+.lstep.done::before {
+  background: var(--moss);
+  border-color: var(--moss);
+}
+.lstep.now::before {
+  background: var(--honey);
+  border-color: var(--honey);
+  box-shadow: 0 0 0 4px var(--honeytint);
+}
+.lstep .lh {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.lstep .lh b {
+  font-size: 15px;
+  color: var(--pine);
+  font-weight: 600;
+}
+.lstep p {
+  font-size: 13.5px;
+  color: var(--mut);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* ---------- explainer callout ---------- */
+.explain {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sky);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+.explain h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sky);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.explain h4 svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--sky);
+  fill: none;
+  stroke-width: 2;
+}
+.explain p {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+.explain p:last-child {
+  margin-bottom: 0;
+}
+.explain b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- money tables + funding bar ---------- */
+.money {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+.money .mhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 17px;
+  border-bottom: 1px solid var(--line2);
+  flex-wrap: wrap;
+}
+.money .mhead h4 {
+  font-size: 15px;
+  color: var(--pine);
+  font-weight: 600;
+}
+.money .updated {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--faint);
+}
+.mrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 17px;
+  border-bottom: 1px solid var(--line2);
+}
+.mrow:last-child {
+  border-bottom: 0;
+}
+.mrow .ml {
+  flex: 1;
+  min-width: 0;
+}
+.mrow .ml b {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+}
+.mrow .ml span {
+  font-size: 12.5px;
+  color: var(--mut);
+}
+.mrow.total {
+  background: var(--shell);
+}
+.mrow.total .ml b {
+  color: var(--pine);
+}
+.mrow.topline {
+  border-top: 1px solid var(--line2);
+}
+.barwrap {
+  padding: 14px 17px;
+}
+.bar {
+  height: 26px;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  background: var(--shell);
+  border: 1px solid var(--line2);
+}
+.bar .seg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+.barlegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 11px;
+}
+.barlegend .lg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--mut);
+}
+.barlegend .sw {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+/* a sky-tinted info-note, used to mark the figures as illustrative */
+.infonote {
+  background: var(--skytint);
+  border: 1px solid var(--skyline);
+  border-radius: 12px;
+  padding: 15px 17px;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin: 14px 0;
+  color: #1a3a56;
+}
+.infonote svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--sky);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.infonote b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- plain note ---------- */
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 17px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin: 14px 0;
+}
+.note svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--slate);
+  fill: none;
+  stroke-width: 2;
+  flex: none;
+  margin-top: 1px;
+}
+.note b {
+  color: var(--pine);
+}
+
+/* ---------- the future-fundraising promise ---------- */
+.promise {
+  background: var(--pinetint);
+  border: 1px solid var(--mossline);
+  border-radius: 16px;
+  padding: 26px 28px;
+  margin: 8px 0;
+}
+.promise h2 {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--pine);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  max-width: 24ch;
+}
+.promise p {
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  max-width: 62ch;
+}
+.promise p:last-child {
+  margin-bottom: 0;
+}
+.promise b {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+/* ---------- raise your hand form ---------- */
+.raise {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 28px;
+  margin: 8px 0;
+}
+.raise .rlabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mut);
+  margin-bottom: 7px;
+}
+.raise .field {
+  margin-bottom: 14px;
+}
+.raise .rinput,
+.raise .rtextarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px 13px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.raise .rtextarea {
+  min-height: 96px;
+  resize: vertical;
+  line-height: 1.55;
+}
+.raise .rinput:focus,
+.raise .rtextarea:focus {
+  outline: none;
+  border-color: var(--moss);
+  background: #fff;
+}
+.raise .rbtn {
+  background: var(--moss);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 46px;
+  cursor: pointer;
+}
+.raise .rbtn:hover {
+  background: #0e423c;
+}
+.raise .rdisclaim {
+  font-size: 13px;
+  color: var(--mut);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 60ch;
+}
+.raise .rdisclaim b {
+  color: var(--pine);
+  font-weight: 600;
+}
+.raise .rhint {
+  font-size: 12px;
+  color: var(--faint);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+.raise .rnote {
+  font-size: 13px;
+  color: var(--moss);
+  font-weight: 500;
+  margin-top: 12px;
+  line-height: 1.55;
+}
+
+/* ---------- CTA rows ---------- */
+.ctarow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.ctarow.center {
+  justify-content: center;
+}
+
+/* ---------- closing centered line ---------- */
+.closing {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+.closingQ {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.4vw, 34px);
+  color: var(--pine);
+  font-weight: 500;
+  max-width: 24ch;
+  margin: 0 auto 22px;
+  line-height: 1.25;
+}
+.closingQ b {
+  color: var(--moss);
+  font-weight: 600;
+}

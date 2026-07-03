@@ -68,6 +68,12 @@ export default function SiteNav() {
           >
             Get involved
           </Link>
+          <Link
+            href="/support"
+            className={isActive("/support") ? "active" : undefined}
+          >
+            Support
+          </Link>
           <Link className="cta" href="/app">
             Open your town
           </Link>
