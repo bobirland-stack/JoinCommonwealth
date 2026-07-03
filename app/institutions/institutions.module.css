@@ -1,0 +1,297 @@
+/* ============================================================================
+   institutions.module.css — page-specific styles for /institutions (Phase 9).
+   ----------------------------------------------------------------------------
+   The resident-facing town institutions page. It lives in the marketing/shell
+   layer like /settings, so it scopes its short component class names as a CSS
+   module to avoid colliding with the global site.css `.wrap`/`.card`.
+
+   The stream chips reuse the follow-chip language from Settings (.fpill) and
+   the You tab (.fchip): a pill that turns moss when followed. They carry a
+   small leading building glyph so a resident can tell an institution-stream
+   chip apart from a topic-follow chip. Shared bits (.serif, .eyebrow) come from
+   the global site.css / tokens.css.
+   ========================================================================== */
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.phead {
+  padding: 48px 0 8px;
+}
+.phead h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  font-weight: 500;
+}
+.phead .lede {
+  font-size: 17px;
+  color: var(--mut);
+  margin-top: 16px;
+  max-width: 54ch;
+  line-height: 1.55;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--moss);
+  margin-bottom: 6px;
+}
+.back svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ---------- institution card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  margin-top: 18px;
+}
+.chead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--pinetint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--pine);
+  fill: none;
+  stroke-width: 1.8;
+}
+.htext {
+  flex: 1;
+  min-width: 0;
+}
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--pine);
+  font-family: var(--font-head);
+}
+.kind {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--moss);
+  background: var(--mosstint);
+  border: 1px solid var(--mossline);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.summary {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.55;
+  margin-top: 12px;
+}
+.addr {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--mut);
+  margin-top: 9px;
+}
+.addr svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--faint);
+  fill: none;
+  stroke-width: 1.8;
+  flex: none;
+}
+
+/* ---------- streams ---------- */
+.streamsHead {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 16px 0 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line2);
+}
+.streams {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.stream {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chip {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  padding: 8px 14px 8px 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--mut);
+  min-height: 40px;
+}
+.chip[aria-pressed="true"] {
+  background: var(--mosstint);
+  border-color: var(--mossline);
+  color: var(--moss);
+  font-weight: 600;
+}
+.mk {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  flex: none;
+  background: var(--honeytint);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mk svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--honey);
+  fill: none;
+  stroke-width: 2;
+}
+.chip[aria-pressed="true"] .mk {
+  background: var(--card);
+}
+.state {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.state svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke-width: 2.2;
+  stroke: currentColor;
+}
+.chip[aria-pressed="false"] .state svg {
+  stroke: var(--faint);
+}
+.streamDesc {
+  font-size: 12.5px;
+  color: var(--mut);
+  line-height: 1.5;
+  padding-left: 2px;
+}
+
+/* ---------- provenance (quiet, from the record) ---------- */
+.prov {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line2);
+  font-size: 12px;
+  color: var(--faint);
+}
+.prov svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 2.2;
+  flex: none;
+}
+.prov b {
+  color: var(--mut);
+  font-weight: 600;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--mut);
+  line-height: 1.6;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.note svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--moss);
+  fill: none;
+  stroke-width: 1.9;
+  flex: none;
+  margin-top: 1px;
+}
+
+.spacer {
+  height: 40px;
+}
+
+/* ---------- toast (shared shape with Settings) ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--pine);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s, transform 0.22s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.toast.on {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--sage);
+  fill: none;
+  stroke-width: 2.4;
+}

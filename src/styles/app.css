@@ -576,6 +576,21 @@ button.rec { cursor: pointer; }
 .fchip[aria-pressed="true"] { background: var(--mosstint); border-color: var(--mossline); color: var(--moss); font-weight: 600; }
 .fchip .plus { stroke: var(--faint); }
 
+/* Institution-stream chip: the same follow-chip pattern, marked with a small
+   building glyph so a resident can tell it apart from a topic-follow chip. The
+   leading marker is presentational; the moss "followed" state is shared. */
+.fchip.istream { padding-left: 8px; }
+.fchip.istream .imk {
+  width: 20px; height: 20px; border-radius: 6px; flex: none;
+  background: var(--honeytint); display: inline-flex; align-items: center; justify-content: center;
+}
+.fchip.istream .imk svg { width: 12px; height: 12px; stroke: var(--honey); stroke-width: 2; }
+.fchip.istream[aria-pressed="true"] .imk { background: var(--card); }
+.fchip.istream .state { margin-left: 1px; }
+
+.emptyfollow { font-size: 13px; color: var(--mut); line-height: 1.55; }
+.emptyfollow a { color: var(--moss); font-weight: 600; }
+
 .linkrow {
   display: flex; align-items: center; gap: 12px; background: var(--card);
   border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; margin-bottom: 9px;

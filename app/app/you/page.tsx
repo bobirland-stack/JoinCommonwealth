@@ -20,20 +20,43 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { town } from "@/src/town";
+import { town, institutionById, institutionStream } from "@/src/town";
 import { getSettings, subscribe } from "@/src/lib/follows";
 import FollowButton from "@/src/components/FollowButton";
+import InstitutionStreamChip from "@/src/components/InstitutionStreamChip";
+
+/** Resolve a stored "{institutionId}:{streamId}" key to its two parts. */
+function splitStreamKey(key: string): { instId: string; streamId: string } {
+  const i = key.indexOf(":");
+  return { instId: key.slice(0, i), streamId: key.slice(i + 1) };
+}
 
 export default function YouPage() {
   const [count, setCount] = useState(0);
+  const [streamFollows, setStreamFollows] = useState<string[]>([]);
 
   useEffect(() => {
-    const sync = () => setCount(getSettings().follows.length);
+    const sync = () => {
+      const s = getSettings();
+      setCount(s.follows.length);
+      setStreamFollows(s.institutionFollows);
+    };
     sync();
     return subscribe(sync);
   }, []);
 
   const following = count > 0;
+
+  // Only the streams that still resolve to a real institution + stream render,
+  // so a stale stored key never crashes the tab.
+  const followedStreams = streamFollows
+    .map((key) => {
+      const { instId, streamId } = splitStreamKey(key);
+      const inst = institutionById(instId);
+      const stream = institutionStream(instId, streamId);
+      return inst && stream ? { inst, stream } : null;
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null);
 
   return (
     <main className="view">
@@ -67,6 +90,32 @@ export default function YouPage() {
           <FollowButton key={t.id} topic={t.id} variant="chip" label={t.label} />
         ))}
       </div>
+
+      <div className="section-h">
+        <h2>Town institutions</h2>
+        <span className="ln" />
+        <Link className="see" href="/institutions">
+          Browse all
+        </Link>
+      </div>
+      {followedStreams.length > 0 ? (
+        <div className="follow-grid">
+          {followedStreams.map(({ inst, stream }) => (
+            <InstitutionStreamChip
+              key={`${inst.id}:${stream.id}`}
+              institutionId={inst.id}
+              streamId={stream.id}
+              label={`${inst.name} · ${stream.label}`}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="emptyfollow">
+          You&apos;re not following any institution streams yet. Open{" "}
+          <Link href="/institutions">Town institutions</Link> to follow the
+          library, historical society, senior center, or downtown.
+        </p>
+      )}
 
       <div className="section-h">
         <h2>Manage</h2>

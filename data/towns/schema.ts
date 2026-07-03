@@ -211,6 +211,32 @@ export interface DigestEntry {
 }
 
 /* ----------------------------------------------------------------------------
+   Town institutions — the library, historical society, senior center, and the
+   downtown authority. Each carries a short profile and a set of specific
+   streams a resident can follow one at a time (never all-or-nothing). This is
+   the resident-facing half only; there is no institution-facing posting tool.
+   `kind` is a plain string, not a strict union, so a future town can add a kind
+   this town doesn't have without a schema change.
+   -------------------------------------------------------------------------- */
+export interface InstitutionStream {
+  id: string;
+  label: string;       // e.g. "Events & programs", "Book sales"
+  description: string; // one plain sentence
+}
+
+export interface Institution {
+  id: string;
+  name: string;
+  kind: string;          // "library" | "historical society" | "senior center" | "downtown authority"
+  summary: string;       // one sentence, what it is
+  address?: string;
+  hours?: string;
+  website?: string;
+  streams: InstitutionStream[];
+  source: Source;
+}
+
+/* ----------------------------------------------------------------------------
    The Town — the whole shape the app reskins from. This is the object every
    component receives (via src/town.ts). Nothing else is town-aware.
    -------------------------------------------------------------------------- */
@@ -224,4 +250,5 @@ export interface Town {
   events: CivicEvent[];
   topics: Topic[];
   digest: DigestEntry[];
+  institutions: Institution[];
 }

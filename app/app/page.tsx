@@ -7,6 +7,7 @@
    hardcoded to Clawson, so the tab reskins for any town.
    ========================================================================== */
 
+import Link from "next/link";
 import { town } from "@/src/town";
 import { niceDate } from "@/src/lib/dates";
 import RecordCard from "@/src/components/RecordCard";
@@ -96,6 +97,30 @@ export default function YourTownPage() {
             <span className="ln" />
           </div>
           <Thread thread={thread} />
+        </>
+      )}
+
+      {/* town institutions — a link to the standalone page, not a sixth tab */}
+      {town.institutions.length > 0 && (
+        <>
+          <div className="section-h">
+            <h2>Town institutions</h2>
+            <span className="ln" />
+          </div>
+          <Link className="linkrow" href="/institutions">
+            <svg className="li" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />
+            </svg>
+            <div className="lt">
+              <b>The library, historical society, and more</b>
+              <span>
+                Follow just the parts you care about, one stream at a time
+              </span>
+            </div>
+            <svg className="ch" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </Link>
         </>
       )}
     </main>

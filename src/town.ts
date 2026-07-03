@@ -40,6 +40,7 @@ const REQUIRED_KEYS: (keyof Town)[] = [
   "events",
   "topics",
   "digest",
+  "institutions",
 ];
 
 /**
@@ -65,6 +66,7 @@ function validateTown(t: Town): Town {
     { name: "records", rows: t.records },
     { name: "events", rows: t.events },
     { name: "digest", rows: t.digest },
+    { name: "institutions", rows: t.institutions },
   ];
   for (const { name, rows } of sourced) {
     for (const row of rows) {
@@ -98,5 +100,13 @@ export const byTopic = <T extends { topic: string }>(rows: T[], topicId: string)
 /** A thread by id (the "follow this" unit). */
 export const threadById = (id: string) =>
   town.threads.find((th) => th.id === id);
+
+/** Look up an institution by id. */
+export const institutionById = (id: string) =>
+  town.institutions.find((i) => i.id === id);
+
+/** Look up a single followable stream by its institution and stream ids. */
+export const institutionStream = (institutionId: string, streamId: string) =>
+  institutionById(institutionId)?.streams.find((s) => s.id === streamId);
 
 export default town;
