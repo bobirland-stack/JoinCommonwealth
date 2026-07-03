@@ -174,6 +174,25 @@ export interface RecordCard {
 }
 
 /* ----------------------------------------------------------------------------
+   Infrastructure projects — current road and water work a resident might want
+   to know about before they drive down their street or open a water bill. Kept
+   separate from RecordCard because a project has a status a plain record does
+   not. `status` moves planned → in-progress → complete.
+   -------------------------------------------------------------------------- */
+export type ProjectStatus = "planned" | "in-progress" | "complete";
+
+export interface InfrastructureProject {
+  id: string;
+  title: string;
+  kind: "road" | "water";
+  status: ProjectStatus;
+  summary: string;          // one or two plain sentences
+  location: string;         // street or area, plain language
+  timeline?: string;        // e.g. "Expected to finish in August"
+  source: Source;
+}
+
+/* ----------------------------------------------------------------------------
    Calendar events (meetings + civic events). body is null for civic events.
    -------------------------------------------------------------------------- */
 export interface CivicEvent {
@@ -247,6 +266,7 @@ export interface Town {
   threads: Thread[];
   meetings: Meeting[];
   records: RecordCard[];
+  infrastructureProjects: InfrastructureProject[];
   events: CivicEvent[];
   topics: Topic[];
   digest: DigestEntry[];

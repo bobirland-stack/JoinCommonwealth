@@ -23,6 +23,8 @@ interface RecordCardProps {
   drafted?: boolean;
   /** Optional short kicker above the title. */
   tag?: string;
+  /** Optional small facts shown under the body, e.g. a location or a timeline. */
+  meta?: string[];
 }
 
 export default function RecordCard({
@@ -33,7 +35,9 @@ export default function RecordCard({
   happening,
   drafted,
   tag,
+  meta,
 }: RecordCardProps) {
+  const metaItems = meta?.filter(Boolean) ?? [];
   return (
     <div className="rec">
       <div className="rtop">
@@ -48,6 +52,13 @@ export default function RecordCard({
       {tag && <div className="rtag">{tag}</div>}
       <h4>{title}</h4>
       <p>{body}</p>
+      {metaItems.length > 0 && (
+        <div className="rmeta">
+          {metaItems.map((m, i) => (
+            <span key={i}>{m}</span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -891,6 +891,50 @@
       }
     }
   ],
+  "infrastructureProjects": [
+    {
+      "id": "ip-main-repave",
+      "title": "Main Street repaving, downtown block",
+      "kind": "road",
+      "status": "in-progress",
+      "summary": "Crews are repaving this stretch of N. Main Street. Expect one lane to be closed during work hours, so downtown traffic may be slow at times. You can still reach the shops and driveways along the block.",
+      "location": "N. Main Street between 14 Mile and Elmwood",
+      "timeline": "Expected to finish this fall.",
+      "source": {
+        "label": "Illustrative example, not a real project",
+        "date": "2026-07-01",
+        "real": false
+      }
+    },
+    {
+      "id": "ip-watermain-west",
+      "title": "Water main replacement, west side",
+      "kind": "water",
+      "status": "planned",
+      "summary": "The city plans to replace an aging water main under these streets. A water main is the pipe that carries water to your home. During the work, your water may be shut off for a few hours at a time. The city gives affected homes notice before any shutoff.",
+      "location": "Residential streets west of Main",
+      "timeline": "Planned for next year, pending budget approval.",
+      "source": {
+        "label": "Illustrative example, not a real project",
+        "date": "2026-07-01",
+        "real": false
+      }
+    },
+    {
+      "id": "ip-fisher-sidewalk",
+      "title": "Sidewalk repair, Fisher Court",
+      "kind": "road",
+      "status": "complete",
+      "summary": "This sidewalk repair is finished. The uneven sections near the community center have been replaced, so the walk is smooth and safe again.",
+      "location": "Fisher Court near the community center",
+      "timeline": "Completed earlier this year.",
+      "source": {
+        "label": "Illustrative example, not a real project",
+        "date": "2026-07-01",
+        "real": false
+      }
+    }
+  ],
   "events": [
     {
       "id": "e1",
@@ -1031,6 +1075,10 @@
     {
       "id": "elections",
       "label": "City elections"
+    },
+    {
+      "id": "infrastructure",
+      "label": "Roads & water"
     }
   ],
   "digest": [
@@ -1087,6 +1135,19 @@
         "label": "City of Clawson",
         "date": "2026-06-01",
         "real": true
+      }
+    },
+    {
+      "id": "d5",
+      "topic": "infrastructure",
+      "tag": "Happening",
+      "title": "Main Street repaving is underway downtown",
+      "note": "One lane of N. Main Street is closed during work hours while crews repave the downtown block. Expected to finish this fall.",
+      "date": "2026-07-01",
+      "source": {
+        "label": "Illustrative example, not a real project",
+        "date": "2026-07-01",
+        "real": false
       }
     }
   ],
