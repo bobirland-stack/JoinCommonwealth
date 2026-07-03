@@ -74,6 +74,9 @@ export interface Body {
   location: string;
   role: string;         // one-line description of its authority
   topic: string;        // maps to a Topic.id (followable)
+  takeAction?: string;  // one plain sentence: how a resident gets involved
+  openSeat?: boolean;   // true if the body currently has a vacancy
+  note?: string;        // optional short context, e.g. statutory basis, history
 }
 
 /* ----------------------------------------------------------------------------
