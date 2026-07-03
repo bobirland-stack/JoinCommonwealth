@@ -84,6 +84,7 @@ function LedgerRow({ meeting }: { meeting: MeetingRow }) {
     status === "minutes_captured" ||
     status === "summary_drafted";
   const canReview = status === "summary_drafted" || status === "summary_reviewed";
+  const canPublish = status === "summary_reviewed";
 
   const meta = [
     meeting.body_id,
@@ -112,6 +113,14 @@ function LedgerRow({ meeting }: { meeting: MeetingRow }) {
             className={styles.smallLink}
           >
             Review
+          </Link>
+        ) : null}
+        {canPublish ? (
+          <Link
+            href={`/workspace/publish?meeting=${meeting.id}`}
+            className={styles.smallLink}
+          >
+            Publish
           </Link>
         ) : null}
       </div>

@@ -66,3 +66,44 @@ a second one the same way.
 Until that variable is set, a submission still saves to the database. The notify
 step just tells the scout that no notice was sent, rather than pretending one
 was.
+
+# The publish function
+
+`publish-worker.js` is the third function in this family, added in Stage A,
+Task 3. When a curator publishes a reviewed meeting in the workspace, the app
+builds the exact objects `data/towns/clawson.json` expects and sends them to
+this function. The function commits the change to a new branch and opens a small
+pull request titled `Publish: {meeting title}, {date}`, so a person reviews and
+merges it. Nothing is visible to a resident until that pull request is merged.
+
+It also handles the light verification-log connection (Task 3, Part 3): the same
+worker can append a checked flag to `data/verification-log.json` as its own
+separate pull request. Each publish is one branch and one pull request, so the
+audit trail stays "one commit, one meeting" (ADR-002).
+
+## One difference from the other two functions: the token
+
+The flag and submission functions only open Issues, so their token needs
+`Issues: Read and write`. This function commits a file and opens a pull request,
+so its token needs two different permissions on this repository:
+
+- **Contents: Read and write** (to commit the file on a new branch)
+- **Pull requests: Read and write** (to open the pull request)
+
+Make a separate fine-grained token with those two permissions. Do not reuse the
+Issues-only token; it cannot commit.
+
+## Set it up
+
+1. In Cloudflare, create a Worker (for example `commonwealth-publish`).
+2. Paste in the contents of `publish-worker.js` and deploy.
+3. Add a `GITHUB_TOKEN` secret to this Worker, using the Contents + Pull
+   requests token described above.
+4. Copy the Worker's URL.
+5. In the GitHub repo, under Settings, then Secrets and variables, then Actions,
+   then the Variables tab, add a repository variable named `PUBLISH_ENDPOINT`
+   set to the Worker URL. The next deploy picks it up.
+
+Until that variable is set, the publish screen says plainly that it cannot
+publish yet. Unlike a submission, a publish has no "saved anyway" fallback: the
+whole point is the commit, so a meeting is never marked published without one.
