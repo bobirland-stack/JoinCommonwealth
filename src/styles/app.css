@@ -186,7 +186,7 @@
 .sp-act {
   display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
   border-radius: 8px; padding: 7px 11px; border: 1px solid var(--line); background: var(--paper);
-  color: var(--pine); min-height: 36px;
+  color: var(--pine); min-height: 44px;
 }
 .sp-act svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
 .sp-act.primary { background: var(--moss); border-color: var(--moss); color: #fff; }

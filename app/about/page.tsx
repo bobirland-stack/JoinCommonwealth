@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className={styles.stepcard}>
               <div className={styles.sn}>01</div>
               <div className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   <path d="M14 2v6h6M9 13h6M9 17h4" />
                 </svg>
@@ -84,7 +84,7 @@ export default function AboutPage() {
             <div className={styles.stepcard}>
               <div className={styles.sn}>02</div>
               <div className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="8" r="4" />
                   <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
                 </svg>
@@ -99,7 +99,7 @@ export default function AboutPage() {
             <div className={styles.stepcard}>
               <div className={styles.sn}>03</div>
               <div className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                   <path d="M9 22V12h6v10" />
                 </svg>
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div className={styles.aud}>
             <div className={styles.audcard}>
               <span className={styles.ai}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M16 21v-2a4 4 0 0 0-8 0v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
                 </svg>
               </span>
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.audcard}>
               <span className={styles.ai}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 21h18M5 21V7l7-4 7 4v14M10 9h.01M14 9h.01M10 13h.01M14 13h.01" />
                 </svg>
               </span>
@@ -150,7 +150,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.audcard}>
               <span className={styles.ai}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
               </span>
@@ -165,7 +165,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.audcard}>
               <span className={styles.ai}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
                 </svg>
               </span>
@@ -195,7 +195,7 @@ export default function AboutPage() {
           <div className={styles.indep}>
             <div className={styles.icard}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M16 21v-2a4 4 0 0 0-8 0v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
                 </svg>
                 It answers to residents
@@ -208,7 +208,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.icard}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
                 </svg>
                 It reports, never editorializes
@@ -220,7 +220,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.icard}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
@@ -234,7 +234,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.icard}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M9 12l2 2 4-4M12 3l7 4v5c0 4.4-3 8.5-7 9.9C8 17.5 5 13.4 5 9V7z" />
                 </svg>
                 Safe and accountable
@@ -249,7 +249,7 @@ export default function AboutPage() {
           <div className={styles.ctarow}>
             <Link className="btn light" href="/trust">
               Read trust &amp; security
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
@@ -262,7 +262,7 @@ export default function AboutPage() {
           <div className={`${styles.ctarow} ${styles.center}`}>
             <Link className="btn primary" href="/app">
               Open your {town.town.name}
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>

@@ -48,11 +48,12 @@ import {
 import "@/src/styles/site.css";
 import styles from "./settings.module.css";
 
-/** Mirror the two class-backed prefs onto <body> so they take effect globally. */
+/** Mirror the class-backed prefs onto <body> so they take effect globally. */
 function applyBodyClasses(prefs: Prefs): void {
   if (typeof document === "undefined") return;
   document.body.classList.toggle("bigtext", prefs.bigtext);
   document.body.classList.toggle("contrast", prefs.contrast);
+  document.body.classList.toggle("reducemotion", prefs.reducemotion);
 }
 
 export default function SettingsPage() {
@@ -142,7 +143,7 @@ export default function SettingsPage() {
         <section className={styles.card}>
           <div className={styles.cardHead}>
             <span className={styles.ci}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0" />
               </svg>
             </span>
@@ -166,11 +167,11 @@ export default function SettingsPage() {
                 >
                   <span className={styles.fpIc}>
                     {on ? (
-                      <svg viewBox="0 0 24 24">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                     ) : (
-                      <svg viewBox="0 0 24 24">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 5v14M5 12h14" />
                       </svg>
                     )}
@@ -186,7 +187,7 @@ export default function SettingsPage() {
         <section className={styles.card}>
           <div className={styles.cardHead}>
             <span className={styles.ci}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
                 <path d="m22 6-10 7L2 6" />
               </svg>
@@ -208,7 +209,7 @@ export default function SettingsPage() {
         <section className={styles.card}>
           <div className={styles.cardHead}>
             <span className={styles.ci}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v8M8 12h8" />
               </svg>
@@ -266,7 +267,7 @@ export default function SettingsPage() {
         <section className={styles.card}>
           <div className={styles.cardHead}>
             <span className={styles.ci}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
@@ -281,7 +282,7 @@ export default function SettingsPage() {
           </div>
 
           <div className={styles.privacyNote}>
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 6 9 17l-5-5" />
             </svg>
             <span>
@@ -297,7 +298,7 @@ export default function SettingsPage() {
 
           <div className={styles.actions}>
             <button className={styles.btn} onClick={onExport}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
               Export my data
@@ -306,7 +307,7 @@ export default function SettingsPage() {
               className={`${styles.btn} ${styles.danger}`}
               onClick={onDelete}
             >
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
               </svg>
               Delete everything
@@ -323,7 +324,7 @@ export default function SettingsPage() {
         role="status"
         aria-live="polite"
       >
-        <svg viewBox="0 0 24 24">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 6 9 17l-5-5" />
         </svg>
         <span>{toast}</span>

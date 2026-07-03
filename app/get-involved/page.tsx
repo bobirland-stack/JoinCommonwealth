@@ -32,7 +32,7 @@ import styles from "./get-involved.module.css";
 /** The right-arrow used on every inline CTA in the reference. */
 function Arrow() {
   return (
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
@@ -73,7 +73,7 @@ export default function GetInvolvedPage() {
             {/* Show up */}
             <div className={styles.way}>
               <span className={styles.wn}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </span>
@@ -117,7 +117,7 @@ export default function GetInvolvedPage() {
             {/* Send a comment */}
             <div className={styles.way}>
               <span className={styles.wn}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
                   <path d="m22 6-10 7L2 6" />
                 </svg>
@@ -165,7 +165,7 @@ export default function GetInvolvedPage() {
             {/* Take a seat */}
             <div className={styles.way}>
               <span className={styles.wn}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01M10 21v-4h4v4" />
                 </svg>
               </span>
@@ -211,7 +211,7 @@ export default function GetInvolvedPage() {
           </div>
 
           <div className={styles.note}>
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
             </svg>
             <span>
@@ -237,7 +237,7 @@ export default function GetInvolvedPage() {
           <div className={styles.chips}>
             {town.topics.map((topic) => (
               <span className={styles.chip} key={topic.id}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
                 {topic.label}

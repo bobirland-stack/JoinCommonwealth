@@ -28,7 +28,7 @@ export default function SiteNav() {
       <div className="nav-in">
         <Link className="brand" href="/">
           <span className="mark">
-            <svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />
             </svg>
           </span>
@@ -41,7 +41,7 @@ export default function SiteNav() {
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
-          <svg viewBox="0 0 24 24">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
         </button>
