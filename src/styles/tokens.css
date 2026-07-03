@@ -19,8 +19,8 @@
   --card:   #FFFFFF;
   --ink:    #1A2327;
   --mut:    #5B6560;
-  --faint:  #6E7872;
-  --honey:  #A8762A;
+  --faint:  #636C66;
+  --honey:  #8C6222;
   --rust:   #92310F;
   --sage:   #A7C0A9;
   --sky:    #1F5A8A;
@@ -120,6 +120,10 @@ button,
   min-height: 44px;
 }
 
+/* Two ways in: the device preference (below), and the in-app "Reduce motion"
+   setting, which toggles `body.reducemotion` (Settings, via the follows store).
+   Both collapse every animation and transition to an instant so no component
+   that added its own motion can slip past. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -129,4 +133,14 @@ button,
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+body.reducemotion,
+body.reducemotion *,
+body.reducemotion *::before,
+body.reducemotion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
 }

@@ -82,7 +82,7 @@ export default function MissionPage() {
           <div className={styles.principles}>
             <div className={styles.pcard}>
               <div className={styles.pi}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   <path d="M14 2v6h6" />
                 </svg>
@@ -95,7 +95,7 @@ export default function MissionPage() {
             </div>
             <div className={styles.pcard}>
               <div className={styles.pi}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
                 </svg>
               </div>
@@ -108,7 +108,7 @@ export default function MissionPage() {
             </div>
             <div className={styles.pcard}>
               <div className={styles.pi}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
                 </svg>
               </div>
@@ -152,7 +152,7 @@ export default function MissionPage() {
           <div className={styles.ctarow}>
             <Link className="btn light" href="/about">
               How it stays independent
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
@@ -177,7 +177,7 @@ export default function MissionPage() {
           <div className={`${styles.ctarow} ${styles.center}`}>
             <Link className="btn primary" href="/app">
               Open your {town.town.name}
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>

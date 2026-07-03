@@ -34,7 +34,7 @@ import styles from "./trust.module.css";
 /** The right-arrow used on the inline CTAs. */
 function Arrow() {
   return (
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
@@ -43,7 +43,7 @@ function Arrow() {
 /** The green check used on every "do" rule. */
 function Check() {
   return (
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M20 6 9 17l-5-5" />
     </svg>
   );
@@ -52,7 +52,7 @@ function Check() {
 /** The rust X used on every "dont" rule. */
 function Cross() {
   return (
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M18 6 6 18M6 6l12 12" />
     </svg>
   );
@@ -61,7 +61,7 @@ function Cross() {
 /** The amber warning triangle used on the notes. */
 function Warn() {
   return (
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
     </svg>
   );
@@ -101,7 +101,7 @@ export default function TrustPage() {
         <section id="record" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <path d="M14 2v6h6M9 13h6M9 17h4" />
               </svg>
@@ -151,7 +151,7 @@ export default function TrustPage() {
         <section id="privacy" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
@@ -211,7 +211,7 @@ export default function TrustPage() {
         <section id="firewall" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
@@ -270,7 +270,7 @@ export default function TrustPage() {
         <section id="neutral" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
               </svg>
             </span>
@@ -321,7 +321,7 @@ export default function TrustPage() {
         <section id="corrections" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 7v6h6M21 17v-6h-6" />
                 <path d="M21 7a9 9 0 0 0-15-3M3 17a9 9 0 0 0 15 3" />
               </svg>
@@ -380,7 +380,7 @@ export default function TrustPage() {
         <section id="access" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 8v8M8 12h8" />
               </svg>
@@ -438,7 +438,7 @@ export default function TrustPage() {
         <section id="safety" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
               </svg>
             </span>
@@ -490,7 +490,7 @@ export default function TrustPage() {
         <section id="security" className={styles.section}>
           <div className={styles.sectitle}>
             <span className={styles.si}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>

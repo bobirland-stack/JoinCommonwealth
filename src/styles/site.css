@@ -79,6 +79,9 @@ header.nav { position: sticky; top: 0; z-index: 40; background: rgba(250, 247, 2
 .rcard h4 { font-size: 15px; font-weight: 600; color: var(--pine); line-height: 1.3; margin-bottom: 6px; }
 .rcard p { font-size: 12.5px; color: var(--mut); line-height: 1.5; }
 .rcard .when { font-size: 11.5px; color: var(--faint); margin-top: 9px; font-weight: 500; }
+/* Sample/scaffold badge — shown when a strip card's source is not yet verified
+   (source.real === false), so the marketing strip never reads a sample as real. */
+.rcard .rsample { display: inline-flex; align-items: center; margin-top: 8px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; color: var(--honey); background: var(--honeytint); border: 1px solid var(--honeyline); border-radius: 5px; padding: 2px 6px; }
 
 /* ---------- section shell ---------- */
 section { padding: 56px 0; }

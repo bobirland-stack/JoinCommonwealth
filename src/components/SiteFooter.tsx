@@ -19,7 +19,7 @@ export default function SiteFooter() {
         <div className="foot-brand">
           <Link className="brand" href="/">
             <span className="mark">
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" />
               </svg>
             </span>
@@ -31,7 +31,7 @@ export default function SiteFooter() {
           </p>
           <div style={{ marginTop: 14 }}>
             <span className="pill">
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
               </svg>
               Nonprofit · independent
@@ -46,7 +46,6 @@ export default function SiteFooter() {
           <h5>The app</h5>
           <Link href="/app">Open your town</Link>
           <Link href="/get-involved">Get involved</Link>
-          <Link href="/water">Your water</Link>
           <Link href="/settings">Settings</Link>
         </div>
 

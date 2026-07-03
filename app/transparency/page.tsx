@@ -66,7 +66,7 @@ const STAGES: Stage[] = [
     cls: "sSource",
     num: "STAGE 1",
     icon: (
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
         <path d="M14 2v6h6" />
       </svg>
@@ -92,7 +92,7 @@ const STAGES: Stage[] = [
     cls: "sAi",
     num: "STAGE 2",
     icon: (
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <rect x="4" y="7" width="16" height="13" rx="2" />
         <path d="M9 7V5a3 3 0 0 1 6 0v2M9 13h.01M15 13h.01" />
       </svg>
@@ -119,7 +119,7 @@ const STAGES: Stage[] = [
     cls: "sHuman",
     num: "STAGE 3",
     icon: (
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="8" r="4" />
         <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
       </svg>
@@ -147,7 +147,7 @@ const STAGES: Stage[] = [
     cls: "sPub",
     num: "STAGE 4",
     icon: (
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" />
       </svg>
     ),
@@ -286,7 +286,7 @@ export default function TransparencyPage() {
           <section id="legal" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 3v18M5 7h14M7 7l-3 7h6l-3-7Zm10 0-3 7h6l-3-7Z" />
                 </svg>
               </span>
@@ -303,7 +303,7 @@ export default function TransparencyPage() {
                 <div className={styles.lh}>
                   <b>Established as a mission-first project</b>
                   <span className={`${styles.status} ${styles.live}`}>
-                    <svg viewBox="0 0 24 24">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                     Complete
@@ -319,7 +319,7 @@ export default function TransparencyPage() {
                 <div className={styles.lh}>
                   <b>Securing a fiscal sponsor</b>
                   <span className={`${styles.status} ${styles.progress}`}>
-                    <svg viewBox="0 0 24 24">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 8v4l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                     In progress
@@ -354,7 +354,7 @@ export default function TransparencyPage() {
             </div>
             <div className={styles.explain}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M12 16v-4M12 8h.01" />
                 </svg>
@@ -385,7 +385,7 @@ export default function TransparencyPage() {
               </p>
             </div>
             <div className={styles.note}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <path d="M14 2v6h6" />
               </svg>
@@ -402,7 +402,7 @@ export default function TransparencyPage() {
           <section id="money" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
                   <path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 1.5-2.5 1.5-2.5 2.5m0 2.5a2.5 2 0 0 1-5 0" />
                 </svg>
@@ -412,7 +412,7 @@ export default function TransparencyPage() {
                 className={`${styles.status} ${styles.live}`}
                 style={{ marginLeft: "auto" }}
               >
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M21 12a9 9 0 1 1-6.2-8.5" />
                 </svg>
                 Updated monthly
@@ -424,7 +424,7 @@ export default function TransparencyPage() {
               has to take our spending on faith.
             </p>
             <div className={styles.infonote}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
               </svg>
               <span>
@@ -562,7 +562,7 @@ export default function TransparencyPage() {
           <section id="sourcing" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   <path d="M14 2v6h6M9 13h6M9 17h4" />
                 </svg>
@@ -577,7 +577,7 @@ export default function TransparencyPage() {
             </p>
             <div className={`${styles.explain} ${styles.moss}`}>
               <h4>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
                 The rule: if it isn&apos;t in the record, it isn&apos;t here
@@ -607,7 +607,7 @@ export default function TransparencyPage() {
             <div className={styles.worked}>
               <div className={`${styles.wk} ${styles.src}`}>
                 <div className={styles.wkh}>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   </svg>
                   The source: official minutes
@@ -619,7 +619,7 @@ export default function TransparencyPage() {
               </div>
               <div className={`${styles.wk} ${styles.out}`}>
                 <div className={styles.wkh}>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                   What a reader sees
@@ -630,7 +630,7 @@ export default function TransparencyPage() {
                   {yesNames.join(", ")}.
                 </div>
                 <div className={styles.srcline}>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
                   </svg>
                   From the record · City Council minutes, {recordDate}
@@ -649,7 +649,7 @@ export default function TransparencyPage() {
           <section id="process" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 0v10l6 3" />
                 </svg>
               </span>
@@ -664,7 +664,7 @@ export default function TransparencyPage() {
               anything reaches a reader.
             </p>
             <div className={styles.note}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 6 9 17l-5-5" />
               </svg>
               <span>
@@ -717,7 +717,7 @@ export default function TransparencyPage() {
           <section id="rules" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si} style={{ background: "var(--slatetint)" }}>
-                <svg viewBox="0 0 24 24" style={{ stroke: "var(--slate)" }}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" style={{ stroke: "var(--slate)" }}>
                   <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                 </svg>
               </span>
@@ -732,7 +732,7 @@ export default function TransparencyPage() {
             <div className={styles.rules}>
               <div className={`${styles.rulecard} ${styles.always}`}>
                 <h4>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                   Always
@@ -750,7 +750,7 @@ export default function TransparencyPage() {
               </div>
               <div className={`${styles.rulecard} ${styles.never}`}>
                 <h4>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M18 6 6 18M6 6l12 12" />
                   </svg>
                   Never
@@ -769,7 +769,7 @@ export default function TransparencyPage() {
             <details className={styles.disclose}>
               <summary>
                 <span className={styles.di}>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8 3H5a2 2 0 0 0-2 2v3m0 8v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3m0-8V5a2 2 0 0 0-2-2h-3M9 12h6" />
                   </svg>
                 </span>
@@ -780,7 +780,7 @@ export default function TransparencyPage() {
                     text
                   </span>
                 </span>
-                <svg className={styles.chev} viewBox="0 0 24 24">
+                <svg className={styles.chev} viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M9 6l6 6-6 6" />
                 </svg>
               </summary>
@@ -831,7 +831,7 @@ You do not decide what is true. A person will check your output
 against the source and may reject it. Write accordingly.`}
                 </pre>
                 <div className={styles.promptnote}>
-                  <svg viewBox="0 0 24 24">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
                   </svg>
                   <span>
@@ -847,7 +847,7 @@ against the source and may reject it. Write accordingly.`}
             <div className={styles.ctarow} style={{ marginTop: 20 }}>
               <Link className="btn primary" href="/app">
                 See it in the app
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </Link>
@@ -861,7 +861,7 @@ against the source and may reject it. Write accordingly.`}
           <section id="corrections" className={styles.section}>
             <div className={styles.sectitle}>
               <span className={styles.si}>
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 7v6h6M21 17v-6h-6" />
                   <path d="M21 7a9 9 0 0 0-15-3M3 17a9 9 0 0 0 15 3" />
                 </svg>
@@ -932,7 +932,7 @@ against the source and may reject it. Write accordingly.`}
               </div>
             </div>
             <div className={styles.note}>
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 6 9 17l-5-5" />
               </svg>
               <span>
@@ -945,7 +945,7 @@ against the source and may reject it. Write accordingly.`}
             <div className={styles.ctarow} style={{ marginTop: 20 }}>
               <Link className="btn primary" href="/app">
                 See it in the app
-                <svg viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </Link>
