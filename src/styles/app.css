@@ -9,11 +9,11 @@
    Design tokens (the --pine / --moss / --line custom properties) live in the
    globally imported tokens.css and are NOT redefined here.
 
-   Scope note: only the styles the in-scope surfaces use are ported — the shell,
-   the source marker + panel + flag flow, the digest/record cards, the showcase
-   thread, and the government body cards. The out-of-scope tabs (Happening, Take
-   part, You) stay as placeholders, so their reference styles are not ported yet;
-   the deferred search input is not ported either.
+   Scope note: Phase 3 ported the shell, the source marker + panel + flag flow,
+   the digest/record cards, the showcase thread, and the government body cards.
+   Phase 4 adds the remaining surfaces: the top-bar search input and results
+   empty state, the Happening calendar rows, the Take part "way" cards, and the
+   You follow manager (header, chips, and manage links).
    ========================================================================== */
 
 .mono { font-family: var(--font-mono); }
@@ -61,6 +61,24 @@
 }
 .top .home:hover { color: #fff; }
 .top .home svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* record search — lives in the top bar, below the brand row */
+.search {
+  margin-top: 11px; display: flex; align-items: center; gap: 9px;
+  background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 10px; padding: 0 12px;
+}
+.search svg { width: 16px; height: 16px; stroke: #aebccb; fill: none; stroke-width: 2; flex: none; }
+.search input {
+  flex: 1; border: 0; background: transparent; outline: none; color: #fff;
+  font-size: 14px; padding: 11px 0; font-family: inherit;
+}
+.search input::placeholder { color: #8fa0b2; }
+/* the type=search clear affordance would clash with the pine bar; hide it */
+.search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+/* search results empty state */
+.emptysearch { text-align: center; padding: 30px 16px; color: var(--mut); font-size: 14px; }
 
 /* --- view (each routed tab's content wrapper) ------------------------------ */
 .view { padding: 16px 16px 8px; }
@@ -432,3 +450,74 @@ button.rec { cursor: pointer; }
 .howcta a svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
 .howcta .p { background: var(--moss); color: #fff; }
 .howcta .g { background: var(--card); border: 1px solid var(--line); color: var(--pine); }
+
+/* ============================================================================
+   Phase 4 surfaces — Happening calendar, Take part ways, You follow manager.
+   ========================================================================== */
+
+/* --- Happening: calendar list --------------------------------------------- */
+.calday { display: flex; gap: 13px; margin-bottom: 11px; }
+.calday .cd {
+  width: 48px; flex: none; text-align: center; background: var(--card);
+  border: 1px solid var(--line); border-radius: 11px; padding: 7px 0; height: fit-content;
+}
+.calday .cd .mo {
+  font-family: var(--font-mono); font-size: 10px; color: var(--rust);
+  font-weight: 700; text-transform: uppercase;
+}
+.calday .cd .dy { font-size: 20px; font-weight: 700; color: var(--pine); line-height: 1; }
+.calday .ce {
+  flex: 1; background: var(--card); border: 1px solid var(--line);
+  border-radius: 11px; padding: 11px 13px; min-width: 0;
+}
+.calday .ce h4 { font-size: 14.5px; font-weight: 600; color: var(--pine); margin-bottom: 3px; font-family: var(--font-ui); }
+.calday .ce .cm { font-size: 12px; color: var(--mut); display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 5px; }
+.calday .ce .cnote { font-size: 12.5px; color: var(--ink); line-height: 1.45; }
+/* the plain source line (not the full marker) + its follow button */
+.calday .ce .cmeta { margin-top: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.calday .ce .csrc { font-size: 11px; color: var(--faint); font-style: italic; }
+
+/* --- Take part: "way" cards ------------------------------------------------ */
+.way {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 15px 16px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start;
+}
+.way .wn {
+  width: 40px; height: 40px; border-radius: 11px; background: var(--mosstint);
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.way .wn svg { width: 20px; height: 20px; stroke: var(--moss); fill: none; stroke-width: 1.8; }
+.way .wc { min-width: 0; }
+.way .wc h4 { font-size: 15.5px; font-weight: 600; color: var(--pine); margin-bottom: 5px; font-family: var(--font-ui); }
+.way .wc p { font-size: 13px; color: var(--mut); line-height: 1.55; }
+.way .wc .wd { font-size: 12px; color: var(--faint); margin-top: 7px; line-height: 1.5; }
+
+/* --- You: header, follow chips, manage links ------------------------------- */
+.youhead {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px; margin-bottom: 14px; text-align: center;
+}
+.youhead .yn { font-size: 30px; margin-bottom: 6px; }
+.youhead h3 { font-size: 16px; color: var(--pine); font-weight: 600; margin-bottom: 5px; font-family: var(--font-ui); }
+.youhead p { font-size: 13px; color: var(--mut); line-height: 1.5; }
+
+.follow-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.fchip {
+  border: 1px solid var(--line); background: var(--card); border-radius: 18px;
+  padding: 8px 13px; font-size: 13px; font-weight: 500; color: var(--mut);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.fchip svg { width: 14px; height: 14px; fill: none; stroke-width: 2.2; stroke: currentColor; }
+.fchip[aria-pressed="true"] { background: var(--mosstint); border-color: var(--mossline); color: var(--moss); font-weight: 600; }
+.fchip .plus { stroke: var(--faint); }
+
+.linkrow {
+  display: flex; align-items: center; gap: 12px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; margin-bottom: 9px;
+}
+.linkrow:hover { border-color: var(--mossline); }
+.linkrow svg.li { width: 18px; height: 18px; stroke: var(--moss); fill: none; stroke-width: 1.9; flex: none; }
+.linkrow .lt { flex: 1; min-width: 0; }
+.linkrow .lt b { font-size: 14px; color: var(--pine); font-weight: 600; display: block; }
+.linkrow .lt span { font-size: 12px; color: var(--mut); }
+.linkrow svg.ch { width: 16px; height: 16px; stroke: var(--faint); fill: none; stroke-width: 2; flex: none; }
