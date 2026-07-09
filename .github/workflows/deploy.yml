@@ -58,6 +58,13 @@ jobs:
           # until the function is deployed; a submission still saves, and the
           # notify step just reports that no notice was sent.
           NEXT_PUBLIC_SUBMISSION_ENDPOINT: ${{ vars.SUBMISSION_ENDPOINT }}
+          # URL of the serverless publish function (Stage A, Task 3). Same
+          # pattern again: a repository variable under Settings -> Secrets and
+          # variables -> Actions -> Variables. Empty until the function is
+          # deployed; the publish screen says plainly that it cannot publish yet.
+          # Without this line the built site never reads the variable, so the
+          # publish button stays hidden even after the worker is deployed.
+          NEXT_PUBLIC_PUBLISH_ENDPOINT: ${{ vars.PUBLISH_ENDPOINT }}
           # Supabase connection for the curation workspace (Stage A, Task 1).
           # Set both as repository variables under Settings -> Secrets and
           # variables -> Actions -> Variables. The URL is the project URL and
