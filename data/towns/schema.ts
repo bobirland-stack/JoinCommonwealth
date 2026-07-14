@@ -22,6 +22,8 @@ export interface Source {
   label: string;      // where it came from, e.g. "City of Clawson"
   date: string;       // ISO date the fact was captured/checked (YYYY-MM-DD)
   real: boolean;      // true = verified; false = sample (label in UI)
+  url?: string;       // ADD-ONLY: link to the official source document or page,
+                      // e.g. the approved minutes PDF or the meeting video
   drafted?: boolean;  // true = software-drafted under fixed rules
   selfReviewed?: boolean; // true = reviewed by the same person who drafted it;
                           // the source panel shows the honest self-review line
@@ -107,10 +109,21 @@ export interface Official {
 /* ----------------------------------------------------------------------------
    Votes — roll-call record for a decision (yes = moss, no = rust in UI).
    -------------------------------------------------------------------------- */
+// OCD-aligned vote options: the standard's yes/no/abstain/absent set.
+export type VoteOption = "yes" | "no" | "abstain" | "absent";
+
 export interface VoteEntry {
   name: string;
-  vote: string;         // "yes" | "no" | "abstain" | "absent" (kept as string
-                        // to mirror the source record faithfully)
+  vote: VoteOption;     // OCD-aligned vote value. Narrowed from `string` to the
+                        // VoteOption union; all existing roll data already uses
+                        // these values, so nothing old breaks.
+  officialId?: string;  // ADD-ONLY: the person's stable Official.id. Links a
+                        // roll entry to a person, so an official's page can find
+                        // every roll entry that is theirs and show how they
+                        // voted. Optional because some historical rolls name a
+                        // person who is not in the officials roster. This is a
+                        // sourced record of votes only, never a score, tally,
+                        // grade, or ranking of any official.
 }
 
 export interface Vote {
@@ -148,6 +161,19 @@ export interface Thread {
    item one. This is a data SHAPE, not the Member View (that stays out of V1).
    -------------------------------------------------------------------------- */
 export type MeetingStatus = "upcoming" | "held" | "closed-out" | "cancelled";
+
+// ADD-ONLY: the honest public record lifecycle (ADR-019 / Phase 1 §5). This is
+// a companion to `status`, not a replacement. `status` tracks scheduling;
+// `recordStatus` tracks the document state a resident is looking at. It is a
+// Commonwealth-specific field: Open Civic Data's event status is about
+// scheduling, not the minutes lifecycle, so this is a deliberate deviation.
+export type RecordStatus =
+  | "agenda"     // agenda posted, meeting not yet held
+  | "held"       // meeting held, minutes not yet posted
+  | "proposed"   // proposed minutes posted, not yet approved
+  | "approved"   // minutes approved, the settled record
+  | "corrected"; // approved, then corrected (see the corrections log)
+
 export type AgendaItemType = "hearing" | "action" | "presentation" | "discussion";
 
 export interface AgendaItem {
@@ -162,6 +188,14 @@ export interface AgendaItem {
   source: Source;
 }
 
+// ADD-ONLY: a plain-language recap of a whole meeting, in resident voice. Like
+// every recap it carries its own source; drafted:true marks it as drafted by
+// software under fixed rules, so the source panel can say so.
+export interface MeetingCompanion {
+  text: string;
+  source: Source;
+}
+
 export interface Meeting {
   id: string;
   body: string;              // Body.id
@@ -169,6 +203,11 @@ export interface Meeting {
   date: string;
   time: string;
   status: MeetingStatus;
+  recordStatus?: RecordStatus;   // ADD-ONLY: honest document-state lifecycle
+  videoUrl?: string;             // ADD-ONLY: linked meeting video (e.g. the
+                                 // YouTube recording), never re-hosted; item
+                                 // videoTimestamps are offsets into it
+  companion?: MeetingCompanion;  // ADD-ONLY: plain-language recap of the meeting
   items: AgendaItem[];
 }
 
