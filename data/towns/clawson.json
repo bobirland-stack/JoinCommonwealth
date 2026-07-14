@@ -226,6 +226,31 @@
       }
     },
     {
+      "id": "duberstein",
+      "name": "Adam Duberstein",
+      "role": "Council member",
+      "body": "council",
+      "note": "Appointed by Council in May 2026 to fill a vacant seat.",
+      "source": {
+        "label": "C&G Newspapers — Adam Duberstein to fill vacant Clawson City Council seat",
+        "date": "2026-05-07",
+        "real": true,
+        "url": "https://www.candgnews.com/news/adam-duberstein-to-fill-vacant-clawson-city-council-seat-10969"
+      }
+    },
+    {
+      "id": "speshock",
+      "name": "Alec Speshock",
+      "role": "Council member",
+      "body": "council",
+      "source": {
+        "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+        "date": "2026-06-16",
+        "real": true,
+        "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+      }
+    },
+    {
       "id": "clerk",
       "name": "G. Machele Kukuk, MMC",
       "role": "City Clerk",
@@ -913,6 +938,236 @@
             "date": "2026-01-27",
             "real": true,
             "selfReviewed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "CC-2026-06-16",
+      "body": "council",
+      "title": "City Council Regular Meeting",
+      "date": "2026-06-16",
+      "time": "7:30 PM",
+      "status": "held",
+      "recordStatus": "approved",
+      "videoUrl": "https://www.youtube.com/watch?v=hx1g48X-oKg",
+      "companion": {
+        "text": "The City Council met on June 16, 2026. Here is a plain look at what happened.\n\nThe meeting opened with awards from the Police Department. The department recognized members for their service. The approved minutes name each person honored and the reason for each award.\n\nCity staff gave a presentation about the city's sewer system and a possible bond for infrastructure work. Crews have been running cameras through the sewer lines to check their condition, which is called a CCTV sewer inspection. A bond is money the city would borrow now and pay back over time. During the discussion, some residents asked for clearer information about what a bond would cost. They wanted to understand the cost before the city moves ahead. The Council heard those questions.\n\nThe Council then handled four items of new business.\n\nFirst, the Council approved budget amendments for the fourth quarter of the 2025 to 2026 fiscal year. These are updates to the current year's budget. The vote was 7 to 0.\n\nSecond, the Council named the city's representatives to SEMCOG, the regional planning group for Southeast Michigan. Council member Adam Duberstein was named the delegate. City Manager Joseph Rheker was named the alternate. Council member Duberstein was the person being appointed, so he abstained from that vote. The vote was 6 to 0 with one abstention.\n\nThird, the Council approved a legal services agreement so the city can take part in a drinking-water settlement with 3M and DuPont over PFAS. PFAS are a group of long-lasting chemicals that can show up in water. The vote was 7 to 0.\n\nFourth, the Council received and filed the city's goals and measurables for the 2026 to 2027 year. Receiving and filing means the Council formally accepted the document into the record. The vote was 7 to 0.\n\nLater in the meeting, the Council voted to go into a closed session. The reason was pending litigation, AWA Investment LLC versus the City of Clawson. State law allows a closed session for this purpose under the Open Meetings Act, section 15.268(h). Closed sessions are private by law, so nothing from that discussion is public.\n\nAfter the closed session, the Council returned to open session and took one public vote. The Council directed the City Attorney to move ahead with a settlement in a property tax case, Michigan Tax Tribunal docket 25-001597. The vote was 7 to 0.\n\nMayor Susan Moffitt and City Clerk Machele Kukuk signed the minutes, so this is the approved record of the meeting.",
+        "source": {
+          "label": "Drafted by Commonwealth from the approved City Council minutes and meeting video for June 16, 2026",
+          "date": "2026-07-11",
+          "real": true,
+          "drafted": true,
+          "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+        }
+      },
+      "items": [
+        {
+          "id": "i1",
+          "n": 1,
+          "title": "Police Department awards and recognitions",
+          "type": "presentation",
+          "summary": "The meeting opened with the Police Department presenting awards. The department recognized members for their work. The approved minutes name each person honored and the reason for each award.",
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i2",
+          "n": 2,
+          "title": "Sewer inspection and infrastructure bond presentation",
+          "type": "presentation",
+          "summary": "Staff gave a presentation about the city's sewer system and a possible bond for infrastructure work. Crews have been running cameras through the sewer lines to check their condition, which is called a CCTV sewer inspection. A bond is money the city would borrow now and pay back over time. During the discussion, some residents asked for clearer information about what a bond would cost. The Council heard those questions.",
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i3",
+          "n": 3,
+          "title": "Consent agenda (CM 06-145-26)",
+          "type": "action",
+          "summary": "The Council approved the consent agenda in a single vote. It included the minutes of the June 2 meeting, the appointments of Zablocki and McDonald to SOCWA and SOCRRA, and the list of bills totaling $1,099,806.22. A consent agenda groups routine items into one vote.",
+          "videoTimestamp": "2:12:36",
+          "vote": {
+            "result": "Carried 7–0 (unanimous)",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i4",
+          "n": 4,
+          "title": "Fourth-quarter budget amendments, FY 2025-2026 (CM 06-146-26)",
+          "type": "action",
+          "summary": "The Council approved budget amendments for the fourth quarter of the 2025 to 2026 fiscal year. These are updates to the current year's budget.",
+          "videoTimestamp": "2:16:24",
+          "vote": {
+            "result": "Carried 7–0 (unanimous)",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i5",
+          "n": 5,
+          "title": "SEMCOG delegate and alternate (CM 06-148-26)",
+          "type": "action",
+          "summary": "The Council named the city's representatives to SEMCOG, the regional planning group for Southeast Michigan. Council member Adam Duberstein was named the delegate. City Manager Joseph Rheker was named the alternate. Council member Duberstein was the person being appointed as delegate, so he abstained from the vote.",
+          "videoTimestamp": "2:19:36",
+          "vote": {
+            "result": "Carried 6–0 with 1 abstention",
+            "roll": [
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" },
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Adam Duberstein", "vote": "abstain", "officialId": "duberstein" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i6",
+          "n": 6,
+          "title": "3M and DuPont PFAS drinking-water settlement, legal services agreement (CM 06-149-26)",
+          "type": "action",
+          "summary": "The Council approved a legal services agreement so the city can take part in a drinking-water settlement with 3M and DuPont over PFAS. PFAS are a group of long-lasting chemicals that can show up in water.",
+          "videoTimestamp": "2:25:41",
+          "vote": {
+            "result": "Carried 7–0 (unanimous)",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i7",
+          "n": 7,
+          "title": "FY 2026/2027 Goals and Objectives Measurables (CM 06-150-26)",
+          "type": "action",
+          "summary": "The Council received and filed the city's goals and measurables for the 2026 to 2027 year. Receiving and filing means the Council formally accepted the document into the record.",
+          "videoTimestamp": "2:37:14",
+          "vote": {
+            "result": "Received and filed, carried 7–0",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i8",
+          "n": 8,
+          "title": "Motion to enter closed session (CM 06-151-26)",
+          "type": "action",
+          "summary": "The Council voted to go into a closed session to discuss pending litigation, AWA Investment LLC versus the City of Clawson. State law allows a closed session for this purpose under the Open Meetings Act, section 15.268(h). Closed sessions are private by law, so nothing from the discussion is part of the public record.",
+          "videoTimestamp": "3:23:48",
+          "vote": {
+            "result": "Carried 7–0 (unanimous)",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
+          }
+        },
+        {
+          "id": "i9",
+          "n": 9,
+          "title": "Direct the City Attorney on the Michigan Tax Tribunal settlement (CM 06-153-26)",
+          "type": "action",
+          "summary": "After the closed session, the Council returned to open session and took one public vote. The Council directed the City Attorney to move ahead with a stipulated settlement in a property tax case, Michigan Tax Tribunal docket 25-001597.",
+          "videoTimestamp": "3:38:25",
+          "vote": {
+            "result": "Carried 7–0 (unanimous)",
+            "roll": [
+              { "name": "Susan Moffitt", "vote": "yes", "officialId": "moffitt" },
+              { "name": "Adam Duberstein", "vote": "yes", "officialId": "duberstein" },
+              { "name": "Aidan O'Rourke", "vote": "yes", "officialId": "orourke" },
+              { "name": "Meredith Peltonen", "vote": "yes", "officialId": "peltonen" },
+              { "name": "Laura Slowinski", "vote": "yes", "officialId": "slowinski" },
+              { "name": "Alec Speshock", "vote": "yes", "officialId": "speshock" },
+              { "name": "Scott Tinlin", "vote": "yes", "officialId": "tinlin" }
+            ]
+          },
+          "source": {
+            "label": "City of Clawson — Approved City Council minutes, June 16, 2026",
+            "date": "2026-06-16",
+            "real": true,
+            "url": "https://clawsoncitymi.documents-on-demand.com/document/1cd1a75f-9575-f111-a4a1-000c29a59557/City%20Council%20Minutes%20June%2016,%202026.PDF"
           }
         }
       ]

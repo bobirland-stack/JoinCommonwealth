@@ -1,0 +1,49 @@
+# The record-check gate (ADR-006).
+#
+# This runs on every pull request into main and on every branch push. It is the
+# machine half of the promise that a person stands behind every recap: nothing
+# merges until the record is sourced, the types are sound, and the site builds.
+#
+# Make these checks required: repo Settings -> Branches -> Branch protection
+# rules -> main -> Require status checks to pass before merging, and select the
+# "checks" job below. Pair it with one required approving review so a human read
+# the record against its source. Keep both on even when the team is one person.
+name: Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches-ignore: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Strict TypeScript. The contract in data/towns/schema.ts is only worth
+      # anything if the app still compiles against it.
+      - name: Typecheck
+        run: npm run typecheck
+
+      # The source-check gate: every meeting, agenda item, thread, thread step,
+      # and companion carries a source, every coded value is one the schema
+      # allows, and every reference resolves. Fails the build if not.
+      - name: Source check
+        run: npm run check-sources
+
+      # The build must complete, so a bad record cannot ship even if it somehow
+      # passed the checks above.
+      - name: Build
+        run: npm run build
